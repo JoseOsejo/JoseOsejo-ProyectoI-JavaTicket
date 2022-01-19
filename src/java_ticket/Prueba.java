@@ -19,17 +19,6 @@ public class Prueba {
     //vamos hacer el menu primero para poder ingresar con un par de funciones 
     //que hagan la validacion de los usuarios
     public static void main(String[] args) {
-    Scanner leer = new Scanner(System.in);
-    int opcion = 0;
-    
-       while(opcion!= 3){
-          
-           System.out.println(" [JAVA TICKET]\n1. LogIn\n2. Crear Cuenta\n3. Salir");
-           opcion = leer.nextInt();
-           
-            if(opcion <1 || opcion >3){
-               break;
-           }
-       }
+   
     }
 }
