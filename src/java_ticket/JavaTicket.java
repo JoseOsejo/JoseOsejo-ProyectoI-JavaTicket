@@ -50,9 +50,11 @@ public class JavaTicket extends javax.swing.JFrame {
         nameLabel.setForeground(new java.awt.Color(255, 255, 51));
         nameLabel.setText("JAVA TICKET");
 
+        usernmaeLabel.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         usernmaeLabel.setForeground(new java.awt.Color(255, 255, 255));
         usernmaeLabel.setText("Username");
 
+        passwordLabel.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
         passwordLabel.setForeground(new java.awt.Color(255, 255, 255));
         passwordLabel.setText("Password");
 
@@ -106,7 +108,7 @@ public class JavaTicket extends javax.swing.JFrame {
                         .addGroup(logInPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(logInPanelLayout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(logInPanelLayout.createSequentialGroup()
                                 .addGroup(logInPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)

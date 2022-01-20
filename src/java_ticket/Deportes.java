@@ -9,7 +9,10 @@ package java_ticket;
  *
  * @author jcoq2
  */
-public class UsuariosContenidos extends Usuario
+public enum Deportes 
 {
-    
+ FUTBOL,
+ TENIS,
+ RUGBY,
+ BASEBALL
 }

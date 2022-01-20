@@ -9,7 +9,11 @@ package java_ticket;
  *
  * @author jcoq2
  */
-public class UsuariosContenidos extends Usuario
-{
-    
+public enum Musica {
+    POP,
+    ROCK,
+    RAP,
+    CLASICA,
+    REGGEATON,
+    OTRO
 }

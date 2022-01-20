@@ -5,10 +5,27 @@
  */
 package java_ticket;
 
+import java.util.Date;
+
 /**
  *
  * @author jcoq2
  */
-public class Evento {
+public class Evento 
+{
+    private int codigo;//el codigo de cada evento es unico
+    private String tituloEvento;
+    private String descripcion;
+    private Date fechaEvento;
+    private int montoRenta;//renta del estadio
+    //todas se ingresan desde el teclado
+
+    public Evento(int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
+        this.codigo = codigo;
+        this.tituloEvento = tituloEvento;
+        this.descripcion = descripcion;
+        this.fechaEvento = fechaEvento;
+        this.montoRenta = montoRenta;
+    }
     
 }

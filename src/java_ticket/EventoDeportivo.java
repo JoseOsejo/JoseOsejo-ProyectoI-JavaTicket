@@ -9,6 +9,13 @@ package java_ticket;
  *
  * @author jcoq2
  */
-public class EventoDeportivo {
-    
+public class EventoDeportivo extends Evento
+{
+    //cantidad maxima de gente es 20 mil
+    //estos datos son parte de la creacion en la opcion del menu en la que se crean
+    private Deportes deporte;
+    /*||Atributos extras||
+    listado de jugadores por equipo
+    cada listado dentro de un arraylist para cada equipo
+    */
 }

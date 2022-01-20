@@ -9,6 +9,10 @@ package java_ticket;
  *
  * @author jcoq2
  */
-public class EventoReligioso {
-    
+public class EventoReligioso extends Evento
+{
+//la cantidad maxima es de 30 mil
+//se cobran 2000 lps fijos por desgaste de la grama
+private double seguro;
+/*la cantidad de personas convertidas esa noche*/
 }
