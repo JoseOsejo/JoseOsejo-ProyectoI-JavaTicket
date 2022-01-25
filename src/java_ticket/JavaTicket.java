@@ -35,12 +35,17 @@ public class JavaTicket extends javax.swing.JFrame {
         MenuAdmin = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        adminEventosButton = new javax.swing.JButton();
+        adminUsuariosButton = new javax.swing.JButton();
+        reportesButton = new javax.swing.JButton();
+        salirButton = new javax.swing.JButton();
         MenuLimitado = new javax.swing.JDialog();
         MenuContenido = new javax.swing.JDialog();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        adminEventosContenido = new javax.swing.JButton();
+        reportesContenido = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         AdminEventos = new javax.swing.JDialog();
         jPanel2 = new javax.swing.JPanel();
         crearEventoButton = new javax.swing.JButton();
@@ -65,21 +70,21 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Dubai Medium", 1, 18)); // NOI18N
         jLabel6.setText("Menu Principal");
 
-        jButton1.setText("Administracion de Eventos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        adminEventosButton.setText("Administracion de Eventos");
+        adminEventosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                adminEventosButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Administracion de Usuarios");
+        adminUsuariosButton.setText("Administracion de Usuarios");
 
-        jButton3.setText("Reportes");
+        reportesButton.setText("Reportes");
 
-        jButton4.setText("Salir");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        salirButton.setText("Salir");
+        salirButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                salirButtonActionPerformed(evt);
             }
         });
 
@@ -95,16 +100,16 @@ public class JavaTicket extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
+                            .addComponent(reportesButton)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(8, 8, 8)
-                                .addComponent(jButton4)))))
+                                .addComponent(salirButton)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(adminEventosButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(adminUsuariosButton)
                 .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
@@ -114,12 +119,12 @@ public class JavaTicket extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(adminEventosButton)
+                    .addComponent(adminUsuariosButton))
                 .addGap(45, 45, 45)
-                .addComponent(jButton3)
+                .addComponent(reportesButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(salirButton)
                 .addGap(29, 29, 29))
         );
 
@@ -145,15 +150,62 @@ public class JavaTicket extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
+        jLabel8.setText("Menu Pricipal");
+
+        adminEventosContenido.setText("Administracion de Eventos");
+
+        reportesContenido.setText("Reportes");
+
+        jButton3.setText("Salir");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(164, 164, 164)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(jButton3))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(119, 119, 119)
+                        .addComponent(adminEventosContenido))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(157, 157, 157)
+                        .addComponent(reportesContenido)))
+                .addContainerGap(119, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel8)
+                .addGap(61, 61, 61)
+                .addComponent(adminEventosContenido)
+                .addGap(18, 18, 18)
+                .addComponent(reportesContenido)
+                .addGap(49, 49, 49)
+                .addComponent(jButton3)
+                .addContainerGap(59, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout MenuContenidoLayout = new javax.swing.GroupLayout(MenuContenido.getContentPane());
         MenuContenido.getContentPane().setLayout(MenuContenidoLayout);
         MenuContenidoLayout.setHorizontalGroup(
             MenuContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         MenuContenidoLayout.setVerticalGroup(
             MenuContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         crearEventoButton.setText("Crear Evento");
@@ -365,20 +417,20 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_logInButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void adminEventosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminEventosButtonActionPerformed
         AdminEventos.setVisible(true);
         AdminEventos.setLocationRelativeTo(null);
         AdminEventos.setResizable(false);
         AdminEventos.pack();
         MenuAdmin.setVisible(false);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_adminEventosButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void salirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirButtonActionPerformed
         MenuAdmin.setVisible(false);
         this.setVisible(true);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_salirButtonActionPerformed
 
     private void crearEventoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearEventoButtonActionPerformed
         // TODO add your handling code here:
@@ -390,6 +442,12 @@ public class JavaTicket extends javax.swing.JFrame {
         
     // TODO add your handling code here:
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+         MenuContenido.setVisible(false);
+         this.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -431,14 +489,14 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JDialog MenuAdmin;
     private javax.swing.JDialog MenuContenido;
     private javax.swing.JDialog MenuLimitado;
+    private javax.swing.JButton adminEventosButton;
+    private javax.swing.JButton adminEventosContenido;
+    private javax.swing.JButton adminUsuariosButton;
     private javax.swing.JButton backButton;
     private javax.swing.JButton crearEventoButton;
     private javax.swing.JButton editarEventoButton;
     private javax.swing.JButton eliminarEventoButton;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -446,13 +504,18 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton logInButton;
     private javax.swing.JPanel logInPanel;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JPasswordField passwordTextField;
+    private javax.swing.JButton reportesButton;
+    private javax.swing.JButton reportesContenido;
+    private javax.swing.JButton salirButton;
     private javax.swing.JTextField userTextField;
     private javax.swing.JLabel usernmaeLabel;
     private javax.swing.JButton verEventoButton;
