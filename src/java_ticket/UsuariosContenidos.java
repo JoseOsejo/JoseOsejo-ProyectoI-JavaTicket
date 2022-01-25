@@ -5,11 +5,28 @@
  */
 package java_ticket;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jcoq2
  */
 public class UsuariosContenidos extends Usuario
 {
+    private ArrayList<Evento>eventosCreados;
+
+    public UsuariosContenidos(ArrayList<Evento> eventosCreados, String nombreCompleto, String username, String password, int edad) {
+        super(nombreCompleto, username, password, edad);
+        this.eventosCreados = eventosCreados;
+    }
+
+    public ArrayList<Evento> getEventosCreados() {
+        return eventosCreados;
+    }
+
+    public void setEventosCreados(ArrayList<Evento> eventosCreados) {
+        this.eventosCreados = eventosCreados;
+    }
     
+
 }

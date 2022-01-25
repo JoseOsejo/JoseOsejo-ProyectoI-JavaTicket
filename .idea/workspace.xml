@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d253d62d-85c4-4bab-a9e1-fffeb20c9aee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/build/classes/java_ticket/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java_ticket/Evento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java_ticket/JavaTicket$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java_ticket/JavaTicket$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java_ticket/JavaTicket$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java_ticket/JavaTicket$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java_ticket/JavaTicket.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java_ticket/JavaTicket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java_ticket/JavaTicket.form" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java_ticket/JavaTicket.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java_ticket/Prueba.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java_ticket/Prueba.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java_ticket/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java_ticket/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java_ticket/UsuarioAdmin.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java_ticket/UsuarioAdmin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java_ticket/UsuariosContenidos.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java_ticket/UsuariosContenidos.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_ticket/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java_ticket/Evento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_ticket/JavaTicket.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/java_ticket/JavaTicket.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_ticket/JavaTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java_ticket/JavaTicket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_ticket/Prueba.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java_ticket/Prueba.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_ticket/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java_ticket/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_ticket/UsuarioAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java_ticket/UsuarioAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/java_ticket/UsuariosContenidos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/java_ticket/UsuariosContenidos.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="24AI4hPyF51vmJgevUyJirn91QY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d253d62d-85c4-4bab-a9e1-fffeb20c9aee" name="Changes" comment="" />
+      <created>1643066776238</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643066776238</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -58,7 +58,7 @@ private int edad;
 
     @Override
     public String toString() {
-        return "Usuario{" + "nombreCompleto=" + nombreCompleto
+        return ", " + "nombreCompleto=" + nombreCompleto
                 + ", username=" + username 
                 + ", password=" + password 
                 + ", edad=" + edad + '}';

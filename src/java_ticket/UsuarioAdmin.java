@@ -11,9 +11,9 @@ import java.util.ArrayList;
  *
  * @author jcoq2
  */
-public class UsuarioAdmin extends Usuario 
-{
-private ArrayList<Evento>eventosCreados;
+public class UsuarioAdmin extends Usuario {
+
+    private ArrayList<Evento> eventosCreados;
 
     public UsuarioAdmin(ArrayList<Evento> eventosCreados, String nombreCompleto, String username, String password, int edad) {
         super(nombreCompleto, username, password, edad);
@@ -26,6 +26,12 @@ private ArrayList<Evento>eventosCreados;
 
     public void setEventosCreados(ArrayList<Evento> eventosCreados) {
         this.eventosCreados = eventosCreados;
+    }
+
+
+    @Override
+    public String toString() {
+        return "eventosCreados" + eventosCreados + super.toString();//To change body of generated methods, choose Tools | Templates.
     }
 
 }
