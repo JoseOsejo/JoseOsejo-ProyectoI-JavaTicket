@@ -610,18 +610,32 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_edadTFActionPerformed
 
+    //funcion para validar user unico
+    public boolean checkUser(String username) {
+        for (Usuario user : usuarios) {
+            if (user.getUsername().equalsIgnoreCase(username)) {
+                return true;
+            }
+        }
+        return false;
+    }
     private void crearUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuarioButtonActionPerformed
         String tipoUsuario = String.valueOf(tipoUsuarioCB.getSelectedItem());
-        if(usernameTF.getText().isEmpty()||passwordTF.getText().isEmpty()||nombreCompletoTF.getText().isEmpty()||edadTF.getText().isEmpty()){
+        if (usernameTF.getText().isEmpty() || passwordTF.getText().isEmpty() || nombreCompletoTF.getText().isEmpty() || edadTF.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "El usuario no se pudo crear!");
-        }else if (tipoUsuario.equalsIgnoreCase("Administrador")) {
+        } else if (tipoUsuario.equalsIgnoreCase("Administrador")) {
             //falta validacion de username unico
             try {
                 String nombreCompleto = nombreCompletoTF.getText();
                 String username = usernameTF.getText();
                 String password = passwordTF.getText();
                 int edad = Integer.parseInt(edadTF.getText());
-                usuarios.add(new UsuarioAdmin(null, nombreCompleto, username, password, edad));
+                boolean validarUsuario = checkUser(username);
+                if (validarUsuario == false) {
+                    usuarios.add(new UsuarioAdmin(null, nombreCompleto, username, password, edad));
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario ya existe!");
+                }
             } catch (NumberFormatException e) {
                 System.out.println(e);
             }
@@ -631,7 +645,12 @@ public class JavaTicket extends javax.swing.JFrame {
                 String username = usernameTF.getText();
                 String password = passwordTF.getText();
                 int edad = Integer.parseInt(edadTF.getText());
-                usuarios.add(new UsuarioContenido(null, nombreCompleto, username, password, edad));
+                boolean validarUsuario = checkUser(username);
+                if (validarUsuario == false) {
+                    usuarios.add(new UsuarioContenido(null, nombreCompleto, username, password, edad));
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario ya existe!");
+                }
             } catch (NumberFormatException e) {
                 System.out.println(e);
             }
@@ -641,11 +660,16 @@ public class JavaTicket extends javax.swing.JFrame {
                 String username = usernameTF.getText();
                 String password = passwordTF.getText();
                 int edad = Integer.parseInt(edadTF.getText());
-                usuarios.add(new UsuarioLimitado(nombreCompleto, username, password, edad));
+                boolean validarUsuario = checkUser(username);
+                if (validarUsuario == false) {
+                    usuarios.add(new UsuarioLimitado(nombreCompleto, username, password, edad));
+                } else {
+                    JOptionPane.showMessageDialog(null, "Usuario ya existe!");
+                }
             } catch (NumberFormatException e) {
                 System.out.println(e);
             }
-        }  
+        }
         System.out.println("Hola");
         for (Usuario user : usuarios) {
             System.out.println(user);
