@@ -6,6 +6,7 @@
 package java_ticket;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -62,12 +63,12 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         tipoUsuarioCB = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        nombreCompletoTF = new javax.swing.JTextField();
+        usernameTF = new javax.swing.JTextField();
+        edadTF = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        crearUsuarioButton = new javax.swing.JButton();
+        passwordTF = new javax.swing.JPasswordField();
         logInPanel = new javax.swing.JPanel();
         nameLabel = new javax.swing.JLabel();
         usernmaeLabel = new javax.swing.JLabel();
@@ -313,21 +314,32 @@ public class JavaTicket extends javax.swing.JFrame {
 
         jLabel12.setText("Username");
 
-        tipoUsuarioCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Contenido", "limitado" }));
+        tipoUsuarioCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Contenido", "Limitado" }));
 
         jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel13.setText("Crear Usuario");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        nombreCompletoTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                nombreCompletoTFActionPerformed(evt);
+            }
+        });
+
+        edadTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                edadTFActionPerformed(evt);
             }
         });
 
         jLabel14.setText("Tipo de Usuario");
 
-        jButton1.setForeground(new java.awt.Color(0, 153, 0));
-        jButton1.setText("Crear Usuario");
+        crearUsuarioButton.setForeground(new java.awt.Color(0, 153, 0));
+        crearUsuarioButton.setText("Crear Usuario");
+        crearUsuarioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crearUsuarioButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -336,10 +348,6 @@ public class JavaTicket extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(184, 184, 184)
-                        .addComponent(jLabel13)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel4Layout.createSequentialGroup()
@@ -350,23 +358,32 @@ public class JavaTicket extends javax.swing.JFrame {
                                 .addComponent(jLabel9)
                                 .addGap(100, 100, 100)
                                 .addComponent(jLabel12)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 150, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel14)
-                        .addGap(66, 66, 66))))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                    .addComponent(jTextField4))
-                .addGap(59, 59, 59)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
-                    .addComponent(jTextField3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tipoUsuarioCB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(41, 41, 41))
+                        .addGap(66, 66, 66))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(184, 184, 184)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel13)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
+                                        .addComponent(tipoUsuarioCB, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nombreCompletoTF, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(edadTF, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGap(183, 183, 183)
+                                        .addComponent(passwordTF, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(35, 35, 35))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(crearUsuarioButton)
+                .addGap(46, 46, 46))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -381,23 +398,25 @@ public class JavaTicket extends javax.swing.JFrame {
                             .addComponent(jLabel12))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(nombreCompletoTF, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(usernameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(103, 103, 103)
                         .addComponent(jLabel14)
-                        .addGap(18, 18, 18)
-                        .addComponent(tipoUsuarioCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tipoUsuarioCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(46, 46, 46))
+                    .addComponent(passwordTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edadTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addComponent(crearUsuarioButton)
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout CrearUsuarioLayout = new javax.swing.GroupLayout(CrearUsuario.getContentPane());
@@ -564,19 +583,19 @@ public class JavaTicket extends javax.swing.JFrame {
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         AdminEventos.setVisible(false);
         MenuAdmin.setVisible(true);
-        
-    // TODO add your handling code here:
+
+        // TODO add your handling code here:
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         MenuContenido.setVisible(false);
-         this.setVisible(true);
+        MenuContenido.setVisible(false);
+        this.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void nombreCompletoTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombreCompletoTFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_nombreCompletoTFActionPerformed
 
     private void adminUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminUsuariosButtonActionPerformed
         CrearUsuario.setVisible(true);
@@ -586,6 +605,53 @@ public class JavaTicket extends javax.swing.JFrame {
         MenuAdmin.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_adminUsuariosButtonActionPerformed
+
+    private void edadTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edadTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_edadTFActionPerformed
+
+    private void crearUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuarioButtonActionPerformed
+        String tipoUsuario = String.valueOf(tipoUsuarioCB.getSelectedItem());
+        if(usernameTF.getText().isEmpty()||passwordTF.getText().isEmpty()||nombreCompletoTF.getText().isEmpty()||edadTF.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null, "El usuario no se pudo crear!");
+        }else if (tipoUsuario.equalsIgnoreCase("Administrador")) {
+            //falta validacion de username unico
+            try {
+                String nombreCompleto = nombreCompletoTF.getText();
+                String username = usernameTF.getText();
+                String password = passwordTF.getText();
+                int edad = Integer.parseInt(edadTF.getText());
+                usuarios.add(new UsuarioAdmin(null, nombreCompleto, username, password, edad));
+            } catch (NumberFormatException e) {
+                System.out.println(e);
+            }
+        } else if (tipoUsuario.equalsIgnoreCase("Contenido")) {
+            try {
+                String nombreCompleto = nombreCompletoTF.getText();
+                String username = usernameTF.getText();
+                String password = passwordTF.getText();
+                int edad = Integer.parseInt(edadTF.getText());
+                usuarios.add(new UsuarioContenido(null, nombreCompleto, username, password, edad));
+            } catch (NumberFormatException e) {
+                System.out.println(e);
+            }
+        } else if (tipoUsuario.equalsIgnoreCase("Limitado")) {
+            try {
+                String nombreCompleto = nombreCompletoTF.getText();
+                String username = usernameTF.getText();
+                String password = passwordTF.getText();
+                int edad = Integer.parseInt(edadTF.getText());
+                usuarios.add(new UsuarioLimitado(nombreCompleto, username, password, edad));
+            } catch (NumberFormatException e) {
+                System.out.println(e);
+            }
+        }  
+        System.out.println("Hola");
+        for (Usuario user : usuarios) {
+            System.out.println(user);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_crearUsuarioButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -634,9 +700,10 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton adminUsuariosButton;
     private javax.swing.JButton backButton;
     private javax.swing.JButton crearEventoButton;
+    private javax.swing.JButton crearUsuarioButton;
+    private javax.swing.JTextField edadTF;
     private javax.swing.JButton editarEventoButton;
     private javax.swing.JButton eliminarEventoButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -656,24 +723,23 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JButton logInButton;
     private javax.swing.JPanel logInPanel;
     private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nombreCompletoTF;
     private javax.swing.JLabel passwordLabel;
+    private javax.swing.JPasswordField passwordTF;
     private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JButton reportesButton;
     private javax.swing.JButton reportesContenido;
     private javax.swing.JButton salirButton;
     private javax.swing.JComboBox<String> tipoUsuarioCB;
     private javax.swing.JTextField userTextField;
+    private javax.swing.JTextField usernameTF;
     private javax.swing.JLabel usernmaeLabel;
     private javax.swing.JButton verEventoButton;
     // End of variables declaration//GEN-END:variables
     private ArrayList<Evento> eventosCreados;
-    private Usuario admin = new UsuarioAdmin(eventosCreados, "administrador", "admin", "supersecreto", 20);
-
+    private final Usuario admin = new UsuarioAdmin(eventosCreados, "administrador", "admin", "123", 20);
+    private final ArrayList<Usuario> usuarios = new ArrayList();
 }

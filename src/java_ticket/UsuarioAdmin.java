@@ -26,12 +26,12 @@ public class UsuarioAdmin extends Usuario {
 
     public void setEventosCreados(ArrayList<Evento> eventosCreados) {
         this.eventosCreados = eventosCreados;
-    }
+    }   
 
 
     @Override
     public String toString() {
-        return "eventosCreados" + eventosCreados + super.toString();//To change body of generated methods, choose Tools | Templates.
+        return "UsuarioAdmin{"+"eventosCreados" + eventosCreados + super.toString()+"}";//To change body of generated methods, choose Tools | Templates.
     }
 
 }

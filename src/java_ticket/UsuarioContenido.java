@@ -11,11 +11,11 @@ import java.util.ArrayList;
  *
  * @author jcoq2
  */
-public class UsuariosContenido extends Usuario
+public class UsuarioContenido extends Usuario
 {
     private ArrayList<Evento>eventosCreados;
 
-    public UsuariosContenido(ArrayList<Evento> eventosCreados, String nombreCompleto, String username, String password, int edad) {
+    public UsuarioContenido(ArrayList<Evento> eventosCreados, String nombreCompleto, String username, String password, int edad) {
         super(nombreCompleto, username, password, edad);
         this.eventosCreados = eventosCreados;
     }
@@ -26,6 +26,11 @@ public class UsuariosContenido extends Usuario
 
     public void setEventosCreados(ArrayList<Evento> eventosCreados) {
         this.eventosCreados = eventosCreados;
+    }
+
+    @Override
+    public String toString() {
+        return "UsuarioContenido{" + "eventosCreados=" + eventosCreados + super.toString()+"}";
     }
     
 
