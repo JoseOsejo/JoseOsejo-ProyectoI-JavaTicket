@@ -17,11 +17,11 @@ public class EventoReligioso extends Evento
 //se cobran 2000 lps fijos por desgaste de la grama
 private double seguro;
 private int cantidadGente;
-private int[] cantidadGenteConvertida;
+private int cantidadGenteConvertida;
 
 /*la cantidad de personas convertidas esa noche*/
 
-    public EventoReligioso(double seguro, int cantidadGente, int[] cantidadGenteConvertidas, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
+    public EventoReligioso(double seguro, int cantidadGente, int cantidadGenteConvertidas, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
         super(codigo, tituloEvento, descripcion, fechaEvento, montoRenta);
         this.seguro = seguro;
         this.cantidadGente = cantidadGente;
@@ -44,11 +44,11 @@ private int[] cantidadGenteConvertida;
         this.cantidadGente = cantidadGente;
     }
 
-    public int[] getCantidadGenteConvertidas() {
+    public int getCantidadGenteConvertidas() {
         return cantidadGenteConvertida;
     }
 
-    public void setCantidadGenteConvertidas(int[] cantidadGenteConvertidas) {
+    public void setCantidadGenteConvertidas(int cantidadGenteConvertidas) {
         this.cantidadGenteConvertida = cantidadGenteConvertidas;
     }
 

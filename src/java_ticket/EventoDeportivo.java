@@ -16,7 +16,7 @@ public class EventoDeportivo extends Evento {
 
     //cantidad maxima de gente es 20 mil
     //estos datos son parte de la creacion en la opcion del menu en la que se crean
-    private Deportes deporte;
+    private Deportes tipoDeporte;
     private int cantidadGente;
     private ArrayList<String> equipos;
     private ArrayList<String> listadoJugadores1;
@@ -28,7 +28,7 @@ public class EventoDeportivo extends Evento {
      */
     public EventoDeportivo(Deportes deporte, int cantidadGente, ArrayList<String> equipos, ArrayList<String> listadoJugadores1, ArrayList<String> listadoJugadores2, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
         super(codigo, tituloEvento, descripcion, fechaEvento, montoRenta);
-        this.deporte = deporte;
+        this.tipoDeporte = deporte;
         this.cantidadGente = cantidadGente;
         this.equipos = equipos;
         this.listadoJugadores1 = listadoJugadores1;
@@ -36,11 +36,11 @@ public class EventoDeportivo extends Evento {
     }
 
     public Deportes getDeporte() {
-        return deporte;
+        return tipoDeporte;
     }
 
     public void setDeporte(Deportes deporte) {
-        this.deporte = deporte;
+        this.tipoDeporte = deporte;
     }
 
     public int getCantidadGente() {
@@ -77,7 +77,7 @@ public class EventoDeportivo extends Evento {
 
     @Override
     public String toString() {
-        return "Evento Deportivo" + "Deporte " + deporte
+        return "Evento Deportivo" + "Deporte " + tipoDeporte
                 + "Cantidad de Gente " + cantidadGente
                 + "Equipos " + equipos
                 + super.toString();//To change body of generated methods, choose Tools | Templates.

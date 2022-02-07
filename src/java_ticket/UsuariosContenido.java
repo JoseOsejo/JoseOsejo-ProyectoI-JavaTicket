@@ -11,11 +11,11 @@ import java.util.ArrayList;
  *
  * @author jcoq2
  */
-public class UsuariosContenidos extends Usuario
+public class UsuariosContenido extends Usuario
 {
     private ArrayList<Evento>eventosCreados;
 
-    public UsuariosContenidos(ArrayList<Evento> eventosCreados, String nombreCompleto, String username, String password, int edad) {
+    public UsuariosContenido(ArrayList<Evento> eventosCreados, String nombreCompleto, String username, String password, int edad) {
         super(nombreCompleto, username, password, edad);
         this.eventosCreados = eventosCreados;
     }
