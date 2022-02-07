@@ -69,6 +69,20 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         crearUsuarioButton = new javax.swing.JButton();
         passwordTF = new javax.swing.JPasswordField();
+        ManejoUsuario = new javax.swing.JDialog();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        volverMenuAdminButton = new javax.swing.JButton();
+        EditarUsuario = new javax.swing.JDialog();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel16 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        volverManejoUsuario = new javax.swing.JButton();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         logInPanel = new javax.swing.JPanel();
         nameLabel = new javax.swing.JLabel();
         usernmaeLabel = new javax.swing.JLabel();
@@ -430,6 +444,158 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLabel15.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel15.setText("Manejo de Usuarios");
+
+        jButton1.setText("Crear Usuario");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Eliminar Usuario");
+
+        jButton4.setText("Editar Usuario");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        volverMenuAdminButton.setText("Volver a Menu");
+        volverMenuAdminButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverMenuAdminButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(23, 23, 23))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(jLabel15))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(140, 140, 140)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(volverMenuAdminButton)
+                            .addComponent(jButton2))))
+                .addContainerGap(123, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel15)
+                .addGap(64, 64, 64)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton4))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
+                .addComponent(volverMenuAdminButton)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout ManejoUsuarioLayout = new javax.swing.GroupLayout(ManejoUsuario.getContentPane());
+        ManejoUsuario.getContentPane().setLayout(ManejoUsuarioLayout);
+        ManejoUsuarioLayout.setHorizontalGroup(
+            ManejoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ManejoUsuarioLayout.setVerticalGroup(
+            ManejoUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel16.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel16.setText("Editar Usuario");
+
+        jButton5.setText("Editar un elemento del Usuario");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Editar todos los elementos del Usuario");
+
+        volverManejoUsuario.setText("Volver a Manejo de Usuarios");
+        volverManejoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverManejoUsuarioActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(jLabel16))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(jButton6))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jButton5))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(volverManejoUsuario)))
+                .addContainerGap(95, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel16)
+                .addGap(77, 77, 77)
+                .addComponent(jButton5)
+                .addGap(41, 41, 41)
+                .addComponent(jButton6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(volverManejoUsuario)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout EditarUsuarioLayout = new javax.swing.GroupLayout(EditarUsuario.getContentPane());
+        EditarUsuario.getContentPane().setLayout(EditarUsuarioLayout);
+        EditarUsuarioLayout.setHorizontalGroup(
+            EditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        EditarUsuarioLayout.setVerticalGroup(
+            EditarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         logInPanel.setBackground(new java.awt.Color(0, 0, 0));
@@ -597,15 +763,6 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nombreCompletoTFActionPerformed
 
-    private void adminUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminUsuariosButtonActionPerformed
-        CrearUsuario.setVisible(true);
-        CrearUsuario.setLocationRelativeTo(null);
-        CrearUsuario.setResizable(false);
-        CrearUsuario.pack();
-        MenuAdmin.setVisible(false);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminUsuariosButtonActionPerformed
-
     private void edadTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edadTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_edadTFActionPerformed
@@ -633,6 +790,8 @@ public class JavaTicket extends javax.swing.JFrame {
                 boolean validarUsuario = checkUser(username);
                 if (validarUsuario == false) {
                     usuarios.add(new UsuarioAdmin(null, nombreCompleto, username, password, edad));
+                    CrearUsuario.setVisible(false);
+                    MenuAdmin.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario ya existe!");
                 }
@@ -648,6 +807,8 @@ public class JavaTicket extends javax.swing.JFrame {
                 boolean validarUsuario = checkUser(username);
                 if (validarUsuario == false) {
                     usuarios.add(new UsuarioContenido(null, nombreCompleto, username, password, edad));
+                    CrearUsuario.setVisible(false);
+                    MenuAdmin.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario ya existe!");
                 }
@@ -663,6 +824,8 @@ public class JavaTicket extends javax.swing.JFrame {
                 boolean validarUsuario = checkUser(username);
                 if (validarUsuario == false) {
                     usuarios.add(new UsuarioLimitado(nombreCompleto, username, password, edad));
+                    CrearUsuario.setVisible(false);
+                    MenuAdmin.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(null, "Usuario ya existe!");
                 }
@@ -670,12 +833,59 @@ public class JavaTicket extends javax.swing.JFrame {
                 System.out.println(e);
             }
         }
-        System.out.println("Hola");
+
+        nombreCompletoTF.setText("");
+        usernameTF.setText("");
+        passwordTF.setText("");
+        edadTF.setText("");
         for (Usuario user : usuarios) {
             System.out.println(user);
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_crearUsuarioButtonActionPerformed
+
+    private void volverMenuAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverMenuAdminButtonActionPerformed
+        ManejoUsuario.setVisible(false);
+        MenuAdmin.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_volverMenuAdminButtonActionPerformed
+
+    private void adminUsuariosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminUsuariosButtonActionPerformed
+        ManejoUsuario.setVisible(true);
+        ManejoUsuario.setResizable(false);
+        ManejoUsuario.setLocationRelativeTo(null);
+        ManejoUsuario.pack();
+        MenuAdmin.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminUsuariosButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        CrearUsuario.setVisible(true);
+        CrearUsuario.setResizable(false);
+        CrearUsuario.setLocationRelativeTo(null);
+        CrearUsuario.pack();
+        ManejoUsuario.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        EditarUsuario.setVisible(true);
+        EditarUsuario.setLocationRelativeTo(null);
+        EditarUsuario.setResizable(false);
+        EditarUsuario.pack();
+        ManejoUsuario.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void volverManejoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverManejoUsuarioActionPerformed
+        EditarUsuario.setVisible(false);
+        ManejoUsuario.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_volverManejoUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -716,6 +926,8 @@ public class JavaTicket extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog AdminEventos;
     private javax.swing.JDialog CrearUsuario;
+    private javax.swing.JDialog EditarUsuario;
+    private javax.swing.JDialog ManejoUsuario;
     private javax.swing.JDialog MenuAdmin;
     private javax.swing.JDialog MenuContenido;
     private javax.swing.JDialog MenuLimitado;
@@ -728,13 +940,21 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTextField edadTF;
     private javax.swing.JButton editarEventoButton;
     private javax.swing.JButton eliminarEventoButton;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -747,6 +967,8 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JButton logInButton;
     private javax.swing.JPanel logInPanel;
     private javax.swing.JLabel nameLabel;
@@ -762,6 +984,8 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTextField usernameTF;
     private javax.swing.JLabel usernmaeLabel;
     private javax.swing.JButton verEventoButton;
+    private javax.swing.JButton volverManejoUsuario;
+    private javax.swing.JButton volverMenuAdminButton;
     // End of variables declaration//GEN-END:variables
     private ArrayList<Evento> eventosCreados;
     private final Usuario admin = new UsuarioAdmin(eventosCreados, "administrador", "admin", "123", 20);
