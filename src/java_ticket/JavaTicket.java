@@ -23,7 +23,7 @@ public class JavaTicket extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-
+        usuarios.add(admin);
     }
 
     /**
@@ -43,6 +43,8 @@ public class JavaTicket extends javax.swing.JFrame {
         reportesButton = new javax.swing.JButton();
         salirButton = new javax.swing.JButton();
         MenuLimitado = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel32 = new javax.swing.JLabel();
         MenuContenido = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -211,15 +213,34 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLabel32.setText("Menu Limitado");
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(168, 168, 168)
+                .addComponent(jLabel32)
+                .addContainerGap(164, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(jLabel32)
+                .addContainerGap(247, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout MenuLimitadoLayout = new javax.swing.GroupLayout(MenuLimitado.getContentPane());
         MenuLimitado.getContentPane().setLayout(MenuLimitadoLayout);
         MenuLimitadoLayout.setHorizontalGroup(
             MenuLimitadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         MenuLimitadoLayout.setVerticalGroup(
             MenuLimitadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jLabel8.setText("Menu Pricipal");
@@ -1107,19 +1128,49 @@ public class JavaTicket extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logInButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logInButtonActionPerformed
-        if (userTextField.getText().equalsIgnoreCase(admin.getUsername()) && passwordTextField.getText().equalsIgnoreCase(admin.getPassword())) {
+        int pos = searchUserIndex(userTextField.getText());
+        if (logIn(userTextField.getText(), passwordTextField.getText()) == true) {
+            if (usuarios.get(pos) instanceof UsuarioAdmin) {
+                MenuAdmin.setVisible(true);
+                MenuAdmin.setLocationRelativeTo(null);
+                MenuAdmin.setResizable(false);
+                MenuAdmin.pack();
+                this.setVisible(false);
+            } else if (usuarios.get(pos) instanceof UsuarioContenido) {
+                MenuContenido.setVisible(true);
+                MenuContenido.setLocationRelativeTo(null);
+                MenuContenido.setResizable(false);
+                MenuContenido.pack();
+                this.setVisible(false);
+            } else if (usuarios.get(pos) instanceof UsuarioLimitado) {
+                MenuLimitado.setVisible(true);
+                MenuLimitado.setLocationRelativeTo(null);
+                MenuLimitado.setResizable(false);
+                MenuLimitado.pack();
+                this.setVisible(false);
+            }
+        }
+        /* if (userTextField.getText().equalsIgnoreCase(admin.getUsername()) && passwordTextField.getText().equalsIgnoreCase(admin.getPassword())) {
             MenuAdmin.setVisible(true);
             MenuAdmin.setLocationRelativeTo(null);
             MenuAdmin.setResizable(false);
             MenuAdmin.pack();
             this.setVisible(false);
-        }
+        }*/
         userTextField.setText("");
         passwordTextField.setText("");
 
         // TODO add your handling code here:
     }//GEN-LAST:event_logInButtonActionPerformed
 
+    private boolean logIn(String username, String password) {
+        for (Usuario user : usuarios) {
+            if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equalsIgnoreCase(password)) {
+                return true;
+            }
+        }
+        return false;
+    }
     private void adminEventosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminEventosButtonActionPerformed
         AdminEventos.setVisible(true);
         AdminEventos.setLocationRelativeTo(null);
@@ -1528,6 +1579,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1535,6 +1587,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
