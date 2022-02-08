@@ -14,6 +14,7 @@ import java.util.Scanner;
  * @author jcoq2
  */
 public class Prueba {
+        static ArrayList<Usuario>usuarios = new ArrayList();
 
     //tanto los eventos como los usuarios se manejaran con herencia
     /*Revisar los temas en las clases y tambien en videos cursos etc.
@@ -26,22 +27,21 @@ public class Prueba {
         //hacer funciones con respecto a que no se repitan
         //y que tambien pueda funcionar el login
         //tengo que hacer por default un usuario admin
-        ArrayList<Usuario> usuarios = new ArrayList();
-        ArrayList<Evento> eventos = new ArrayList();
-        Date fecha = new Date();
-        int montoRenta = 500;
-        Evento evento = new Evento(134, "MANA", "increibleEvento", fecha, montoRenta);
-        eventos.add(evento);
-        String nombre = "Jose";
-        String user = "admin";
-        String password = "supersecreto";
-        int edad = 19;
-        Usuario admin = new UsuarioAdmin(eventos, nombre, user, password, edad);
-        Usuario loco = new UsuarioAdmin(eventos, nombre, user, password, edad);
-        usuarios.add(loco);
-        usuarios.add(admin);
-        for (Usuario u : usuarios) {
-            System.out.println(u);
-        }
+        ArrayList<Evento>eventos = new ArrayList();
+        UsuarioAdmin userAdmin ;
+        userAdmin = new UsuarioAdmin(eventos,",dfasd","Carlos","dfsf",3);
+        usuarios.add(new Usuario("Willina","Jose","dfasd",3));
+        usuarios.add(userAdmin);
+        searchUserIndex("Carlos");
+        /**/
     }
+    public static void searchUserIndex(String username)  {
+            
+        for(Usuario user: usuarios){
+            if(user.getUsername().equalsIgnoreCase(username)){
+                System.out.println(usuarios.indexOf(user));
+            }
+        }
+        
+        }
 }
