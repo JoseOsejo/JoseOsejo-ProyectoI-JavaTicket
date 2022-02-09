@@ -18,7 +18,8 @@ public class EventoDeportivo extends Evento {
     //estos datos son parte de la creacion en la opcion del menu en la que se crean
     private Deportes tipoDeporte;
     private int cantidadGente;
-    private ArrayList<String> equipos;
+    private String equipo1;
+    private String equipo2;
     private ArrayList<String> listadoJugadores1;
     private ArrayList<String> listadoJugadores2;
 
@@ -26,14 +27,17 @@ public class EventoDeportivo extends Evento {
     listado de jugadores por equipo
     cada listado dentro de un arraylist para cada equipo
      */
-    public EventoDeportivo(Deportes deporte, int cantidadGente, ArrayList<String> equipos, ArrayList<String> listadoJugadores1, ArrayList<String> listadoJugadores2, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
+
+    public EventoDeportivo(Deportes tipoDeporte, int cantidadGente, String equipo1, String equipo2, ArrayList<String> listadoJugadores1, ArrayList<String> listadoJugadores2, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
         super(codigo, tituloEvento, descripcion, fechaEvento, montoRenta);
-        this.tipoDeporte = deporte;
+        this.tipoDeporte = tipoDeporte;
         this.cantidadGente = cantidadGente;
-        this.equipos = equipos;
+        this.equipo1 = equipo1;
+        this.equipo2 = equipo2;
         this.listadoJugadores1 = listadoJugadores1;
         this.listadoJugadores2 = listadoJugadores2;
     }
+    
 
     public Deportes getDeporte() {
         return tipoDeporte;
@@ -51,13 +55,31 @@ public class EventoDeportivo extends Evento {
         this.cantidadGente = cantidadGente;
     }
 
-    public ArrayList<String> getEquipos() {
-        return equipos;
+    public Deportes getTipoDeporte() {
+        return tipoDeporte;
     }
 
-    public void setEquipos(ArrayList<String> equipos) {
-        this.equipos = equipos;
+    public void setTipoDeporte(Deportes tipoDeporte) {
+        this.tipoDeporte = tipoDeporte;
     }
+
+    public String getEquipo1() {
+        return equipo1;
+    }
+
+    public void setEquipo1(String equipo1) {
+        this.equipo1 = equipo1;
+    }
+
+    public String getEquipo2() {
+        return equipo2;
+    }
+
+    public void setEquipo2(String equipo2) {
+        this.equipo2 = equipo2;
+    }
+
+   
 
     public ArrayList<String> getListadoJugadores1() {
         return listadoJugadores1;
@@ -79,7 +101,8 @@ public class EventoDeportivo extends Evento {
     public String toString() {
         return "Evento Deportivo" + "Deporte " + tipoDeporte
                 + "Cantidad de Gente " + cantidadGente
-                + "Equipos " + equipos
+                + "Equipo1 " + equipo1
+                + "Equipo2 " + equipo2
                 + super.toString();//To change body of generated methods, choose Tools | Templates.
 
     }
