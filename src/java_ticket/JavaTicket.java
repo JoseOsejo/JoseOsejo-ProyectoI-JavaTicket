@@ -1303,10 +1303,10 @@ public class JavaTicket extends javax.swing.JFrame {
                 MenuLimitado.pack();
                 this.setVisible(false);
             }
-            
-        }else{
+
+        } else {
             userTextField.setText("");
-        passwordTextField.setText("");
+            passwordTextField.setText("");
         }
         /* if (userTextField.getText().equalsIgnoreCase(admin.getUsername()) && passwordTextField.getText().equalsIgnoreCase(admin.getPassword())) {
             MenuAdmin.setVisible(true);
@@ -1315,11 +1315,10 @@ public class JavaTicket extends javax.swing.JFrame {
             MenuAdmin.pack();
             this.setVisible(false);
         }*/
-        
 
         // TODO add your handling code here:
     }//GEN-LAST:event_logInButtonActionPerformed
-    
+
     private boolean logIn(String username, String password) {
         for (Usuario user : usuarios) {
             if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equalsIgnoreCase(password)) {
@@ -1328,7 +1327,8 @@ public class JavaTicket extends javax.swing.JFrame {
         }
         return false;
     }
-    private Usuario getLoggedUser(Usuario user){
+
+    private Usuario getLoggedUser(Usuario user) {
         return user;
     }
     private void adminEventosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminEventosButtonActionPerformed
@@ -1437,7 +1437,7 @@ public class JavaTicket extends javax.swing.JFrame {
                 System.out.println(e);
             }
         }
-        
+
         nombreCompletoTF.setText("");
         usernameTF.setText("");
         passwordTF.setText("");
@@ -1504,7 +1504,7 @@ public class JavaTicket extends javax.swing.JFrame {
         usuarios.get(pos).setPassword(contraTF.getText());
         int edad = Integer.parseInt(edadTextField.getText());
         usuarios.get(pos).setEdad(edad);
-        
+
         inputUser.setText("");
         nombreTF.setText("");
         usernameTextField.setText("");
@@ -1566,7 +1566,7 @@ public class JavaTicket extends javax.swing.JFrame {
                     int edad = Integer.parseInt(atributoTextField.getText());
                     usuarios.get(pos).setEdad(edad);
                 }
-                
+
             }
         }
         usuarioIngresado.setText("");
@@ -1599,7 +1599,7 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_contraTFActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        
+
         int pos = searchUserIndex(inputUsername.getText());
         if (pos != -1) {
             usuarios.remove(pos);
@@ -1649,7 +1649,7 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel31MouseClicked
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-                   
+
         try {
             int codigo = Integer.parseInt(codigoEventoAdmin.getText());
             String tituloEvento = tituloEventoAdmin.getText();
@@ -1658,27 +1658,27 @@ public class JavaTicket extends javax.swing.JFrame {
             int montoRenta = Integer.parseInt(montoAcordadoEventoAdmin.getText());
             boolean validarCodigo = codigoUnico(codigo);
             int pos = searchUserIndex(userTextField.getText());
-            if (validarCodigo == false ) {
-                eventosCreados.add(new Evento(codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin)usuarios.get(pos)).getEventosCreados().add(new Evento(codigo, tituloEvento, descripcion,fechaEvento , montoRenta));
-            }else{
+            if (validarCodigo == false) {
+                eventosCreados.add(new Evento(codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new Evento(codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+            } else {
                 JOptionPane.showMessageDialog(null, "El evento no se pudo crear");
             }
         } catch (NumberFormatException e) {
             System.out.println(e);
         }
-        for(Usuario user : usuarios){
+        for (Usuario user : usuarios) {
             System.out.println(user);
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton8ActionPerformed
     private boolean codigoUnico(int codigo) {
-       for(Evento evento: eventosCreados){
-               if(evento.getCodigo()==codigo){
-                   return true;
-           }
-       }
-       return false;
+        for (Evento evento : eventosCreados) {
+            if (evento.getCodigo() == codigo) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
