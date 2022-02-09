@@ -15,9 +15,9 @@ public class UsuarioContenido extends Usuario
 {
     private ArrayList<Evento>eventosCreados;
 
-    public UsuarioContenido(ArrayList<Evento> eventosCreados, String nombreCompleto, String username, String password, int edad) {
+    public UsuarioContenido(String nombreCompleto, String username, String password, int edad) {
         super(nombreCompleto, username, password, edad);
-        this.eventosCreados = eventosCreados;
+        this.eventosCreados = new ArrayList();
     }
 
     public ArrayList<Evento> getEventosCreados() {

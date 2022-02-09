@@ -9,7 +9,7 @@ package java_ticket;
  *
  * @author jcoq2
  */
-public class Usuario 
+public abstract class  Usuario 
 {
  /*antes de crear un usuario es importante definir que tipo de usuario sera*/
 private String nombreCompleto;

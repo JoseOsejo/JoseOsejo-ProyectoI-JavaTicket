@@ -29,10 +29,11 @@ public class Prueba {
         //tengo que hacer por default un usuario admin
         ArrayList<Evento>eventos = new ArrayList();
         UsuarioAdmin userAdmin ;
-        userAdmin = new UsuarioAdmin(eventos,",dfasd","Carlos","dfsf",3);
-        usuarios.add(new Usuario("Willina","Jose","dfasd",3));
-        usuarios.add(userAdmin);
+        eventos.add(new Evento(34,"fdf","dfsdf",new Date(),344));
         searchUserIndex("Carlos");
+        for(Evento evento :eventos){
+            System.out.println(evento);
+        }
         /**/
     }
     public static void searchUserIndex(String username)  {

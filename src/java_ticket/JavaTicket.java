@@ -6,6 +6,8 @@
 package java_ticket;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Enumeration;
 import javax.swing.AbstractButton;
 import javax.swing.JOptionPane;
@@ -123,6 +125,24 @@ public class JavaTicket extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         eliminarLabel = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
+        CrearEvento = new javax.swing.JDialog();
+        jPanel11 = new javax.swing.JPanel();
+        tipoEventoCB = new javax.swing.JComboBox<>();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        codigoEventoAdmin = new javax.swing.JTextField();
+        jLabel36 = new javax.swing.JLabel();
+        tituloEventoAdmin = new javax.swing.JTextField();
+        jLabel37 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        descripcionEventoAdmin = new javax.swing.JTextArea();
+        jLabel38 = new javax.swing.JLabel();
+        fechaEventoAdmin = new com.toedter.calendar.JDateChooser();
+        jButton8 = new javax.swing.JButton();
+        jLabel39 = new javax.swing.JLabel();
+        montoAcordadoEventoAdmin = new javax.swing.JTextField();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         logInPanel = new javax.swing.JPanel();
         nameLabel = new javax.swing.JLabel();
         usernmaeLabel = new javax.swing.JLabel();
@@ -1010,6 +1030,140 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        tipoEventoCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Deportivo", "Musical", "Religioso" }));
+
+        jLabel33.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel33.setText("Crear Evento");
+
+        jLabel34.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel34.setText("Tipo Evento");
+
+        jLabel35.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel35.setText("Codigo del Evento");
+
+        jLabel36.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel36.setText("Titulo del Evento");
+
+        jLabel37.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel37.setText("Descripcion del Evento");
+
+        descripcionEventoAdmin.setColumns(20);
+        descripcionEventoAdmin.setRows(5);
+        jScrollPane1.setViewportView(descripcionEventoAdmin);
+
+        jLabel38.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel38.setText("Fecha del Evento");
+
+        jButton8.setText("Crear Evento");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jLabel39.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel39.setText("Monto Acordado");
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel34)
+                        .addGap(141, 141, 141)
+                        .addComponent(jLabel35))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(jLabel33))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(tituloEventoAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton8))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createSequentialGroup()
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(tipoEventoCB, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel36))
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel11Layout.createSequentialGroup()
+                                        .addGap(112, 112, 112)
+                                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(codigoEventoAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(fechaEventoAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel38)
+                                        .addGap(46, 46, 46))))))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(175, 175, 175)
+                        .addComponent(jLabel39))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(montoAcordadoEventoAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel37)))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jLabel33)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel34))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel35)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tipoEventoCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(codigoEventoAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel38))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tituloEventoAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fechaEventoAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jLabel39)
+                .addGap(18, 18, 18)
+                .addComponent(montoAcordadoEventoAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel37)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addComponent(jButton8)
+                        .addGap(34, 34, 34)))
+                .addGap(24, 24, 24))
+        );
+
+        javax.swing.GroupLayout CrearEventoLayout = new javax.swing.GroupLayout(CrearEvento.getContentPane());
+        CrearEvento.getContentPane().setLayout(CrearEventoLayout);
+        CrearEventoLayout.setHorizontalGroup(
+            CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        CrearEventoLayout.setVerticalGroup(
+            CrearEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         logInPanel.setBackground(new java.awt.Color(0, 0, 0));
@@ -1149,6 +1303,10 @@ public class JavaTicket extends javax.swing.JFrame {
                 MenuLimitado.pack();
                 this.setVisible(false);
             }
+            
+        }else{
+            userTextField.setText("");
+        passwordTextField.setText("");
         }
         /* if (userTextField.getText().equalsIgnoreCase(admin.getUsername()) && passwordTextField.getText().equalsIgnoreCase(admin.getPassword())) {
             MenuAdmin.setVisible(true);
@@ -1157,12 +1315,11 @@ public class JavaTicket extends javax.swing.JFrame {
             MenuAdmin.pack();
             this.setVisible(false);
         }*/
-        userTextField.setText("");
-        passwordTextField.setText("");
+        
 
         // TODO add your handling code here:
     }//GEN-LAST:event_logInButtonActionPerformed
-
+    
     private boolean logIn(String username, String password) {
         for (Usuario user : usuarios) {
             if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equalsIgnoreCase(password)) {
@@ -1170,6 +1327,9 @@ public class JavaTicket extends javax.swing.JFrame {
             }
         }
         return false;
+    }
+    private Usuario getLoggedUser(Usuario user){
+        return user;
     }
     private void adminEventosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminEventosButtonActionPerformed
         AdminEventos.setVisible(true);
@@ -1183,10 +1343,17 @@ public class JavaTicket extends javax.swing.JFrame {
     private void salirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salirButtonActionPerformed
         MenuAdmin.setVisible(false);
         this.setVisible(true);
+        userTextField.setText("");
+        passwordTextField.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_salirButtonActionPerformed
 
     private void crearEventoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearEventoButtonActionPerformed
+        CrearEvento.setVisible(true);
+        CrearEvento.setLocationRelativeTo(null);
+        CrearEvento.setResizable(false);
+        CrearEvento.pack();
+        AdminEventos.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_crearEventoButtonActionPerformed
 
@@ -1226,7 +1393,7 @@ public class JavaTicket extends javax.swing.JFrame {
                 int edad = Integer.parseInt(edadTF.getText());
                 boolean validarUsuario = checkUser(username);
                 if (validarUsuario == false) {
-                    usuarios.add(new UsuarioAdmin(null, nombreCompleto, username, password, edad));
+                    usuarios.add(new UsuarioAdmin(nombreCompleto, username, password, edad));
                     CrearUsuario.setVisible(false);
                     MenuAdmin.setVisible(true);
                 } else {
@@ -1243,7 +1410,7 @@ public class JavaTicket extends javax.swing.JFrame {
                 int edad = Integer.parseInt(edadTF.getText());
                 boolean validarUsuario = checkUser(username);
                 if (validarUsuario == false) {
-                    usuarios.add(new UsuarioContenido(null, nombreCompleto, username, password, edad));
+                    usuarios.add(new UsuarioContenido(nombreCompleto, username, password, edad));
                     CrearUsuario.setVisible(false);
                     MenuAdmin.setVisible(true);
                 } else {
@@ -1270,7 +1437,7 @@ public class JavaTicket extends javax.swing.JFrame {
                 System.out.println(e);
             }
         }
-
+        
         nombreCompletoTF.setText("");
         usernameTF.setText("");
         passwordTF.setText("");
@@ -1337,7 +1504,7 @@ public class JavaTicket extends javax.swing.JFrame {
         usuarios.get(pos).setPassword(contraTF.getText());
         int edad = Integer.parseInt(edadTextField.getText());
         usuarios.get(pos).setEdad(edad);
-
+        
         inputUser.setText("");
         nombreTF.setText("");
         usernameTextField.setText("");
@@ -1399,7 +1566,7 @@ public class JavaTicket extends javax.swing.JFrame {
                     int edad = Integer.parseInt(atributoTextField.getText());
                     usuarios.get(pos).setEdad(edad);
                 }
-
+                
             }
         }
         usuarioIngresado.setText("");
@@ -1432,7 +1599,7 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_contraTFActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-
+        
         int pos = searchUserIndex(inputUsername.getText());
         if (pos != -1) {
             usuarios.remove(pos);
@@ -1481,6 +1648,39 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel31MouseClicked
 
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+                   
+        try {
+            int codigo = Integer.parseInt(codigoEventoAdmin.getText());
+            String tituloEvento = tituloEventoAdmin.getText();
+            String descripcion = descripcionEventoAdmin.getText();
+            Date fechaEvento = fechaEventoAdmin.getDate();
+            int montoRenta = Integer.parseInt(montoAcordadoEventoAdmin.getText());
+            boolean validarCodigo = codigoUnico(codigo);
+            int pos = searchUserIndex(userTextField.getText());
+            if (validarCodigo == false ) {
+                eventosCreados.add(new Evento(codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
+                ((UsuarioAdmin)usuarios.get(pos)).getEventosCreados().add(new Evento(codigo, tituloEvento, descripcion,fechaEvento , montoRenta));
+            }else{
+                JOptionPane.showMessageDialog(null, "El evento no se pudo crear");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
+        for(Usuario user : usuarios){
+            System.out.println(user);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+    private boolean codigoUnico(int codigo) {
+       for(Evento evento: eventosCreados){
+               if(evento.getCodigo()==codigo){
+                   return true;
+           }
+       }
+       return false;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -1519,6 +1719,7 @@ public class JavaTicket extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog AdminEventos;
+    private javax.swing.JDialog CrearEvento;
     private javax.swing.JDialog CrearUsuario;
     private javax.swing.JDialog EditarUsuario;
     private javax.swing.JDialog EditartodosElementos;
@@ -1535,15 +1736,18 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel atributoLabel;
     private javax.swing.JTextField atributoTextField;
     private javax.swing.JButton cambiarButton;
+    private javax.swing.JTextField codigoEventoAdmin;
     private javax.swing.JPasswordField contraTF;
     private javax.swing.JButton crearEventoButton;
     private javax.swing.JButton crearUsuarioButton;
+    private javax.swing.JTextArea descripcionEventoAdmin;
     private javax.swing.JRadioButton edadRB;
     private javax.swing.JTextField edadTF;
     private javax.swing.JTextField edadTextField;
     private javax.swing.JButton editarEventoButton;
     private javax.swing.JButton eliminarEventoButton;
     private javax.swing.JLabel eliminarLabel;
+    private com.toedter.calendar.JDateChooser fechaEventoAdmin;
     private javax.swing.JTextField inputUser;
     private javax.swing.JTextField inputUsername;
     private javax.swing.JButton jButton1;
@@ -1553,6 +1757,8 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -1580,6 +1786,13 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1588,6 +1801,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1596,9 +1810,11 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton logInButton;
     private javax.swing.JPanel logInPanel;
+    private javax.swing.JTextField montoAcordadoEventoAdmin;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JRadioButton nombreCompletoRB;
     private javax.swing.JTextField nombreCompletoTF;
@@ -1610,7 +1826,9 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton reportesButton;
     private javax.swing.JButton reportesContenido;
     private javax.swing.JButton salirButton;
+    private javax.swing.JComboBox<String> tipoEventoCB;
     private javax.swing.JComboBox<String> tipoUsuarioCB;
+    private javax.swing.JTextField tituloEventoAdmin;
     private javax.swing.JTextField userTextField;
     private javax.swing.JRadioButton usernameRB;
     private javax.swing.JTextField usernameTF;
@@ -1619,7 +1837,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTextField usuarioIngresado;
     private javax.swing.JButton verEventoButton;
     // End of variables declaration//GEN-END:variables
-    private ArrayList<Evento> eventosCreados;
-    private final Usuario admin = new UsuarioAdmin(eventosCreados, "administrador", "admin", "123", 20);
+    private ArrayList<Evento> eventosCreados = new ArrayList();
+    private final Usuario admin = new UsuarioAdmin("administrador", "admin", "123", 20);
     private final ArrayList<Usuario> usuarios = new ArrayList();
 }
