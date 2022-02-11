@@ -21,9 +21,9 @@ private int cantidadGenteConvertida;
 
 /*la cantidad de personas convertidas esa noche*/
 
-    public EventoReligioso(double seguro, int cantidadGente, int cantidadGenteConvertidas, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
+    public EventoReligioso(int cantidadGente, int cantidadGenteConvertidas, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
         super(codigo, tituloEvento, descripcion, fechaEvento, montoRenta);
-        this.seguro = seguro;
+        this.seguro = 2000;
         this.cantidadGente = cantidadGente;
         this.cantidadGenteConvertida = cantidadGenteConvertidas;
     }
