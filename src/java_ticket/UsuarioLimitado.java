@@ -9,7 +9,7 @@ package java_ticket;
  *
  * @author jcoq2
  */
-public  class UsuarioLimitado extends Usuario
+public final class UsuarioLimitado extends Usuario
 {
 
     public UsuarioLimitado(String nombreCompleto, String username, String password, int edad) {

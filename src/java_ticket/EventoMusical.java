@@ -23,12 +23,12 @@ public class EventoMusical extends Evento {
     //un seguro por la grama del 30% sobre el valor de la renta
     /*Arraylist de los nombres de las personas que conforman la banda musical*/
 
-    public EventoMusical(Musica tipoMusica, int cantidadGente, ArrayList<String> listadoEquipoMusical, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
+    public EventoMusical(Musica tipoMusica, int cantidadGente,int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
         super(codigo, tituloEvento, descripcion, fechaEvento, montoRenta);
         this.tipoMusica = tipoMusica;
         this.cantidadGente = cantidadGente;
-        this.seguro = 0.3/montoRenta;
-        this.listadoEquipoMusical = listadoEquipoMusical;
+        this.seguro = 0.3*montoRenta;
+        this.listadoEquipoMusical = new ArrayList();
     }
 
     public Musica getTipoMusica() {

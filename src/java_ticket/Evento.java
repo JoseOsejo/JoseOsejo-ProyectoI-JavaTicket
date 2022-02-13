@@ -11,7 +11,7 @@ import java.util.Date;
  *
  * @author jcoq2
  */
-public class Evento 
+public  class Evento 
 {
     private int codigo;//el codigo de cada evento es unico
     private String tituloEvento;

@@ -192,6 +192,20 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         montoReligioso = new javax.swing.JTextField();
         jButton13 = new javax.swing.JButton();
+        IngresarCodigoEvento = new javax.swing.JDialog();
+        jPanel15 = new javax.swing.JPanel();
+        jLabel60 = new javax.swing.JLabel();
+        codigoIngresadoTF = new javax.swing.JTextField();
+        jButton14 = new javax.swing.JButton();
+        EditarEventoMusical = new javax.swing.JDialog();
+        jPanel16 = new javax.swing.JPanel();
+        jLabel61 = new javax.swing.JLabel();
+        EditarEventoDeportivo = new javax.swing.JDialog();
+        jPanel17 = new javax.swing.JPanel();
+        jLabel62 = new javax.swing.JLabel();
+        EditarEventoReligioso = new javax.swing.JDialog();
+        jPanel18 = new javax.swing.JPanel();
+        jLabel63 = new javax.swing.JLabel();
         logInPanel = new javax.swing.JPanel();
         nameLabel = new javax.swing.JLabel();
         usernmaeLabel = new javax.swing.JLabel();
@@ -378,8 +392,18 @@ public class JavaTicket extends javax.swing.JFrame {
         });
 
         eliminarEventoButton.setText("Eliminar Evento");
+        eliminarEventoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarEventoButtonActionPerformed(evt);
+            }
+        });
 
         editarEventoButton.setText("Editar Evento");
+        editarEventoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarEventoButtonActionPerformed(evt);
+            }
+        });
 
         verEventoButton.setText("Ver Evento");
 
@@ -1594,6 +1618,146 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLabel60.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel60.setText("Ingresar el Codigo del Evento");
+
+        jButton14.setText("Editar");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(jLabel60))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(codigoIngresadoTF, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(jButton14)))
+                .addContainerGap(84, Short.MAX_VALUE))
+        );
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel15Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jLabel60)
+                .addGap(64, 64, 64)
+                .addComponent(codigoIngresadoTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addComponent(jButton14)
+                .addGap(29, 29, 29))
+        );
+
+        javax.swing.GroupLayout IngresarCodigoEventoLayout = new javax.swing.GroupLayout(IngresarCodigoEvento.getContentPane());
+        IngresarCodigoEvento.getContentPane().setLayout(IngresarCodigoEventoLayout);
+        IngresarCodigoEventoLayout.setHorizontalGroup(
+            IngresarCodigoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        IngresarCodigoEventoLayout.setVerticalGroup(
+            IngresarCodigoEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel61.setText("Edicion Evento Musical");
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addComponent(jLabel61)
+                .addContainerGap(154, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabel61)
+                .addContainerGap(244, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout EditarEventoMusicalLayout = new javax.swing.GroupLayout(EditarEventoMusical.getContentPane());
+        EditarEventoMusical.getContentPane().setLayout(EditarEventoMusicalLayout);
+        EditarEventoMusicalLayout.setHorizontalGroup(
+            EditarEventoMusicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        EditarEventoMusicalLayout.setVerticalGroup(
+            EditarEventoMusicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel62.setText("Edicion Evento Deportivo");
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(jLabel62)
+                .addContainerGap(111, Short.MAX_VALUE))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addComponent(jLabel62)
+                .addContainerGap(232, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout EditarEventoDeportivoLayout = new javax.swing.GroupLayout(EditarEventoDeportivo.getContentPane());
+        EditarEventoDeportivo.getContentPane().setLayout(EditarEventoDeportivoLayout);
+        EditarEventoDeportivoLayout.setHorizontalGroup(
+            EditarEventoDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        EditarEventoDeportivoLayout.setVerticalGroup(
+            EditarEventoDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel63.setText("Edicion Evento Religioso");
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(jLabel63)
+                .addContainerGap(128, Short.MAX_VALUE))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(jLabel63)
+                .addContainerGap(236, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout EditarEventoReligiosoLayout = new javax.swing.GroupLayout(EditarEventoReligioso.getContentPane());
+        EditarEventoReligioso.getContentPane().setLayout(EditarEventoReligiosoLayout);
+        EditarEventoReligiosoLayout.setHorizontalGroup(
+            EditarEventoReligiosoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        EditarEventoReligiosoLayout.setVerticalGroup(
+            EditarEventoReligiosoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         logInPanel.setBackground(new java.awt.Color(0, 0, 0));
@@ -1804,7 +1968,7 @@ public class JavaTicket extends javax.swing.JFrame {
     //funcion para validar user unico
     public boolean checkUser(String username) {
         for (Usuario user : usuarios) {
-            if (user.getUsername().equalsIgnoreCase(username)) {
+            if ((user.getUsername().replaceAll("\\s+", "").equalsIgnoreCase(username.replaceAll("\\s+", "")))) {
                 return true;
             }
         }
@@ -2016,6 +2180,16 @@ public class JavaTicket extends javax.swing.JFrame {
         }
         return -1;
     }
+
+    private int searchEventoIndex(int codigo) {
+        for (Evento evento : eventosCreados) {
+            if (evento.getCodigo() == codigo) {
+                return eventosCreados.indexOf(evento);
+            }
+        }
+        return -1;
+    }
+
     private void usuarioIngresadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioIngresadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_usuarioIngresadoActionPerformed
@@ -2092,29 +2266,29 @@ public class JavaTicket extends javax.swing.JFrame {
             int pos = searchUserIndex(userTextField.getText());
             String equipo1 = equipo1TF.getText();
             String equipo2 = equipo2TF.getText();
-            if (validarCodigo == false && cantidadGente< 20000) {
-               if(tipoDeporte.equalsIgnoreCase("Futbol")){
-                eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL,cantidadGente,equipo1,equipo2,null,null,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.FUTBOL,cantidadGente,equipo1,equipo2,null,null,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                EventoDeportivo.setVisible(false);
-                AdminEventos.setVisible(true);
-               }else if(tipoDeporte.equalsIgnoreCase("Rugby")){
-                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL,cantidadGente,equipo1,equipo2,null,null,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.RUGBY,cantidadGente,equipo1,equipo2,null,null,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                 EventoDeportivo.setVisible(false);
-                AdminEventos.setVisible(true);
-               }else if(tipoDeporte.equalsIgnoreCase("Baseball")){
-                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL,cantidadGente,equipo1,equipo2,null,null,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.BASEBALL,cantidadGente,equipo1,equipo2,null,null,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                 EventoDeportivo.setVisible(false);
-                AdminEventos.setVisible(true);
-               }else if(tipoDeporte.equalsIgnoreCase("Tenis")){
-                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL,cantidadGente,equipo1,equipo2,null,null,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.TENIS,cantidadGente,equipo1,equipo2,null,null,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                 EventoDeportivo.setVisible(false);
-                AdminEventos.setVisible(true);
-               }
-            }else{
+            if (validarCodigo == false && cantidadGente < 20000) {
+                if (tipoDeporte.equalsIgnoreCase("Futbol")) {
+                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoDeportivo.setVisible(false);
+                    AdminEventos.setVisible(true);
+                } else if (tipoDeporte.equalsIgnoreCase("Rugby")) {
+                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.RUGBY, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoDeportivo.setVisible(false);
+                    AdminEventos.setVisible(true);
+                } else if (tipoDeporte.equalsIgnoreCase("Baseball")) {
+                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.BASEBALL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoDeportivo.setVisible(false);
+                    AdminEventos.setVisible(true);
+                } else if (tipoDeporte.equalsIgnoreCase("Tenis")) {
+                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.TENIS, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoDeportivo.setVisible(false);
+                    AdminEventos.setVisible(true);
+                }
+            } else {
                 JOptionPane.showMessageDialog(null, "El evento no se pudo Crear!");
             }
         } catch (NumberFormatException e) {
@@ -2125,11 +2299,11 @@ public class JavaTicket extends javax.swing.JFrame {
         descripcionEventoAdmin.setText("");
         montoAcordadoEventoAdmin.setText("");
         cantidadGenteTF.setText("");
-        
-       for (Usuario user : usuarios) {
+
+        for (Usuario user : usuarios) {
             System.out.println(user);
         }
-        for(Evento evento : eventosCreados){
+        for (Evento evento : eventosCreados) {
             System.out.println(evento);
         }
         // TODO add your handling code here:
@@ -2159,8 +2333,8 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-         //Esta es la funcion para crear eventos musicales
-          try {
+        //Esta es la funcion para crear eventos musicales
+        try {
             String tipoMusica = String.valueOf(musicaCB.getSelectedItem());
             int codigo = Integer.parseInt(codigoEventoMusical.getText());
             String tituloEvento = tituloEventoMusical.getText();
@@ -2170,47 +2344,47 @@ public class JavaTicket extends javax.swing.JFrame {
             int cantidadGente = Integer.parseInt(genteEventoMusical.getText());
             boolean validarCodigo = codigoUnico(codigo);
             int pos = searchUserIndex(userTextField.getText());
-            if (validarCodigo == false && cantidadGente< 25000) {
-               if(tipoMusica.equalsIgnoreCase("Pop")){
-                eventosCreados.add(new EventoMusical(Musica.POP, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.POP, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                EventoMusical.setVisible(false);
-                AdminEventos.setVisible(true);
-               }else if(tipoMusica.equalsIgnoreCase("Rock")){
-                    eventosCreados.add(new EventoMusical(Musica.ROCK, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.ROCK, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                EventoMusical.setVisible(false);
-                AdminEventos.setVisible(true);
-               }else if(tipoMusica.equalsIgnoreCase("Rap")){
-                     eventosCreados.add(new EventoMusical(Musica.RAP, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.RAP, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                EventoMusical.setVisible(false);
-                AdminEventos.setVisible(true);
-               }else if(tipoMusica.equalsIgnoreCase("Clasica")){
-                    eventosCreados.add(new EventoMusical(Musica.CLASICA, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.CLASICA, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                EventoMusical.setVisible(false);
-                AdminEventos.setVisible(true);
-               }else if(tipoMusica.equalsIgnoreCase("Reggeaton")){
-                     eventosCreados.add(new EventoMusical(Musica.REGGEATON, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.REGGEATON, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                EventoMusical.setVisible(false);
-                AdminEventos.setVisible(true);
-               }else if(tipoMusica.equalsIgnoreCase("Otro")){
-                     eventosCreados.add(new EventoMusical(Musica.OTRO, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.OTRO, cantidadGente, null, codigo, tituloEvento,descripcion,fechaEvento,montoRenta));
+            if (validarCodigo == false && cantidadGente < 25000) {
+                if (tipoMusica.equalsIgnoreCase("Pop")) {
+                    eventosCreados.add(new EventoMusical(Musica.POP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.POP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoMusical.setVisible(false);
+                    AdminEventos.setVisible(true);
+                } else if (tipoMusica.equalsIgnoreCase("Rock")) {
+                    eventosCreados.add(new EventoMusical(Musica.ROCK, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.ROCK, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoMusical.setVisible(false);
+                    AdminEventos.setVisible(true);
+                } else if (tipoMusica.equalsIgnoreCase("Rap")) {
+                    eventosCreados.add(new EventoMusical(Musica.RAP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.RAP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoMusical.setVisible(false);
+                    AdminEventos.setVisible(true);
+                } else if (tipoMusica.equalsIgnoreCase("Clasica")) {
+                    eventosCreados.add(new EventoMusical(Musica.CLASICA, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.CLASICA, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoMusical.setVisible(false);
+                    AdminEventos.setVisible(true);
+                } else if (tipoMusica.equalsIgnoreCase("Reggeaton")) {
+                    eventosCreados.add(new EventoMusical(Musica.REGGEATON, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.REGGEATON, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoMusical.setVisible(false);
+                    AdminEventos.setVisible(true);
+                } else if (tipoMusica.equalsIgnoreCase("Otro")) {
+                    eventosCreados.add(new EventoMusical(Musica.OTRO, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.OTRO, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
                 }
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "El evento no se pudo Crear!");
             }
         } catch (NumberFormatException e) {
             System.out.println(e);
         }
-          codigoEventoMusical.setText("");
-          tituloEventoMusical.setText("");
-          descripcionEventoMusical.setText("");
-          montoEventoMusical.setText("");
-          genteEventoMusical.setText("");
+        codigoEventoMusical.setText("");
+        tituloEventoMusical.setText("");
+        descripcionEventoMusical.setText("");
+        montoEventoMusical.setText("");
+        genteEventoMusical.setText("");
         for (Usuario user : usuarios) {
             System.out.println(user);
         }
@@ -2233,27 +2407,74 @@ public class JavaTicket extends javax.swing.JFrame {
             int cantidadGenteConvertida = 0;
             boolean validarCodigo = codigoUnico(codigo);
             int pos = searchUserIndex(userTextField.getText());
-            if (validarCodigo == false && cantidadGente< 30000) {
-                eventosCreados.add(new EventoReligioso(cantidadGente,cantidadGenteConvertida,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoReligioso(cantidadGente,cantidadGenteConvertida,codigo,tituloEvento,descripcion,fechaEvento,montoRenta));
+            if (validarCodigo == false && cantidadGente < 30000) {
+                eventosCreados.add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
                 EventoReligioso.setVisible(false);
                 AdminEventos.setVisible(true);
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "El evento no se pudo Crear!");
             }
         } catch (NumberFormatException e) {
             System.out.println(e);
         }
-          codigoEventoMusical.setText("");
-          tituloEventoMusical.setText("");
-          descripcionEventoMusical.setText("");
-          montoEventoMusical.setText("");
-          genteEventoMusical.setText("");
+        codigoEventoMusical.setText("");
+        tituloEventoMusical.setText("");
+        descripcionEventoMusical.setText("");
+        montoEventoMusical.setText("");
+        genteEventoMusical.setText("");
         for (Usuario user : usuarios) {
             System.out.println(user);
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void eliminarEventoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarEventoButtonActionPerformed
+        //esta funcion permite eliminar un evento
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarEventoButtonActionPerformed
+
+    private void editarEventoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarEventoButtonActionPerformed
+        IngresarCodigoEvento.setVisible(true);
+        IngresarCodigoEvento.setResizable(false);
+        IngresarCodigoEvento.setLocationRelativeTo(null);
+        IngresarCodigoEvento.pack();
+        AdminEventos.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editarEventoButtonActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        int pos = Integer.parseInt(codigoIngresadoTF.getText());
+        if (searchEventoIndex(pos) == -1) {
+            JOptionPane.showMessageDialog(null, "Evento No Existe!");
+        } else if (searchEventoIndex(pos) != 1) {
+            if (eventosCreados.get(pos) instanceof EventoDeportivo) {
+                EditarEventoDeportivo.setVisible(true);
+                EditarEventoDeportivo.setResizable(false);
+                EditarEventoDeportivo.setLocationRelativeTo(null);
+                EditarEventoDeportivo.pack();
+                IngresarCodigoEvento.setVisible(false);
+            }
+        } else if (searchEventoIndex(pos) != 1) {
+            if (eventosCreados.get(pos) instanceof EventoMusical) {
+                EditarEventoMusical.setVisible(true);
+                EditarEventoMusical.setResizable(false);
+                EditarEventoMusical.setLocationRelativeTo(null);
+                EditarEventoMusical.pack();
+                IngresarCodigoEvento.setVisible(false);
+            }
+        } else if (searchEventoIndex(pos) != 1) {
+            if (eventosCreados.get(pos) instanceof EventoReligioso) {
+                EditarEventoReligioso.setVisible(true);
+                EditarEventoReligioso.setResizable(false);
+                EditarEventoReligioso.setLocationRelativeTo(null);
+                EditarEventoReligioso.pack();
+                IngresarCodigoEvento.setVisible(false);
+            }
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14ActionPerformed
     private boolean codigoUnico(int codigo) {
         for (Evento evento : eventosCreados) {
             if (evento.getCodigo() == codigo) {
@@ -2262,7 +2483,7 @@ public class JavaTicket extends javax.swing.JFrame {
         }
         return false;
     }
-          
+
     /**
      * @param args the command line arguments
      */
@@ -2302,6 +2523,9 @@ public class JavaTicket extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog AdminEventos;
     private javax.swing.JDialog CrearUsuario;
+    private javax.swing.JDialog EditarEventoDeportivo;
+    private javax.swing.JDialog EditarEventoMusical;
+    private javax.swing.JDialog EditarEventoReligioso;
     private javax.swing.JDialog EditarUsuario;
     private javax.swing.JDialog EditartodosElementos;
     private javax.swing.JDialog EditarunElemento;
@@ -2309,6 +2533,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JDialog EventoDeportivo;
     private javax.swing.JDialog EventoMusical;
     private javax.swing.JDialog EventoReligioso;
+    private javax.swing.JDialog IngresarCodigoEvento;
     private javax.swing.JDialog ManejoUsuario;
     private javax.swing.JDialog MenuAdmin;
     private javax.swing.JDialog MenuContenido;
@@ -2324,6 +2549,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTextField cantidadGenteTF;
     private javax.swing.JTextField codigoEventoAdmin;
     private javax.swing.JTextField codigoEventoMusical;
+    private javax.swing.JTextField codigoIngresadoTF;
     private javax.swing.JTextField codigoReligioso;
     private javax.swing.JPasswordField contraTF;
     private javax.swing.JButton crearEventoButton;
@@ -2352,6 +2578,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2418,6 +2645,10 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -2427,6 +2658,10 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -2468,7 +2703,8 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTextField usuarioIngresado;
     private javax.swing.JButton verEventoButton;
     // End of variables declaration//GEN-END:variables
-    private ArrayList<Evento> eventosCreados = new ArrayList();
+    private final ArrayList<Evento> eventosCreados = new ArrayList();
     private final Usuario admin = new UsuarioAdmin("administrador", "admin", "123", 20);
     private final ArrayList<Usuario> usuarios = new ArrayList();
+
 }

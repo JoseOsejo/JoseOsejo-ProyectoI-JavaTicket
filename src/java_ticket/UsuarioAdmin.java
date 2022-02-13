@@ -6,6 +6,7 @@
 package java_ticket;
 
 import java.util.ArrayList;
+import static java_ticket.Prueba.eventos;
 
 /**
  *
@@ -27,11 +28,18 @@ public class UsuarioAdmin extends Usuario {
     public void setEventosCreados(ArrayList<Evento> eventosCreados) {
         this.eventosCreados = eventosCreados;
     }
-
+    
+    public ArrayList<String> idsEvento(){
+        ArrayList<String>ids = new ArrayList();
+        for(Evento evento:eventosCreados){
+            ids.add(String.valueOf(evento.getCodigo()));
+        }
+        return ids;
+    }
    
     @Override
     public String toString() {
-        return "UsuarioAdmin{" + "eventosCreados" + eventosCreados + super.toString() + "}";//To change body of generated methods, choose Tools | Templates.
+        return "UsuarioAdmin{" + "IdsDeEventos " + idsEvento()+ super.toString() + "}";//To change body of generated methods, choose Tools | Templates.
     }
 
 }

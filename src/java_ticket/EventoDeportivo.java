@@ -28,14 +28,14 @@ public class EventoDeportivo extends Evento {
     cada listado dentro de un arraylist para cada equipo
      */
 
-    public EventoDeportivo(Deportes tipoDeporte, int cantidadGente, String equipo1, String equipo2, ArrayList<String> listadoJugadores1, ArrayList<String> listadoJugadores2, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
+    public EventoDeportivo(Deportes tipoDeporte, int cantidadGente, String equipo1, String equipo2, int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
         super(codigo, tituloEvento, descripcion, fechaEvento, montoRenta);
         this.tipoDeporte = tipoDeporte;
         this.cantidadGente = cantidadGente;
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
-        this.listadoJugadores1 = listadoJugadores1;
-        this.listadoJugadores2 = listadoJugadores2;
+        this.listadoJugadores1 = new ArrayList();
+        this.listadoJugadores2 = new ArrayList();
     }
     
 
@@ -99,7 +99,7 @@ public class EventoDeportivo extends Evento {
 
     @Override
     public String toString() {
-        return "Evento Deportivo" + "Deporte " + tipoDeporte
+        return "EventoDeportivo" + "Deporte " + tipoDeporte
                 + "Cantidad de Gente " + cantidadGente
                 + "Equipo1 " + equipo1
                 + "Equipo2 " + equipo2
