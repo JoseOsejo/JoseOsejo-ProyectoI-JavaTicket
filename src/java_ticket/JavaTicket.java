@@ -1922,9 +1922,7 @@ public class JavaTicket extends javax.swing.JFrame {
         return false;
     }
 
-    private Usuario getLoggedUser(Usuario user) {
-        return user;
-    }
+    
     private void adminEventosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminEventosButtonActionPerformed
         AdminEventos.setVisible(true);
         AdminEventos.setLocationRelativeTo(null);
@@ -2445,34 +2443,29 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_editarEventoButtonActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        int pos = Integer.parseInt(codigoIngresadoTF.getText());
-        if (searchEventoIndex(pos) == -1) {
+        int pos = searchEventoIndex(Integer.parseInt(codigoIngresadoTF.getText()));
+        if (pos == -1) {
             JOptionPane.showMessageDialog(null, "Evento No Existe!");
-        } else if (searchEventoIndex(pos) != 1) {
-            if (eventosCreados.get(pos) instanceof EventoDeportivo) {
+        } else if (eventosCreados.get(pos) instanceof EventoDeportivo) {
                 EditarEventoDeportivo.setVisible(true);
                 EditarEventoDeportivo.setResizable(false);
                 EditarEventoDeportivo.setLocationRelativeTo(null);
                 EditarEventoDeportivo.pack();
                 IngresarCodigoEvento.setVisible(false);
-            }
-        } else if (searchEventoIndex(pos) != 1) {
-            if (eventosCreados.get(pos) instanceof EventoMusical) {
+            }else if (eventosCreados.get(pos) instanceof EventoMusical) {
                 EditarEventoMusical.setVisible(true);
                 EditarEventoMusical.setResizable(false);
                 EditarEventoMusical.setLocationRelativeTo(null);
                 EditarEventoMusical.pack();
                 IngresarCodigoEvento.setVisible(false);
-            }
-        } else if (searchEventoIndex(pos) != 1) {
-            if (eventosCreados.get(pos) instanceof EventoReligioso) {
+            }else if (eventosCreados.get(pos) instanceof EventoReligioso) {
                 EditarEventoReligioso.setVisible(true);
                 EditarEventoReligioso.setResizable(false);
                 EditarEventoReligioso.setLocationRelativeTo(null);
                 EditarEventoReligioso.pack();
                 IngresarCodigoEvento.setVisible(false);
             }
-        }
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
     private boolean codigoUnico(int codigo) {
