@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Enumeration;
 import javax.swing.AbstractButton;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
 /**
@@ -220,38 +221,41 @@ public class JavaTicket extends javax.swing.JFrame {
         jTextArea3 = new javax.swing.JTextArea();
         jLabel78 = new javax.swing.JLabel();
         jTextField15 = new javax.swing.JTextField();
+        jTextField18 = new javax.swing.JTextField();
         EditarEventoDeportivo = new javax.swing.JDialog();
         jPanel30 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
         jScrollPane15 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaEquipo1 = new javax.swing.JList<>();
         jScrollPane16 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
+        listaEquipo2 = new javax.swing.JList<>();
         jLabel62 = new javax.swing.JLabel();
         jLabel186 = new javax.swing.JLabel();
-        jButton26 = new javax.swing.JButton();
-        jButton27 = new javax.swing.JButton();
+        agregarEquipo1 = new javax.swing.JButton();
+        agregarEquipo2 = new javax.swing.JButton();
         jLabel187 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        edicionCodigo = new javax.swing.JTextField();
         jLabel188 = new javax.swing.JLabel();
         jScrollPane17 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        edicionDescripcion = new javax.swing.JTextArea();
         jLabel189 = new javax.swing.JLabel();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        edicionFecha = new com.toedter.calendar.JDateChooser();
         jLabel190 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        edicionMonto = new javax.swing.JTextField();
         jLabel191 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        edicionTitulo = new javax.swing.JTextField();
         jLabel192 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        edicionGente = new javax.swing.JTextField();
         jLabel193 = new javax.swing.JLabel();
         jLabel194 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        edicionEquipo1 = new javax.swing.JTextField();
         jLabel195 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        edicionEquipo2 = new javax.swing.JTextField();
         jLabel196 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        edicionTipoDeporte = new javax.swing.JComboBox<>();
         jButton16 = new javax.swing.JButton();
+        jugadorIngresado1 = new javax.swing.JTextField();
+        jugadorIngresado2 = new javax.swing.JTextField();
         EditarEventoReligioso = new javax.swing.JDialog();
         jPanel18 = new javax.swing.JPanel();
         jLabel63 = new javax.swing.JLabel();
@@ -1788,7 +1792,8 @@ public class JavaTicket extends javax.swing.JFrame {
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel71, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jTextField18, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1850,16 +1855,22 @@ public class JavaTicket extends javax.swing.JFrame {
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jDateChooser4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton29)
-                    .addComponent(jLabel76)
-                    .addComponent(jLabel78))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel76)
+                            .addComponent(jLabel78))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel16Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton29)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addComponent(jLabel77)
@@ -1885,25 +1896,35 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel64.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel64.setText("Edicion Evento Deportivo");
 
-        jScrollPane15.setViewportView(jList1);
+        jScrollPane15.setViewportView(listaEquipo1);
 
-        jScrollPane16.setViewportView(jList2);
+        jScrollPane16.setViewportView(listaEquipo2);
 
         jLabel62.setText("Equipo 1");
 
         jLabel186.setText("Equipo 2");
 
-        jButton26.setText("Agregar");
+        agregarEquipo1.setText("Agregar");
+        agregarEquipo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarEquipo1ActionPerformed(evt);
+            }
+        });
 
-        jButton27.setText("Agregar");
+        agregarEquipo2.setText("Agregar");
+        agregarEquipo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarEquipo2ActionPerformed(evt);
+            }
+        });
 
         jLabel187.setText("Codigo del Evento");
 
         jLabel188.setText("Descripcion del Evento");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane17.setViewportView(jTextArea1);
+        edicionDescripcion.setColumns(20);
+        edicionDescripcion.setRows(5);
+        jScrollPane17.setViewportView(edicionDescripcion);
 
         jLabel189.setText("Fecha del Evento");
 
@@ -1921,9 +1942,14 @@ public class JavaTicket extends javax.swing.JFrame {
 
         jLabel196.setText("Tipo Deporte");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Futbol", "Rugby", "Tenis", "Baseball" }));
+        edicionTipoDeporte.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Futbol", "Rugby", "Tenis", "Baseball" }));
 
         jButton16.setText("Editar Evento");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -1936,13 +1962,16 @@ public class JavaTicket extends javax.swing.JFrame {
                         .addComponent(jScrollPane17))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel30Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton26))
-                        .addGap(62, 62, 62)
-                        .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton27)
-                            .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(agregarEquipo1)
+                            .addComponent(jScrollPane15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jugadorIngresado1, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(57, 57, 57)
+                        .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(agregarEquipo2)
+                            .addComponent(jScrollPane16, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jugadorIngresado2, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(5, 5, 5))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(jLabel62)
@@ -1958,21 +1987,21 @@ public class JavaTicket extends javax.swing.JFrame {
                                         .addGap(65, 65, 65)
                                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jLabel187, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                                            .addComponent(jTextField1)
+                                            .addComponent(edicionCodigo)
                                             .addComponent(jLabel189)))
                                     .addGroup(jPanel30Layout.createSequentialGroup()
                                         .addGap(51, 51, 51)
-                                        .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(edicionFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel190)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                                    .addComponent(edicionMonto, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
                                     .addComponent(jLabel191)
-                                    .addComponent(jTextField3)))
+                                    .addComponent(edicionTitulo)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel30Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(edicionGente, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel192))
                                 .addGap(99, 99, 99)))
                         .addGap(77, 77, 77))
@@ -1981,23 +2010,13 @@ public class JavaTicket extends javax.swing.JFrame {
                         .addComponent(jButton16)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel30Layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jLabel188)
-                .addGap(153, 153, 153)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel195)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel30Layout.createSequentialGroup()
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGap(83, 83, 83)
                         .addComponent(jLabel196))
                     .addGroup(jPanel30Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(edicionTipoDeporte, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel30Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2010,6 +2029,19 @@ public class JavaTicket extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel30Layout.createSequentialGroup()
                         .addComponent(jLabel64)
                         .addGap(192, 192, 192))))
+            .addGroup(jPanel30Layout.createSequentialGroup()
+                .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel30Layout.createSequentialGroup()
+                        .addGap(315, 315, 315)
+                        .addComponent(edicionEquipo1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel195)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(edicionEquipo2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel30Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(jLabel188)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel30Layout.setVerticalGroup(
             jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2019,7 +2051,7 @@ public class JavaTicket extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel196)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edicionTipoDeporte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel30Layout.createSequentialGroup()
@@ -2030,20 +2062,20 @@ public class JavaTicket extends javax.swing.JFrame {
                         .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel30Layout.createSequentialGroup()
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(edicionCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(edicionMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(28, 28, 28)
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel189)
                                     .addComponent(jLabel191))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(edicionFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(edicionTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(28, 28, 28)
                                 .addComponent(jLabel192)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(edicionGente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(22, 22, 22)
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel193)
@@ -2051,26 +2083,31 @@ public class JavaTicket extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel195)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(edicionEquipo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(edicionEquipo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(25, 25, 25))
                             .addGroup(jPanel30Layout.createSequentialGroup()
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel30Layout.createSequentialGroup()
                                         .addComponent(jLabel62)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jugadorIngresado1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(5, 5, 5))
                                     .addGroup(jPanel30Layout.createSequentialGroup()
                                         .addComponent(jLabel186)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jScrollPane16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jugadorIngresado2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                                 .addGroup(jPanel30Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton26)
-                                    .addComponent(jButton27))
+                                    .addComponent(agregarEquipo1)
+                                    .addComponent(agregarEquipo2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel188)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel30Layout.createSequentialGroup()
@@ -2396,7 +2433,7 @@ public class JavaTicket extends javax.swing.JFrame {
         return false;
     }
 
-    
+
     private void adminEventosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminEventosButtonActionPerformed
         AdminEventos.setVisible(true);
         AdminEventos.setLocationRelativeTo(null);
@@ -2921,25 +2958,25 @@ public class JavaTicket extends javax.swing.JFrame {
         if (pos == -1) {
             JOptionPane.showMessageDialog(null, "Evento No Existe!");
         } else if (eventosCreados.get(pos) instanceof EventoDeportivo) {
-                EditarEventoDeportivo.setVisible(true);
-                EditarEventoDeportivo.setResizable(false);
-                EditarEventoDeportivo.setLocationRelativeTo(null);
-                EditarEventoDeportivo.pack();
-                IngresarCodigoEvento.setVisible(false);
-            }else if (eventosCreados.get(pos) instanceof EventoMusical) {
-                EditarEventoMusical.setVisible(true);
-                EditarEventoMusical.setResizable(false);
-                EditarEventoMusical.setLocationRelativeTo(null);
-                EditarEventoMusical.pack();
-                IngresarCodigoEvento.setVisible(false);
-            }else if (eventosCreados.get(pos) instanceof EventoReligioso) {
-                EditarEventoReligioso.setVisible(true);
-                EditarEventoReligioso.setResizable(false);
-                EditarEventoReligioso.setLocationRelativeTo(null);
-                EditarEventoReligioso.pack();
-                IngresarCodigoEvento.setVisible(false);
-            }
-        
+            EditarEventoDeportivo.setVisible(true);
+            EditarEventoDeportivo.setResizable(false);
+            EditarEventoDeportivo.setLocationRelativeTo(null);
+            EditarEventoDeportivo.pack();
+            IngresarCodigoEvento.setVisible(false);
+        } else if (eventosCreados.get(pos) instanceof EventoMusical) {
+            EditarEventoMusical.setVisible(true);
+            EditarEventoMusical.setResizable(false);
+            EditarEventoMusical.setLocationRelativeTo(null);
+            EditarEventoMusical.pack();
+            IngresarCodigoEvento.setVisible(false);
+        } else if (eventosCreados.get(pos) instanceof EventoReligioso) {
+            EditarEventoReligioso.setVisible(true);
+            EditarEventoReligioso.setResizable(false);
+            EditarEventoReligioso.setLocationRelativeTo(null);
+            EditarEventoReligioso.pack();
+            IngresarCodigoEvento.setVisible(false);
+        }
+
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
@@ -2950,6 +2987,262 @@ public class JavaTicket extends javax.swing.JFrame {
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField9ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        //Esta funcion permite editar el tipo de evento Deportivo
+        try {
+            String tipoDeporte = String.valueOf(edicionTipoDeporte.getSelectedItem());
+            int codigo = Integer.parseInt(edicionCodigo.getText());
+            String tituloEvento = edicionTitulo.getText();
+            String descripcion = edicionDescripcion.getText();
+            Date fechaEvento = edicionFecha.getDate();
+            int montoRenta = Integer.parseInt(edicionMonto.getText());
+            int cantidadGente = Integer.parseInt(edicionGente.getText());
+            int pos = searchEventoIndex(Integer.parseInt(codigoIngresadoTF.getText()));
+            boolean validarCodigo = codigoUnico(codigo);
+            String equipo1 = edicionEquipo1.getText();
+            String equipo2 = edicionEquipo2.getText();
+            int userPos = searchUserIndex(userTextField.getText());
+            int userEventoPos = searchUserEventos(Integer.parseInt(codigoIngresadoTF.getText()), userPos);
+            if (validarCodigo == false && cantidadGente < 20000) {
+                if (tipoDeporte.equalsIgnoreCase("Futbol")) {
+                    //lista de Eventos Creados
+                    ((EventoDeportivo) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setDeporte(Deportes.FUTBOL);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setEquipo1(equipo1);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setEquipo2(equipo2);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setTituloEvento(tituloEvento);
+                    for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                        ((EventoDeportivo) eventosCreados.get(pos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                    }
+                    for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                        ((EventoDeportivo) eventosCreados.get(pos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                    }
+                    //////////////////////////////////////////////////////////////////////////////////////////////////
+                    //lista de eventos del usuarios loggeado
+                   if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDeporte(Deportes.FUTBOL);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo1(equipo1);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo2(equipo2);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                        }
+                        for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDeporte(Deportes.FUTBOL);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo1(equipo1);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo2(equipo2);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                        }
+                        for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                        }
+                    }
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+                } else if (tipoDeporte.equalsIgnoreCase("Rugby")) {
+                    ((EventoDeportivo) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setDeporte(Deportes.RUGBY);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setEquipo1(equipo1);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setEquipo2(equipo2);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                        ((EventoDeportivo) eventosCreados.get(pos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                    }
+                    for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                        ((EventoDeportivo) eventosCreados.get(pos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                    }
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDeporte(Deportes.RUGBY);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo1(equipo1);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo2(equipo2);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                        }
+                        for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDeporte(Deportes.RUGBY);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo1(equipo1);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo2(equipo2);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                        }
+                        for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                        }
+                    }
+                    //////////////////////////////////////////////////////////////////////////////////////////
+                } else if (tipoDeporte.equalsIgnoreCase("Baseball")) {
+                    ((EventoDeportivo) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setDeporte(Deportes.BASEBALL);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setEquipo1(equipo1);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setEquipo2(equipo2);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                        ((EventoDeportivo) eventosCreados.get(pos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                    }
+                    for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                        ((EventoDeportivo) eventosCreados.get(pos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                    }
+
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDeporte(Deportes.BASEBALL);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo1(equipo1);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo2(equipo2);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                        }
+                        for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDeporte(Deportes.BASEBALL);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo1(equipo1);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo2(equipo2);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                        }
+                        for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                        }
+                    }
+                    //////////////////////////////////////////////////////////////////////////////////////////////
+                } else if (tipoDeporte.equalsIgnoreCase("Tenis")) {
+                    ((EventoDeportivo) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setDeporte(Deportes.TENIS);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setEquipo1(equipo1);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setEquipo2(equipo2);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoDeportivo) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                        ((EventoDeportivo) eventosCreados.get(pos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                    }
+                    for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                        ((EventoDeportivo) eventosCreados.get(pos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                    }
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDeporte(Deportes.TENIS);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo1(equipo1);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo2(equipo2);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                        }
+                        for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDeporte(Deportes.TENIS);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo1(equipo1);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setEquipo2(equipo2);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                        }
+                        for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
+                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                        }
+                    }
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "El evento no se pudo Editar!");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
+        edicionCodigo.setText("");
+        edicionTitulo.setText("");
+        edicionDescripcion.setText("");
+        edicionMonto.setText("");
+        edicionGente.setText("");
+
+        for (Usuario user : usuarios) {
+            System.out.println(user);
+        }
+        for (Evento evento : eventosCreados) {
+            System.out.println(evento);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
+    DefaultListModel dml = new DefaultListModel();
+
+    private void agregarEquipo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEquipo1ActionPerformed
+        dml.addElement(jugadorIngresado1.getText());
+        listaEquipo1.setModel(dml);
+        jugadorIngresado1.setText("");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarEquipo1ActionPerformed
+    DefaultListModel dml2 = new DefaultListModel();
+
+    private void agregarEquipo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEquipo2ActionPerformed
+        dml2.addElement(jugadorIngresado2.getText());
+        listaEquipo2.setModel(dml2);
+        jugadorIngresado2.setText("");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarEquipo2ActionPerformed
     private boolean codigoUnico(int codigo) {
         for (Evento evento : eventosCreados) {
             if (evento.getCodigo() == codigo) {
@@ -2957,6 +3250,23 @@ public class JavaTicket extends javax.swing.JFrame {
             }
         }
         return false;
+    }
+
+    private int searchUserEventos(int codigo, int userPos) {
+        if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+            for (Evento evento : ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados()) {
+                if (evento.getCodigo() == codigo) {
+                    return ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().indexOf(evento);
+                }
+            }
+        } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+            for (Evento evento : ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados()) {
+                if (evento.getCodigo() == codigo) {
+                    return ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().indexOf(evento);
+                }
+            }
+        }
+        return -1;
     }
 
     /**
@@ -3017,6 +3327,8 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton adminEventosButton;
     private javax.swing.JButton adminEventosContenido;
     private javax.swing.JButton adminUsuariosButton;
+    private javax.swing.JButton agregarEquipo1;
+    private javax.swing.JButton agregarEquipo2;
     private javax.swing.ButtonGroup atributoButtonGroup;
     private javax.swing.JLabel atributoLabel;
     private javax.swing.JTextField atributoTextField;
@@ -3036,6 +3348,15 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JRadioButton edadRB;
     private javax.swing.JTextField edadTF;
     private javax.swing.JTextField edadTextField;
+    private javax.swing.JTextField edicionCodigo;
+    private javax.swing.JTextArea edicionDescripcion;
+    private javax.swing.JTextField edicionEquipo1;
+    private javax.swing.JTextField edicionEquipo2;
+    private com.toedter.calendar.JDateChooser edicionFecha;
+    private javax.swing.JTextField edicionGente;
+    private javax.swing.JTextField edicionMonto;
+    private javax.swing.JComboBox<String> edicionTipoDeporte;
+    private javax.swing.JTextField edicionTitulo;
     private javax.swing.JButton editarEventoButton;
     private javax.swing.JButton eliminarEventoButton;
     private javax.swing.JLabel eliminarLabel;
@@ -3057,8 +3378,6 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton26;
-    private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
@@ -3068,10 +3387,8 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
     private com.toedter.calendar.JDateChooser jDateChooser3;
     private com.toedter.calendar.JDateChooser jDateChooser4;
     private javax.swing.JInternalFrame jInternalFrame1;
@@ -3165,8 +3482,6 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
     private javax.swing.JList<String> jList4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -3195,25 +3510,23 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
     private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField18;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JTextField jugadorIngresado1;
+    private javax.swing.JTextField jugadorIngresado2;
+    private javax.swing.JList<String> listaEquipo1;
+    private javax.swing.JList<String> listaEquipo2;
     private javax.swing.JButton logInButton;
     private javax.swing.JPanel logInPanel;
     private javax.swing.JTextField montoAcordadoEventoAdmin;

@@ -103,6 +103,8 @@ public class EventoDeportivo extends Evento {
                 + "Cantidad de Gente " + cantidadGente
                 + "Equipo1 " + equipo1
                 + "Equipo2 " + equipo2
+                + "Lista 1" + listadoJugadores1
+                + "Lista 2" + listadoJugadores2
                 + super.toString();//To change body of generated methods, choose Tools | Templates.
 
     }

@@ -6,7 +6,6 @@
 package java_ticket;
 
 import java.util.ArrayList;
-import static java_ticket.Prueba.eventos;
 
 /**
  *
@@ -39,7 +38,7 @@ public class UsuarioAdmin extends Usuario {
    
     @Override
     public String toString() {
-        return "UsuarioAdmin{" + "IdsDeEventos " + idsEvento()+ super.toString() + "}";//To change body of generated methods, choose Tools | Templates.
+        return "UsuarioAdmin{" + "IdsDeEventos " + idsEvento()+ super.toString() +eventosCreados+ "}";//To change body of generated methods, choose Tools | Templates.
     }
 
 }
