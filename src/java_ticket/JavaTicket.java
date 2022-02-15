@@ -202,26 +202,26 @@ public class JavaTicket extends javax.swing.JFrame {
         jPanel16 = new javax.swing.JPanel();
         jLabel61 = new javax.swing.JLabel();
         jScrollPane19 = new javax.swing.JScrollPane();
-        jList4 = new javax.swing.JList<>();
+        listaMusicos = new javax.swing.JList<>();
         jButton28 = new javax.swing.JButton();
         jButton29 = new javax.swing.JButton();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
-        jTextField12 = new javax.swing.JTextField();
+        edicionTituloMusical = new javax.swing.JTextField();
         jLabel73 = new javax.swing.JLabel();
-        jTextField13 = new javax.swing.JTextField();
+        edicionCodigoMusical = new javax.swing.JTextField();
         jLabel74 = new javax.swing.JLabel();
-        jDateChooser4 = new com.toedter.calendar.JDateChooser();
+        edicionFechaMusical = new com.toedter.calendar.JDateChooser();
         jLabel75 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        edicionMontoMusical = new javax.swing.JTextField();
+        edicionTipoMusica = new javax.swing.JComboBox<>();
         jLabel76 = new javax.swing.JLabel();
         jLabel77 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        edicionDescripcionMusical = new javax.swing.JTextArea();
         jLabel78 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
-        jTextField18 = new javax.swing.JTextField();
+        edicionGenteMusical = new javax.swing.JTextField();
+        musicoIngresadoTF = new javax.swing.JTextField();
         EditarEventoDeportivo = new javax.swing.JDialog();
         jPanel30 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
@@ -260,20 +260,20 @@ public class JavaTicket extends javax.swing.JFrame {
         jPanel18 = new javax.swing.JPanel();
         jLabel63 = new javax.swing.JLabel();
         jLabel197 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        edicionTituloReligioso = new javax.swing.JTextField();
         jLabel65 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        edicionCodigoReligioso = new javax.swing.JTextField();
         jLabel66 = new javax.swing.JLabel();
-        jDateChooser3 = new com.toedter.calendar.JDateChooser();
+        edicionFechaReligioso = new com.toedter.calendar.JDateChooser();
         jLabel67 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        edicionMontoReligioso = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        edicionGenteReligioso = new javax.swing.JTextField();
         jLabel69 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        genteConvertida = new javax.swing.JTextField();
         jLabel70 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        edicionDescripcionReligioso = new javax.swing.JTextArea();
         jButton15 = new javax.swing.JButton();
         logInPanel = new javax.swing.JPanel();
         nameLabel = new javax.swing.JLabel();
@@ -1375,6 +1375,11 @@ public class JavaTicket extends javax.swing.JFrame {
         });
 
         jButton11.setText("Evento Religioso");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -1740,11 +1745,21 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel61.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel61.setText("Edicion Evento Musical");
 
-        jScrollPane19.setViewportView(jList4);
+        jScrollPane19.setViewportView(listaMusicos);
 
         jButton28.setText("Editar Evento");
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
 
         jButton29.setText("Agregar");
+        jButton29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton29ActionPerformed(evt);
+            }
+        });
 
         jLabel71.setText("Grupo Musical");
 
@@ -1756,15 +1771,15 @@ public class JavaTicket extends javax.swing.JFrame {
 
         jLabel75.setText("Monto Acordado");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pop", "Rock", "Clasica", "Reggeaton", "Rap", "Otro" }));
+        edicionTipoMusica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pop", "Rock", "Clasica", "Reggeaton", "Rap", "Otro" }));
 
         jLabel76.setText("Tipo de Musica");
 
         jLabel77.setText("Descripcion del Evento");
 
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane5.setViewportView(jTextArea3);
+        edicionDescripcionMusical.setColumns(20);
+        edicionDescripcionMusical.setRows(5);
+        jScrollPane5.setViewportView(edicionDescripcionMusical);
 
         jLabel78.setText("Cantidad de Gente");
 
@@ -1793,37 +1808,39 @@ public class JavaTicket extends javax.swing.JFrame {
                             .addComponent(jLabel71, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton29, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jScrollPane19, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(jTextField18, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(musicoIngresadoTF, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel16Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel16Layout.createSequentialGroup()
-                                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(48, 48, 48))
-                                    .addGroup(jPanel16Layout.createSequentialGroup()
-                                        .addComponent(jLabel72)
-                                        .addGap(61, 61, 61))
-                                    .addGroup(jPanel16Layout.createSequentialGroup()
-                                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel74)
-                                            .addComponent(jDateChooser4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(48, 48, 48))
-                                    .addGroup(jPanel16Layout.createSequentialGroup()
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(48, 48, 48))))
                             .addGroup(jPanel16Layout.createSequentialGroup()
                                 .addGap(85, 85, 85)
                                 .addComponent(jLabel76)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel16Layout.createSequentialGroup()
+                                        .addComponent(edicionFechaMusical, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel16Layout.createSequentialGroup()
+                                            .addComponent(edicionTituloMusical, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(48, 48, 48))
+                                        .addGroup(jPanel16Layout.createSequentialGroup()
+                                            .addComponent(jLabel72)
+                                            .addGap(61, 61, 61))
+                                        .addGroup(jPanel16Layout.createSequentialGroup()
+                                            .addComponent(jLabel74)
+                                            .addGap(63, 63, 63))
+                                        .addGroup(jPanel16Layout.createSequentialGroup()
+                                            .addComponent(edicionTipoMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(48, 48, 48))))))
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel75)
                                 .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextField13)
-                                .addComponent(jTextField14))
+                                .addComponent(edicionCodigoMusical)
+                                .addComponent(edicionMontoMusical))
                             .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField15))
+                            .addComponent(edicionGenteMusical))
                         .addGap(30, 30, 30))))
         );
         jPanel16Layout.setVerticalGroup(
@@ -1845,16 +1862,16 @@ public class JavaTicket extends javax.swing.JFrame {
                     .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(edicionTituloMusical, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edicionCodigoMusical, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(49, 49, 49)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel74)
                             .addComponent(jLabel75))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jDateChooser4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(edicionFechaMusical, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edicionMontoMusical, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -1863,11 +1880,11 @@ public class JavaTicket extends javax.swing.JFrame {
                             .addComponent(jLabel78))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(edicionTipoMusica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(edicionGenteMusical, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel16Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
-                        .addComponent(jTextField18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(musicoIngresadoTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton29)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
@@ -2131,9 +2148,9 @@ public class JavaTicket extends javax.swing.JFrame {
 
         jLabel197.setText("Titulo del Evento");
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        edicionTituloReligioso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                edicionTituloReligiosoActionPerformed(evt);
             }
         });
 
@@ -2143,9 +2160,9 @@ public class JavaTicket extends javax.swing.JFrame {
 
         jLabel67.setText("Monto Acordado");
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        edicionMontoReligioso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                edicionMontoReligiosoActionPerformed(evt);
             }
         });
 
@@ -2155,11 +2172,16 @@ public class JavaTicket extends javax.swing.JFrame {
 
         jLabel70.setText("Descripcion del Evento");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane4.setViewportView(jTextArea2);
+        edicionDescripcionReligioso.setColumns(20);
+        edicionDescripcionReligioso.setRows(5);
+        jScrollPane4.setViewportView(edicionDescripcionReligioso);
 
         jButton15.setText("Editar Evento");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -2172,15 +2194,10 @@ public class JavaTicket extends javax.swing.JFrame {
                 .addComponent(jLabel67)
                 .addGap(63, 63, 63))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel63))
-                    .addGroup(jPanel18Layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel197)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel65)))
+                .addGap(22, 22, 22)
+                .addComponent(jLabel197)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel65)
                 .addGap(59, 59, 59))
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2189,25 +2206,25 @@ public class JavaTicket extends javax.swing.JFrame {
                         .addComponent(jLabel68))
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(edicionGenteReligioso, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel69)
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(genteConvertida, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(32, 32, 32))
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jDateChooser3, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                            .addComponent(jTextField7))
+                            .addComponent(edicionFechaReligioso, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                            .addComponent(edicionTituloReligioso))
                         .addGap(78, 78, 78)
                         .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)))
+                            .addComponent(edicionCodigoReligioso)
+                            .addComponent(edicionMontoReligioso, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)))
                     .addGroup(jPanel18Layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(jLabel70))
@@ -2217,8 +2234,13 @@ public class JavaTicket extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton15)
-                .addGap(145, 145, 145))
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                        .addComponent(jButton15)
+                        .addGap(145, 145, 145))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
+                        .addComponent(jLabel63)
+                        .addGap(71, 71, 71))))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2231,24 +2253,24 @@ public class JavaTicket extends javax.swing.JFrame {
                     .addComponent(jLabel65))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edicionTituloReligioso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edicionCodigoReligioso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel66)
                     .addComponent(jLabel67))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooser3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edicionFechaReligioso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(edicionMontoReligioso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel68)
                     .addComponent(jLabel69))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(edicionGenteReligioso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(genteConvertida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addComponent(jLabel70)
                 .addGap(18, 18, 18)
@@ -2957,6 +2979,9 @@ public class JavaTicket extends javax.swing.JFrame {
         int pos = searchEventoIndex(Integer.parseInt(codigoIngresadoTF.getText()));
         if (pos == -1) {
             JOptionPane.showMessageDialog(null, "Evento No Existe!");
+            codigoIngresadoTF.setText("");
+            IngresarCodigoEvento.setVisible(false);
+            AdminEventos.setVisible(true);
         } else if (eventosCreados.get(pos) instanceof EventoDeportivo) {
             EditarEventoDeportivo.setVisible(true);
             EditarEventoDeportivo.setResizable(false);
@@ -2980,13 +3005,13 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void edicionTituloReligiosoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionTituloReligiosoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_edicionTituloReligiosoActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void edicionMontoReligiosoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edicionMontoReligiosoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_edicionMontoReligiosoActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         //Esta funcion permite editar el tipo de evento Deportivo
@@ -3024,7 +3049,7 @@ public class JavaTicket extends javax.swing.JFrame {
                     }
                     //////////////////////////////////////////////////////////////////////////////////////////////////
                     //lista de eventos del usuarios loggeado
-                   if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
                         ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
                         ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
                         ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDeporte(Deportes.FUTBOL);
@@ -3054,7 +3079,7 @@ public class JavaTicket extends javax.swing.JFrame {
                             ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
                         }
                         for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
-                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                            ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
                         }
                     }
                     /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3100,10 +3125,10 @@ public class JavaTicket extends javax.swing.JFrame {
                         ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
                         ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
                         for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
-                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                            ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
                         }
                         for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
-                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                            ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
                         }
                     }
                     //////////////////////////////////////////////////////////////////////////////////////////
@@ -3150,10 +3175,10 @@ public class JavaTicket extends javax.swing.JFrame {
                         ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
                         ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
                         for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
-                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                            ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
                         }
                         for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
-                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                            ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
                         }
                     }
                     //////////////////////////////////////////////////////////////////////////////////////////////
@@ -3199,10 +3224,10 @@ public class JavaTicket extends javax.swing.JFrame {
                         ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
                         ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
                         for (int i = 0; i < listaEquipo1.getModel().getSize(); i++) {
-                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
+                            ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores1().add(listaEquipo1.getModel().getElementAt(i));
                         }
                         for (int i = 0; i < listaEquipo2.getModel().getSize(); i++) {
-                            ((EventoDeportivo) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
+                            ((EventoDeportivo) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoJugadores2().add(listaEquipo2.getModel().getElementAt(i));
                         }
                     }
                     //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3218,6 +3243,8 @@ public class JavaTicket extends javax.swing.JFrame {
         edicionDescripcion.setText("");
         edicionMonto.setText("");
         edicionGente.setText("");
+        edicionEquipo1.setText("");
+        edicionEquipo2.setText("");
 
         for (Usuario user : usuarios) {
             System.out.println(user);
@@ -3243,6 +3270,339 @@ public class JavaTicket extends javax.swing.JFrame {
         jugadorIngresado2.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_agregarEquipo2ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        //Esta es la funcion para poder editar un evento Musical
+        try {
+            String tipoMusica = String.valueOf(edicionTipoMusica.getSelectedItem());
+            int codigo = Integer.parseInt(edicionCodigoMusical.getText());
+            String tituloEvento = edicionTituloMusical.getText();
+            String descripcion = edicionDescripcionMusical.getText();
+            Date fechaEvento = edicionFechaMusical.getDate();
+            int montoRenta = Integer.parseInt(edicionMontoMusical.getText());
+            int cantidadGente = Integer.parseInt(edicionGenteMusical.getText());
+            int pos = searchEventoIndex(Integer.parseInt(codigoIngresadoTF.getText()));
+            boolean validarCodigo = codigoUnico(codigo);
+            int userPos = searchUserIndex(userTextField.getText());
+            int userEventoPos = searchUserEventos(Integer.parseInt(codigoIngresadoTF.getText()), userPos);
+            if (validarCodigo == false && cantidadGente < 25000) {
+                if (tipoMusica.equalsIgnoreCase("Pop")) {
+                    //lista de Eventos Creados
+                    ((EventoMusical) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoMusical) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoMusical) eventosCreados.get(pos)).setTipoMusica(Musica.POP);
+                    ((EventoMusical) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoMusical) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoMusical) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    ((EventoMusical) eventosCreados.get(pos)).setTituloEvento(tituloEvento);
+                    for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                        ((EventoMusical) eventosCreados.get(pos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                    }
+                    //////////////////////////////////////////////////////////////////////////////////////////////////
+                    //lista de eventos del usuarios loggeado
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.POP);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.POP);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    }
+                    /////////////////////////////////////////////////////////////////////////////////////////////////////////
+                } else if (tipoMusica.equalsIgnoreCase("Rock")) {
+                    ((EventoMusical) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoMusical) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoMusical) eventosCreados.get(pos)).setTipoMusica(Musica.ROCK);
+                    ((EventoMusical) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoMusical) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoMusical) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                        ((EventoMusical) eventosCreados.get(pos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                    }
+
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.ROCK);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.ROCK);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    }
+                    //////////////////////////////////////////////////////////////////////////////////////////
+                } else if (tipoMusica.equalsIgnoreCase("Rap")) {
+                    ((EventoMusical) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoMusical) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoMusical) eventosCreados.get(pos)).setTipoMusica(Musica.RAP);
+                    ((EventoMusical) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoMusical) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoMusical) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                        ((EventoMusical) eventosCreados.get(pos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                    }
+
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.RAP);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.RAP);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    }
+                    //////////////////////////////////////////////////////////////////////////////////////////////
+                } else if (tipoMusica.equalsIgnoreCase("Clasica")) {
+                    ((EventoMusical) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoMusical) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoMusical) eventosCreados.get(pos)).setTipoMusica(Musica.CLASICA);
+                    ((EventoMusical) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoMusical) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoMusical) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                        ((EventoMusical) eventosCreados.get(pos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                    }
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.CLASICA);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.CLASICA);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    }
+
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////
+                } else if (tipoMusica.equalsIgnoreCase("Reggeaton")) {
+                    ((EventoMusical) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoMusical) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoMusical) eventosCreados.get(pos)).setTipoMusica(Musica.REGGEATON);
+                    ((EventoMusical) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoMusical) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoMusical) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                        ((EventoMusical) eventosCreados.get(pos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                    }
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.REGGEATON);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.REGGEATON);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    }
+
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////
+                } else if (tipoMusica.equalsIgnoreCase("Otro")) {
+                    ((EventoMusical) eventosCreados.get(pos)).setCodigo(codigo);
+                    ((EventoMusical) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                    ((EventoMusical) eventosCreados.get(pos)).setTipoMusica(Musica.OTRO);
+                    ((EventoMusical) eventosCreados.get(pos)).setDescripcion(descripcion);
+                    ((EventoMusical) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                    ((EventoMusical) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                    for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                        ((EventoMusical) eventosCreados.get(pos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                    }
+                    if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.OTRO);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTipoMusica(Musica.OTRO);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                        ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                        for (int i = 0; i < listaMusicos.getModel().getSize(); i++) {
+                            ((EventoMusical) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).getListadoEquipoMusical().add(listaMusicos.getModel().getElementAt(i));
+                        }
+                    }
+
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////
+                }
+
+            } else {
+                JOptionPane.showMessageDialog(null, "El evento no se pudo Editar!");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
+        edicionCodigo.setText("");
+        edicionTitulo.setText("");
+        edicionDescripcion.setText("");
+        edicionMonto.setText("");
+        edicionGente.setText("");
+        edicionEquipo1.setText("");
+        edicionEquipo2.setText("");
+
+        for (Usuario user : usuarios) {
+            System.out.println(user);
+        }
+        for (Evento evento : eventosCreados) {
+            System.out.println(evento);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton28ActionPerformed
+    DefaultListModel dml3 = new DefaultListModel();
+
+    private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
+        dml3.addElement(musicoIngresadoTF.getText());
+        listaMusicos.setModel(dml3);
+        musicoIngresadoTF.setText("");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        //esta funcion permite editar un evento religioso
+        try {
+            /*int pos = searchEventoIndex(Integer.parseInt(codigoIngresadoTF.getText()));
+            boolean validarCodigo = codigoUnico(codigo);*/
+            int codigo = Integer.parseInt(edicionCodigoReligioso.getText());
+            String tituloEvento = edicionTituloReligioso.getText();
+            String descripcion = edicionDescripcionReligioso.getText();
+            Date fechaEvento = edicionFechaReligioso.getDate();
+            int montoRenta = Integer.parseInt(edicionMontoReligioso.getText());
+            int cantidadGente = Integer.parseInt(edicionGenteReligioso.getText());
+            int cantidadGenteConvertida = Integer.parseInt(genteConvertida.getText());
+            int pos = searchEventoIndex(Integer.parseInt(codigoIngresadoTF.getText()));
+            boolean validarCodigo = codigoUnico(codigo);
+            int userPos = searchUserIndex(userTextField.getText());
+            int userEventoPos = searchUserEventos(Integer.parseInt(codigoIngresadoTF.getText()), userPos);
+            if (validarCodigo == false && cantidadGente < 30000) {
+                ((EventoReligioso) eventosCreados.get(pos)).setCodigo(codigo);
+                ((EventoReligioso) eventosCreados.get(pos)).setCantidadGente(cantidadGente);
+                ((EventoReligioso) eventosCreados.get(pos)).setDescripcion(descripcion);
+                ((EventoReligioso) eventosCreados.get(pos)).setMontoRenta(montoRenta);
+                ((EventoReligioso) eventosCreados.get(pos)).setFechaEvento(fechaEvento);
+                ((EventoReligioso) eventosCreados.get(pos)).setTituloEvento(tituloEvento);
+                ((EventoReligioso) eventosCreados.get(pos)).setCantidadGenteConvertidas(cantidadGenteConvertida);
+
+                //////////////////////////////////////////////////////////////////////////////////////////////////
+                //lista de eventos del usuarios loggeado
+                if (usuarios.get(userPos) instanceof UsuarioAdmin) {
+                    ((EventoReligioso) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                    ((EventoReligioso) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                    ((EventoReligioso) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                    ((EventoReligioso) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                    ((EventoReligioso) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                    ((EventoReligioso) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                    ((EventoReligioso) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGenteConvertidas(cantidadGenteConvertida);
+
+                } else if (usuarios.get(userPos) instanceof UsuarioContenido) {
+                    ((EventoReligioso) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCodigo(codigo);
+                    ((EventoReligioso) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGente(cantidadGente);
+                    ((EventoReligioso) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setDescripcion(descripcion);
+                    ((EventoReligioso) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setMontoRenta(montoRenta);
+                    ((EventoReligioso) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setFechaEvento(fechaEvento);
+                    ((EventoReligioso) ((UsuarioContenido) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setTituloEvento(tituloEvento);
+                    ((EventoReligioso) ((UsuarioAdmin) usuarios.get(userPos)).getEventosCreados().get(userEventoPos)).setCantidadGenteConvertidas(cantidadGenteConvertida);
+                }
+            } else {
+                JOptionPane.showMessageDialog(null, "El evento no se pudo Editar!");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(e);
+        }
+        codigoEventoMusical.setText("");
+        tituloEventoMusical.setText("");
+        descripcionEventoMusical.setText("");
+        montoEventoMusical.setText("");
+        genteEventoMusical.setText("");
+        for (Usuario user : usuarios) {
+            System.out.println(user);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        EventoReligioso.setVisible(true);
+        EventoReligioso.setLocationRelativeTo(null);
+        EventoReligioso.setResizable(false);
+        EventoReligioso.pack();
+        TipoEvento.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
     private boolean codigoUnico(int codigo) {
         for (Evento evento : eventosCreados) {
             if (evento.getCodigo() == codigo) {
@@ -3349,14 +3709,27 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTextField edadTF;
     private javax.swing.JTextField edadTextField;
     private javax.swing.JTextField edicionCodigo;
+    private javax.swing.JTextField edicionCodigoMusical;
+    private javax.swing.JTextField edicionCodigoReligioso;
     private javax.swing.JTextArea edicionDescripcion;
+    private javax.swing.JTextArea edicionDescripcionMusical;
+    private javax.swing.JTextArea edicionDescripcionReligioso;
     private javax.swing.JTextField edicionEquipo1;
     private javax.swing.JTextField edicionEquipo2;
     private com.toedter.calendar.JDateChooser edicionFecha;
+    private com.toedter.calendar.JDateChooser edicionFechaMusical;
+    private com.toedter.calendar.JDateChooser edicionFechaReligioso;
     private javax.swing.JTextField edicionGente;
+    private javax.swing.JTextField edicionGenteMusical;
+    private javax.swing.JTextField edicionGenteReligioso;
     private javax.swing.JTextField edicionMonto;
+    private javax.swing.JTextField edicionMontoMusical;
+    private javax.swing.JTextField edicionMontoReligioso;
     private javax.swing.JComboBox<String> edicionTipoDeporte;
+    private javax.swing.JComboBox<String> edicionTipoMusica;
     private javax.swing.JTextField edicionTitulo;
+    private javax.swing.JTextField edicionTituloMusical;
+    private javax.swing.JTextField edicionTituloReligioso;
     private javax.swing.JButton editarEventoButton;
     private javax.swing.JButton eliminarEventoButton;
     private javax.swing.JLabel eliminarLabel;
@@ -3365,6 +3738,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser fechaEventoAdmin;
     private com.toedter.calendar.JDateChooser fechaEventoMusical;
     private com.toedter.calendar.JDateChooser fechaReligioso;
+    private javax.swing.JTextField genteConvertida;
     private javax.swing.JTextField genteEventoMusical;
     private javax.swing.JTextField genteReligioso;
     private javax.swing.JTextField inputUser;
@@ -3387,10 +3761,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser3;
-    private com.toedter.calendar.JDateChooser jDateChooser4;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -3482,7 +3853,6 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -3510,29 +3880,19 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField18;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField jugadorIngresado1;
     private javax.swing.JTextField jugadorIngresado2;
     private javax.swing.JList<String> listaEquipo1;
     private javax.swing.JList<String> listaEquipo2;
+    private javax.swing.JList<String> listaMusicos;
     private javax.swing.JButton logInButton;
     private javax.swing.JPanel logInPanel;
     private javax.swing.JTextField montoAcordadoEventoAdmin;
     private javax.swing.JTextField montoEventoMusical;
     private javax.swing.JTextField montoReligioso;
     private javax.swing.JComboBox<String> musicaCB;
+    private javax.swing.JTextField musicoIngresadoTF;
     private javax.swing.JLabel nameLabel;
     private javax.swing.JRadioButton nombreCompletoRB;
     private javax.swing.JTextField nombreCompletoTF;
