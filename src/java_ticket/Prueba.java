@@ -6,6 +6,7 @@
 package java_ticket;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -14,57 +15,80 @@ import java.util.Scanner;
  * @author jcoq2
  */
 public class Prueba {
-        static ArrayList<Usuario>usuarios = new ArrayList();
-
-    //tanto los eventos como los usuarios se manejaran con herencia
-    /*Revisar los temas en las clases y tambien en videos cursos etc.
-     */
-    //vamos hacer el menu primero para poder ingresar con un par de funciones 
-    //que hagan la validacion de los usuarios
-        static        ArrayList<Evento>eventos = new ArrayList();
+    public static ArrayList<Usuario> usuarios = new ArrayList();
+    public static ArrayList<Evento>eventos = new ArrayList();
 
     public static void main(String[] args) {
+        //eventos
+        eventos.add(new Evento(123,"Rock","dkfj;adf",Calendar.getInstance().getTime(),343));
+        eventos.add(new Evento(1234,"Rock","dkfj;adf",Calendar.getInstance().getTime(),343));
+        eventos.add(new Evento(12345,"Rock","dkfj;adf",Calendar.getInstance().getTime(),343));
 
-        //tengo que intentar crear usuarios para despues 
-        //hacer funciones con respecto a que no se repitan
-        //y que tambien pueda funcionar el login
-        //tengo que hacer por default un usuario admin
-        UsuarioAdmin userAdmin = new UsuarioAdmin("S","ekd","dflkd",3);
-        eventos.add(new Evento(87,"jdfk","kdfj",new Date(),684));
-        eventos.add(new Evento(66,"fdf","dfsdf",new Date(),386));
-        eventos.add(new Evento(34,"fdf","dfsdf",new Date(),344));
-        searchUserIndex("Carlos");
+        System.out.println(retornarEvento(12345));
+        //Usuarios 
+        usuarios.add(new UsuarioAdmin("Jose","jcoq2003","34342",45));
+        usuarios.add(new UsuarioAdmin("Jose","juanca","34342",45));
+        usuarios.add(new UsuarioAdmin("Jose","Marios","34342",45));
+        usuarios.add(new UsuarioAdmin("Jose","luis","34342",45));
         
-    //        System.out.println(retornarIdsEvento());
-        System.out.println(idsEvento());
-        /**/
-    }
-    private static String retornarIdsEvento(){
-            for(int i = 0; i<eventos.size();i++){
-                return String.valueOf(eventos.get(i).getCodigo());
+        System.out.println(retornarUsuario("juanca"));
+        /*
+        ar hoy = Calendar.getInstance();
+            Calendar fecha = Calendar.getInstance();
+            fecha.set(2015, 01, 27);
+            //System.out.println(fecha.get((Calendar.YEAR))+" "+fecha.get(Calendar.MONTH)+" "+fecha.get(Calendar.DATE));            System.out.println(hoy.get(Calendar.DATE));
+            hoy.add(Calendar.YEAR, -9);
+            System.out.println(hoy.before(fecha));
+            
+            
+            Calendar hoy = Calendar.getInstance();
+            hoy.add(Calendar.DATE, -1);
+            System.out.println(hoy.get(Calendar.DATE));
+         */
+        /*Calendar fecha = Calendar.getInstance();
+        fecha.set(2022, 02, 13);
+        Evento e = new Evento(3424, "ldfkjs", "dlkf", fecha.getTime(), 3423);
+        System.out.println(fecha.getTime());
+        Calendar hoy = Calendar.getInstance();
+        
+        if (hoy.before(fecha)) {
+            hoy.add(Calendar.DATE, -1);
+            if (hoy.before(fecha)) {
+                System.out.println("Hola");
+                System.out.println(fecha.getTime());
+                System.out.println(hoy.getTime());
+            } else {
+                System.out.println("SIU");
             }
-        return "No tiene eventos Creados!";
+        }*/
+        // System.out.println(unDiaAntes(e.getFechaEvento()));
+
+        //System.out.println(e);
     }
-    public static void dfdf(){
-        for(Evento evento:eventos){
-            System.out.print("["+evento.getCodigo()+"] ");
+    //funciones recursivas
+    private static Usuario retornarUsuario(String username,int i)
+    {
+        if(i<usuarios.size()){
+            if(usuarios.get(i).getUsername().equalsIgnoreCase(username)){
+                return usuarios.get(i);
+            }
         }
+        return retornarUsuario(username,i+1);
     }
-     public static ArrayList<String> idsEvento(){
-        ArrayList<String>ids = new ArrayList();
-        for(Evento evento:eventos){
-            ids.add(String.valueOf(evento.getCodigo()));
-        }
-        return ids;
+
+    public static Usuario retornarUsuario(String username){
+        return retornarUsuario(username,0);
     }
     
-    public static void searchUserIndex(String username)  {
-            
-        for(Usuario user: usuarios){
-            if(user.getUsername().equalsIgnoreCase(username)){
-                System.out.println(usuarios.indexOf(user));
+    private static Evento retornarEvento(int codigo,int i){
+        if(i<eventos.size()){
+            if(eventos.get(i).getCodigo() == codigo){
+                return eventos.get(i);
             }
         }
-        
-        }
+        return retornarEvento(codigo,i+1);
+    }
+    public static Evento retornarEvento(int codigo){
+        return retornarEvento(codigo,0);
+    }
 }

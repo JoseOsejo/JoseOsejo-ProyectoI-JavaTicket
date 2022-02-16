@@ -5,6 +5,7 @@
  */
 package java_ticket;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,6 +13,7 @@ import java.util.Enumeration;
 import javax.swing.AbstractButton;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -27,6 +29,7 @@ public class JavaTicket extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         usuarios.add(admin);
+
     }
 
     /**
@@ -275,6 +278,28 @@ public class JavaTicket extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         edicionDescripcionReligioso = new javax.swing.JTextArea();
         jButton15 = new javax.swing.JButton();
+        EliminarEvento = new javax.swing.JDialog();
+        jPanel19 = new javax.swing.JPanel();
+        jLabel79 = new javax.swing.JLabel();
+        jLabel80 = new javax.swing.JLabel();
+        codigoIngresadoEliminarEvento = new javax.swing.JTextField();
+        jButton17 = new javax.swing.JButton();
+        VerEventoDeportivo = new javax.swing.JDialog();
+        jPanel17 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tablaEventoDeportivo = new javax.swing.JTable();
+        IngresarCodigoVerEvento = new javax.swing.JDialog();
+        jLabel81 = new javax.swing.JLabel();
+        codigoIngresadoVerEvento = new javax.swing.JTextField();
+        jButton18 = new javax.swing.JButton();
+        VerEventoMusical = new javax.swing.JDialog();
+        jPanel20 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        tablaEventoMusical = new javax.swing.JTable();
+        VerEventoReligioso = new javax.swing.JDialog();
+        jPanel21 = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        tablaEventoReligioso = new javax.swing.JTable();
         logInPanel = new javax.swing.JPanel();
         nameLabel = new javax.swing.JLabel();
         usernmaeLabel = new javax.swing.JLabel();
@@ -475,6 +500,11 @@ public class JavaTicket extends javax.swing.JFrame {
         });
 
         verEventoButton.setText("Ver Evento");
+        verEventoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verEventoButtonActionPerformed(evt);
+            }
+        });
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setText("Administracion de Eventos");
@@ -1834,11 +1864,10 @@ public class JavaTicket extends javax.swing.JFrame {
                                             .addComponent(edicionTipoMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(48, 48, 48))))))
                         .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel75)
-                                .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(edicionCodigoMusical)
-                                .addComponent(edicionMontoMusical))
+                            .addComponent(jLabel75)
+                            .addComponent(jLabel73, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(edicionCodigoMusical)
+                            .addComponent(edicionMontoMusical)
                             .addComponent(jLabel78, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(edicionGenteMusical))
                         .addGap(30, 30, 30))))
@@ -2289,6 +2318,216 @@ public class JavaTicket extends javax.swing.JFrame {
         EditarEventoReligiosoLayout.setVerticalGroup(
             EditarEventoReligiosoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel79.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel79.setText("Eliminar Evento");
+
+        jLabel80.setText("Codigo del Evento");
+
+        codigoIngresadoEliminarEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codigoIngresadoEliminarEventoActionPerformed(evt);
+            }
+        });
+
+        jButton17.setText("Eliminar Evento");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(jLabel80)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                .addContainerGap(138, Short.MAX_VALUE)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton17)
+                            .addComponent(codigoIngresadoEliminarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(139, 139, 139))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                        .addComponent(jLabel79)
+                        .addGap(123, 123, 123))))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel79)
+                .addGap(57, 57, 57)
+                .addComponent(jLabel80)
+                .addGap(18, 18, 18)
+                .addComponent(codigoIngresadoEliminarEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                .addComponent(jButton17)
+                .addGap(41, 41, 41))
+        );
+
+        javax.swing.GroupLayout EliminarEventoLayout = new javax.swing.GroupLayout(EliminarEvento.getContentPane());
+        EliminarEvento.getContentPane().setLayout(EliminarEventoLayout);
+        EliminarEventoLayout.setHorizontalGroup(
+            EliminarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        EliminarEventoLayout.setVerticalGroup(
+            EliminarEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tablaEventoDeportivo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Titulo", "Descripcion", "Fecha", "Monto", "Cantidad Gente", "Equipo1", "Equipo2", "Jugadores1", "Jugadores2", "TipoDeporte"
+            }
+        ));
+        jScrollPane6.setViewportView(tablaEventoDeportivo);
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1197, Short.MAX_VALUE)
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout VerEventoDeportivoLayout = new javax.swing.GroupLayout(VerEventoDeportivo.getContentPane());
+        VerEventoDeportivo.getContentPane().setLayout(VerEventoDeportivoLayout);
+        VerEventoDeportivoLayout.setHorizontalGroup(
+            VerEventoDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        VerEventoDeportivoLayout.setVerticalGroup(
+            VerEventoDeportivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel81.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel81.setText("Ver Evento");
+
+        codigoIngresadoVerEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codigoIngresadoVerEventoActionPerformed(evt);
+            }
+        });
+
+        jButton18.setText("Ver Evento");
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout IngresarCodigoVerEventoLayout = new javax.swing.GroupLayout(IngresarCodigoVerEvento.getContentPane());
+        IngresarCodigoVerEvento.getContentPane().setLayout(IngresarCodigoVerEventoLayout);
+        IngresarCodigoVerEventoLayout.setHorizontalGroup(
+            IngresarCodigoVerEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IngresarCodigoVerEventoLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addGroup(IngresarCodigoVerEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel81)
+                    .addGroup(IngresarCodigoVerEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jButton18)
+                        .addComponent(codigoIngresadoVerEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(165, Short.MAX_VALUE))
+        );
+        IngresarCodigoVerEventoLayout.setVerticalGroup(
+            IngresarCodigoVerEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IngresarCodigoVerEventoLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel81)
+                .addGap(59, 59, 59)
+                .addComponent(codigoIngresadoVerEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(jButton18)
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+
+        tablaEventoMusical.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Titulo", "Descripcion", "Fecha", "Monto", "CantidadGente", "EquipoMusical", "TipoMusica"
+            }
+        ));
+        jScrollPane7.setViewportView(tablaEventoMusical);
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 742, Short.MAX_VALUE)
+            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 742, Short.MAX_VALUE))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 446, Short.MAX_VALUE)
+            .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel20Layout.createSequentialGroup()
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 434, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout VerEventoMusicalLayout = new javax.swing.GroupLayout(VerEventoMusical.getContentPane());
+        VerEventoMusical.getContentPane().setLayout(VerEventoMusicalLayout);
+        VerEventoMusicalLayout.setHorizontalGroup(
+            VerEventoMusicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        VerEventoMusicalLayout.setVerticalGroup(
+            VerEventoMusicalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tablaEventoReligioso.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Titulo", "Descripcion", "Fecha", "Monto", "CantidadGente", "CantidadGenteConvertida"
+            }
+        ));
+        jScrollPane8.setViewportView(tablaEventoReligioso);
+
+        javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
+        jPanel21.setLayout(jPanel21Layout);
+        jPanel21Layout.setHorizontalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel21Layout.createSequentialGroup()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 926, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel21Layout.setVerticalGroup(
+            jPanel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout VerEventoReligiosoLayout = new javax.swing.GroupLayout(VerEventoReligioso.getContentPane());
+        VerEventoReligioso.getContentPane().setLayout(VerEventoReligiosoLayout);
+        VerEventoReligiosoLayout.setHorizontalGroup(
+            VerEventoReligiosoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(VerEventoReligiosoLayout.createSequentialGroup()
+                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        VerEventoReligiosoLayout.setVerticalGroup(
+            VerEventoReligiosoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -3603,6 +3842,119 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    private void codigoIngresadoEliminarEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoIngresadoEliminarEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codigoIngresadoEliminarEventoActionPerformed
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        //Funcion para eliminar el evento
+        //  si la fecha es apenas 1 dia antes de su realizacion se cobrara el 50% del monto acordado
+        //a excepcion de los eventos religiosos que no pagan nada
+        /*Calendar hoy = Calendar.getInstance();
+        hoy.add(Calendar.DATE,1);
+        Evento evento = searchEvento(Integer.parseInt(codigoIngresadoEliminarEvento.getText()));
+            if(evento.getFechaEvento())
+        // TODO add your handling code here:*/
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void verEventoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verEventoButtonActionPerformed
+        //Pasar a ingresar el codigo del evento
+        AdminEventos.setVisible(false);
+        IngresarCodigoVerEvento.setVisible(true);
+        IngresarCodigoVerEvento.setLocationRelativeTo(null);
+        IngresarCodigoVerEvento.setResizable(false);
+        IngresarCodigoVerEvento.pack();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_verEventoButtonActionPerformed
+
+    private void codigoIngresadoVerEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoIngresadoVerEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_codigoIngresadoVerEventoActionPerformed
+    public void llenarEventoReligioso(){
+        DefaultTableModel model = (DefaultTableModel)tablaEventoReligios.getModel();
+        
+    }
+    public void llenarEventoMusical() {
+        DefaultTableModel model = (DefaultTableModel) tablaEventoMusical.getModel();
+        Object rowData[] = new Object[8];
+        for (int i = 0; i < eventosCreados.size(); i++) {
+            rowData[0] = ((EventoMusical) eventosCreados.get(i)).getCodigo();
+            rowData[1] = ((EventoMusical) eventosCreados.get(i)).getTituloEvento();
+            rowData[2] = ((EventoMusical) eventosCreados.get(i)).getDescripcion();
+            rowData[3] = formatter.format(((EventoMusical) eventosCreados.get(i)).getFechaEvento());
+            rowData[4] = ((EventoMusical) eventosCreados.get(i)).getMontoRenta();
+            rowData[5] = ((EventoMusical) eventosCreados.get(i)).getCantidadGente();
+            rowData[6] = ((EventoMusical) eventosCreados.get(i)).getListadoEquipoMusical();
+            rowData[7] = ((EventoMusical) eventosCreados.get(i)).getTipoMusica();
+            model.addRow(rowData);
+        }
+    }
+
+    public void llenarEventoDeportivo() {
+        DefaultTableModel model = (DefaultTableModel) tablaEventoDeportivo.getModel();
+        Object rowData[] = new Object[11];
+        for (int i = 0; i < eventosCreados.size(); i++) {
+            rowData[0] = ((EventoDeportivo) eventosCreados.get(i)).getCodigo();
+            rowData[1] = ((EventoDeportivo) eventosCreados.get(i)).getTituloEvento();
+            rowData[2] = ((EventoDeportivo) eventosCreados.get(i)).getDescripcion();
+            rowData[3] = formatter.format(((EventoDeportivo) eventosCreados.get(i)).getFechaEvento());
+            rowData[4] = ((EventoDeportivo) eventosCreados.get(i)).getMontoRenta();
+            rowData[5] = ((EventoDeportivo) eventosCreados.get(i)).getCantidadGente();
+            rowData[6] = ((EventoDeportivo) eventosCreados.get(i)).getEquipo1();
+            rowData[7] = ((EventoDeportivo) eventosCreados.get(i)).getEquipo2();
+            rowData[8] = ((EventoDeportivo) eventosCreados.get(i)).getListadoJugadores1();
+            rowData[9] = ((EventoDeportivo) eventosCreados.get(i)).getListadoJugadores2();
+            rowData[10] = ((EventoDeportivo) eventosCreados.get(i)).getTipoDeporte();
+            model.addRow(rowData);
+        }
+    }
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        //ver evento
+        int codigo = Integer.parseInt(codigoIngresadoVerEvento.getText());
+        int pos = searchEventoIndex(Integer.parseInt(codigoIngresadoVerEvento.getText()));
+
+        //if(evento esta cancelado es falso){
+        if (pos == -1) {
+            JOptionPane.showMessageDialog(null, "Evento No Existe!");
+        }
+        if (searchEvento(codigo) instanceof EventoDeportivo) {
+            IngresarCodigoVerEvento.setVisible(false);
+            VerEventoDeportivo.setVisible(true);
+            VerEventoDeportivo.setResizable(false);
+            VerEventoDeportivo.setLocationRelativeTo(null);
+            VerEventoDeportivo.pack();
+            llenarEventoDeportivo();
+        } else if (searchEvento(codigo) instanceof EventoMusical) {
+            IngresarCodigoVerEvento.setVisible(false);
+            VerEventoMusical.setVisible(true);
+            VerEventoMusical.setResizable(false);
+            VerEventoMusical.setLocationRelativeTo(null);
+            VerEventoMusical.pack();
+            llenarEventoMusical();
+        } else if (searchEvento(codigo) instanceof EventoReligioso) {
+            
+        } else {
+            JOptionPane.showMessageDialog(null, "evento no existe");
+        }
+        //}else{
+        //mostrar que el evento esta cancelad con su multa
+        //}
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private Evento searchEvento(int codigo, int i) throws StackOverflowError {
+        if (i < eventosCreados.size()) {
+            if (eventosCreados.get(i).getCodigo() == codigo) {
+                return eventosCreados.get(i);
+            }
+        }
+        return searchEvento(codigo, i + 1);
+    }
+
+    private Evento searchEvento(int codigo) {
+        return searchEvento(codigo, 0);
+    }
+
     private boolean codigoUnico(int codigo) {
         for (Evento evento : eventosCreados) {
             if (evento.getCodigo() == codigo) {
@@ -3674,16 +4026,21 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JDialog EditarUsuario;
     private javax.swing.JDialog EditartodosElementos;
     private javax.swing.JDialog EditarunElemento;
+    private javax.swing.JDialog EliminarEvento;
     private javax.swing.JDialog EliminarUsuario;
     private javax.swing.JDialog EventoDeportivo;
     private javax.swing.JDialog EventoMusical;
     private javax.swing.JDialog EventoReligioso;
     private javax.swing.JDialog IngresarCodigoEvento;
+    private javax.swing.JDialog IngresarCodigoVerEvento;
     private javax.swing.JDialog ManejoUsuario;
     private javax.swing.JDialog MenuAdmin;
     private javax.swing.JDialog MenuContenido;
     private javax.swing.JDialog MenuLimitado;
     private javax.swing.JDialog TipoEvento;
+    private javax.swing.JDialog VerEventoDeportivo;
+    private javax.swing.JDialog VerEventoMusical;
+    private javax.swing.JDialog VerEventoReligioso;
     private javax.swing.JButton adminEventosButton;
     private javax.swing.JButton adminEventosContenido;
     private javax.swing.JButton adminUsuariosButton;
@@ -3696,7 +4053,9 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTextField cantidadGenteTF;
     private javax.swing.JTextField codigoEventoAdmin;
     private javax.swing.JTextField codigoEventoMusical;
+    private javax.swing.JTextField codigoIngresadoEliminarEvento;
     private javax.swing.JTextField codigoIngresadoTF;
+    private javax.swing.JTextField codigoIngresadoVerEvento;
     private javax.swing.JTextField codigoReligioso;
     private javax.swing.JPasswordField contraTF;
     private javax.swing.JButton crearEventoButton;
@@ -3751,6 +4110,8 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
@@ -3851,7 +4212,10 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel76;
     private javax.swing.JLabel jLabel77;
     private javax.swing.JLabel jLabel78;
+    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -3861,8 +4225,12 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel4;
@@ -3880,6 +4248,9 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField jugadorIngresado1;
     private javax.swing.JTextField jugadorIngresado2;
@@ -3904,6 +4275,9 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton reportesButton;
     private javax.swing.JButton reportesContenido;
     private javax.swing.JButton salirButton;
+    private javax.swing.JTable tablaEventoDeportivo;
+    private javax.swing.JTable tablaEventoMusical;
+    private javax.swing.JTable tablaEventoReligioso;
     private javax.swing.JComboBox<String> tipoUsuarioCB;
     private javax.swing.JTextField tituloEventoAdmin;
     private javax.swing.JTextField tituloEventoMusical;
@@ -3919,5 +4293,6 @@ public class JavaTicket extends javax.swing.JFrame {
     private final ArrayList<Evento> eventosCreados = new ArrayList();
     private final Usuario admin = new UsuarioAdmin("administrador", "admin", "123", 20);
     private final ArrayList<Usuario> usuarios = new ArrayList();
+    static SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
 
 }

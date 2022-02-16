@@ -5,6 +5,8 @@
  */
 package java_ticket;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -18,6 +20,8 @@ public  class Evento
     private String descripcion;
     private Date fechaEvento;
     private int montoRenta;//renta del estadio
+    private boolean eventoCancelado;
+    private double multaEvento;
     //todas se ingresan desde el teclado
 
     public Evento(int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
@@ -26,6 +30,8 @@ public  class Evento
         this.descripcion = descripcion;
         this.fechaEvento = fechaEvento;
         this.montoRenta = montoRenta;
+        this.eventoCancelado = false;
+        this.multaEvento = 0;
     }
 
     public int getCodigo() {
@@ -67,6 +73,36 @@ public  class Evento
     public void setMontoRenta(int montoRenta) {
         this.montoRenta = montoRenta;
     }
+
+    public boolean isEventoCancelado() {
+        return eventoCancelado;
+    }
+
+    public void setEventoCancelado(boolean eventoCancelado) {
+        this.eventoCancelado = eventoCancelado;
+    }
+
+    public double getMultaEvento() {
+        return multaEvento;
+    }
+
+    public void setMultaEvento(double multaEvento) {
+        this.multaEvento = multaEvento;
+    }
+    
+    
+    /*public  void cancelarEvento(){
+        Calendar hoy = Calendar.getInstance();
+        if(hoy.before(fechaEvento)){
+            hoy.add(Calendar.DATE, 1);
+            if(hoy.before(fechaEvento)){
+                eventoCancelado = true;
+                multa
+            }else{
+                
+            }
+        }
+    }*/
 
     @Override
     public String toString() {
