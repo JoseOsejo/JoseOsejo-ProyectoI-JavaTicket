@@ -300,6 +300,15 @@ public class JavaTicket extends javax.swing.JFrame {
         jPanel21 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         tablaEventoReligioso = new javax.swing.JTable();
+        Reportes = new javax.swing.JDialog();
+        jPanel22 = new javax.swing.JPanel();
+        jLabel82 = new javax.swing.JLabel();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
+        jButton21 = new javax.swing.JButton();
+        jButton22 = new javax.swing.JButton();
+        jButton23 = new javax.swing.JButton();
+        jButton24 = new javax.swing.JButton();
         logInPanel = new javax.swing.JPanel();
         nameLabel = new javax.swing.JLabel();
         usernmaeLabel = new javax.swing.JLabel();
@@ -331,6 +340,11 @@ public class JavaTicket extends javax.swing.JFrame {
         });
 
         reportesButton.setText("Reportes");
+        reportesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportesButtonActionPerformed(evt);
+            }
+        });
 
         salirButton.setText("Salir");
         salirButton.addActionListener(new java.awt.event.ActionListener() {
@@ -2530,6 +2544,81 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLabel82.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel82.setText("Reportes");
+
+        jButton19.setText("Listar Eventos Realizados");
+
+        jButton20.setText("Listar Eventos Futuros");
+
+        jButton21.setText("Listar Eventos Cancelados");
+
+        jButton22.setText("Ingreso Generado  por Fecha");
+
+        jButton23.setText("Ver Perfil");
+
+        jButton24.setText("Volver a Menu Principal");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton19)
+                    .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton20)
+                    .addComponent(jButton22)
+                    .addComponent(jButton24))
+                .addGap(52, 52, 52))
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(210, 210, 210)
+                .addComponent(jLabel82)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel82)
+                .addGap(51, 51, 51)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton19)
+                    .addComponent(jButton20))
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jButton21))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jButton22)))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton23)
+                    .addComponent(jButton24))
+                .addContainerGap(46, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ReportesLayout = new javax.swing.GroupLayout(Reportes.getContentPane());
+        Reportes.getContentPane().setLayout(ReportesLayout);
+        ReportesLayout.setHorizontalGroup(
+            ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        ReportesLayout.setVerticalGroup(
+            ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         logInPanel.setBackground(new java.awt.Color(0, 0, 0));
@@ -3871,8 +3960,18 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_codigoIngresadoVerEventoActionPerformed
     public void llenarEventoReligioso(){
-        DefaultTableModel model = (DefaultTableModel)tablaEventoReligios.getModel();
-        
+        DefaultTableModel model = (DefaultTableModel)tablaEventoReligioso.getModel();
+        Object rowData[] = new Object[7];
+        for(int i = 0;i<eventosCreados.size();i++){
+            rowData[0] = ((EventoReligioso) eventosCreados.get(i)).getCodigo();
+            rowData[1] = ((EventoReligioso) eventosCreados.get(i)).getTituloEvento();
+            rowData[2] = ((EventoReligioso) eventosCreados.get(i)).getDescripcion();
+            rowData[3] = formatter.format(((EventoReligioso) eventosCreados.get(i)).getFechaEvento());
+            rowData[4] = ((EventoReligioso) eventosCreados.get(i)).getMontoRenta();
+            rowData[5] = ((EventoReligioso) eventosCreados.get(i)).getCantidadGente();
+            rowData[6] = ((EventoReligioso) eventosCreados.get(i)).getCantidadGenteConvertidas();
+            model.addRow(rowData);
+        }
     }
     public void llenarEventoMusical() {
         DefaultTableModel model = (DefaultTableModel) tablaEventoMusical.getModel();
@@ -3932,7 +4031,12 @@ public class JavaTicket extends javax.swing.JFrame {
             VerEventoMusical.pack();
             llenarEventoMusical();
         } else if (searchEvento(codigo) instanceof EventoReligioso) {
-            
+            IngresarCodigoVerEvento.setVisible(false);
+            VerEventoReligioso.setVisible(true);
+            VerEventoReligioso.setResizable(false);
+            VerEventoReligioso.setLocationRelativeTo(null);
+            VerEventoReligioso.pack();
+            llenarEventoReligioso();
         } else {
             JOptionPane.showMessageDialog(null, "evento no existe");
         }
@@ -3941,6 +4045,21 @@ public class JavaTicket extends javax.swing.JFrame {
         //}
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        Reportes.setVisible(false);
+        MenuAdmin.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton24ActionPerformed
+
+    private void reportesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportesButtonActionPerformed
+        MenuAdmin.setVisible(false);
+        Reportes.setVisible(true);
+        Reportes.setResizable(false);
+        Reportes.setLocationRelativeTo(null);
+        Reportes.pack();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reportesButtonActionPerformed
 
     private Evento searchEvento(int codigo, int i) throws StackOverflowError {
         if (i < eventosCreados.size()) {
@@ -4037,6 +4156,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JDialog MenuAdmin;
     private javax.swing.JDialog MenuContenido;
     private javax.swing.JDialog MenuLimitado;
+    private javax.swing.JDialog Reportes;
     private javax.swing.JDialog TipoEvento;
     private javax.swing.JDialog VerEventoDeportivo;
     private javax.swing.JDialog VerEventoMusical;
@@ -4112,7 +4232,13 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
+    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jButton23;
+    private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
@@ -4216,6 +4342,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -4231,6 +4358,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel4;
