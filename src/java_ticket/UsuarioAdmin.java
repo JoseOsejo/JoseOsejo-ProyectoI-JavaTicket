@@ -28,6 +28,7 @@ public class UsuarioAdmin extends Usuario {
         this.eventosCreados = eventosCreados;
     }
     
+    
     public ArrayList<String> idsEvento(){
         ArrayList<String>ids = new ArrayList();
         for(Evento evento:eventosCreados){

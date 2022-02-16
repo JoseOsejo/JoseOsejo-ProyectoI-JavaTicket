@@ -15,23 +15,43 @@ import java.util.Scanner;
  * @author jcoq2
  */
 public class Prueba {
+
     public static ArrayList<Usuario> usuarios = new ArrayList();
-    public static ArrayList<Evento>eventos = new ArrayList();
+    public static ArrayList<Evento> eventos = new ArrayList();
 
     public static void main(String[] args) {
         //eventos
-        eventos.add(new Evento(123,"Rock","dkfj;adf",Calendar.getInstance().getTime(),343));
-        eventos.add(new Evento(1234,"Rock","dkfj;adf",Calendar.getInstance().getTime(),343));
-        eventos.add(new Evento(12345,"Rock","dkfj;adf",Calendar.getInstance().getTime(),343));
+        eventos.add(new EventoMusical(Musica.CLASICA,397,79983,"","",Calendar.getInstance().getTime(),587563));
+        eventos.add(new EventoReligioso(34,343,4343,"","",Calendar.getInstance().getTime(),3));
+        eventos.add(new EventoMusical(Musica.RAP,397,8793,"","",Calendar.getInstance().getTime(),3980));
 
-        System.out.println(retornarEvento(12345));
+        //System.out.println(retornarEvento(12345));
         //Usuarios 
-        usuarios.add(new UsuarioAdmin("Jose","jcoq2003","34342",45));
-        usuarios.add(new UsuarioAdmin("Jose","juanca","34342",45));
-        usuarios.add(new UsuarioAdmin("Jose","Marios","34342",45));
-        usuarios.add(new UsuarioAdmin("Jose","luis","34342",45));
-        
-        System.out.println(retornarUsuario("juanca"));
+        Usuario user1 = new UsuarioAdmin("Jose", "jcoq2003", "34342", 45);
+        Usuario user2 = new UsuarioAdmin("Jose", "juanca", "34342", 45);
+        Usuario user3 = new UsuarioAdmin("Jose", "Marios", "34342", 45);
+        Usuario user4 = new UsuarioAdmin("Jose", "luis", "34342", 45);
+        usuarios.add(user1);
+        usuarios.add(user2);
+        usuarios.add(user3);
+        usuarios.add(user4);
+        ((UsuarioAdmin) user1).getEventosCreados().add(eventos.get(0));
+        ((UsuarioAdmin) user1).getEventosCreados().add(eventos.get(1));
+        ((UsuarioAdmin) user1).getEventosCreados().add(eventos.get(2));
+        for(int i = 0;i<((UsuarioAdmin)usuarios.get(0)).getEventosCreados().size();i++){
+            
+            System.out.println(((UsuarioAdmin)usuarios.get(0)).getEventosCreados().get(i).getCodigo());
+           //System.out.println(tipoEvento());
+           if(((UsuarioAdmin)usuarios.get(0)).getEventosCreados().get(i)instanceof EventoReligioso){
+               System.out.println("Evento Religioso");
+           }else if(((UsuarioAdmin)usuarios.get(0)).getEventosCreados().get(i)instanceof EventoMusical){
+               System.out.println("EventoMusical");
+           }else {
+               System.out.println("Evento Deportivo");
+           }
+           
+        }
+
         /*
         ar hoy = Calendar.getInstance();
             Calendar fecha = Calendar.getInstance();
@@ -45,7 +65,7 @@ public class Prueba {
             hoy.add(Calendar.DATE, -1);
             System.out.println(hoy.get(Calendar.DATE));
          */
-        /*Calendar fecha = Calendar.getInstance();
+ /*Calendar fecha = Calendar.getInstance();
         fecha.set(2022, 02, 13);
         Evento e = new Evento(3424, "ldfkjs", "dlkf", fecha.getTime(), 3423);
         System.out.println(fecha.getTime());
@@ -62,33 +82,33 @@ public class Prueba {
             }
         }*/
         // System.out.println(unDiaAntes(e.getFechaEvento()));
-
         //System.out.println(e);
     }
+    
     //funciones recursivas
-    private static Usuario retornarUsuario(String username,int i)
-    {
-        if(i<usuarios.size()){
-            if(usuarios.get(i).getUsername().equalsIgnoreCase(username)){
+    private static Usuario retornarUsuario(String username, int i) {
+        if (i < usuarios.size()) {
+            if (usuarios.get(i).getUsername().equalsIgnoreCase(username)) {
                 return usuarios.get(i);
             }
         }
-        return retornarUsuario(username,i+1);
+        return retornarUsuario(username, i + 1);
     }
 
-    public static Usuario retornarUsuario(String username){
-        return retornarUsuario(username,0);
+    public static Usuario retornarUsuario(String username) {
+        return retornarUsuario(username, 0);
     }
-    
-    private static Evento retornarEvento(int codigo,int i){
-        if(i<eventos.size()){
-            if(eventos.get(i).getCodigo() == codigo){
+
+    private static Evento retornarEvento(int codigo, int i) {
+        if (i < eventos.size()) {
+            if (eventos.get(i).getCodigo() == codigo) {
                 return eventos.get(i);
             }
         }
-        return retornarEvento(codigo,i+1);
+        return retornarEvento(codigo, i + 1);
     }
-    public static Evento retornarEvento(int codigo){
-        return retornarEvento(codigo,0);
+
+    public static Evento retornarEvento(int codigo) {
+        return retornarEvento(codigo, 0);
     }
 }

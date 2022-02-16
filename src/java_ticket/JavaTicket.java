@@ -309,6 +309,27 @@ public class JavaTicket extends javax.swing.JFrame {
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
+        VerPerfilAdmin = new javax.swing.JDialog();
+        jPanel23 = new javax.swing.JPanel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        tablaUsuarioAdmin = new javax.swing.JTable();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        tablaEventosAdmin = new javax.swing.JTable();
+        jLabel83 = new javax.swing.JLabel();
+        jLabel84 = new javax.swing.JLabel();
+        VerPerfilLimitado = new javax.swing.JDialog();
+        jPanel24 = new javax.swing.JPanel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        tablaUsuarioLimitado = new javax.swing.JTable();
+        jLabel85 = new javax.swing.JLabel();
+        VerPerfilContenido = new javax.swing.JDialog();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        tablaUsuarioContenido = new javax.swing.JTable();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        tablaEventosContenido = new javax.swing.JTable();
+        jLabel86 = new javax.swing.JLabel();
+        jLabel87 = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
         logInPanel = new javax.swing.JPanel();
         nameLabel = new javax.swing.JLabel();
         usernmaeLabel = new javax.swing.JLabel();
@@ -2556,6 +2577,11 @@ public class JavaTicket extends javax.swing.JFrame {
         jButton22.setText("Ingreso Generado  por Fecha");
 
         jButton23.setText("Ver Perfil");
+        jButton23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton23ActionPerformed(evt);
+            }
+        });
 
         jButton24.setText("Volver a Menu Principal");
         jButton24.addActionListener(new java.awt.event.ActionListener() {
@@ -2617,6 +2643,270 @@ public class JavaTicket extends javax.swing.JFrame {
         ReportesLayout.setVerticalGroup(
             ReportesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tablaUsuarioAdmin.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "NombreCompleto", "Username", "Password", "Edad"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaUsuarioAdmin.getTableHeader().setReorderingAllowed(false);
+        jScrollPane9.setViewportView(tablaUsuarioAdmin);
+        if (tablaUsuarioAdmin.getColumnModel().getColumnCount() > 0) {
+            tablaUsuarioAdmin.getColumnModel().getColumn(0).setResizable(false);
+            tablaUsuarioAdmin.getColumnModel().getColumn(1).setResizable(false);
+            tablaUsuarioAdmin.getColumnModel().getColumn(2).setResizable(false);
+            tablaUsuarioAdmin.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        tablaEventosAdmin.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Tipo", "Titulo", "Monto"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaEventosAdmin.getTableHeader().setReorderingAllowed(false);
+        jScrollPane10.setViewportView(tablaEventosAdmin);
+        if (tablaEventosAdmin.getColumnModel().getColumnCount() > 0) {
+            tablaEventosAdmin.getColumnModel().getColumn(0).setResizable(false);
+            tablaEventosAdmin.getColumnModel().getColumn(1).setResizable(false);
+            tablaEventosAdmin.getColumnModel().getColumn(2).setResizable(false);
+            tablaEventosAdmin.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jLabel83.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel83.setText("Eventos");
+
+        jLabel84.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel84.setText("Informacion del Usuario");
+
+        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
+        jPanel23.setLayout(jPanel23Layout);
+        jPanel23Layout.setHorizontalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jLabel83))
+                    .addGroup(jPanel23Layout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(jLabel84)))
+                .addContainerGap(55, Short.MAX_VALUE))
+        );
+        jPanel23Layout.setVerticalGroup(
+            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel23Layout.createSequentialGroup()
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addComponent(jLabel84)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel83)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
+        );
+
+        javax.swing.GroupLayout VerPerfilAdminLayout = new javax.swing.GroupLayout(VerPerfilAdmin.getContentPane());
+        VerPerfilAdmin.getContentPane().setLayout(VerPerfilAdminLayout);
+        VerPerfilAdminLayout.setHorizontalGroup(
+            VerPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        VerPerfilAdminLayout.setVerticalGroup(
+            VerPerfilAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tablaUsuarioLimitado.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "NomrbeCompleto", "Username", "Password", "Edad"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaUsuarioLimitado.getTableHeader().setReorderingAllowed(false);
+        jScrollPane11.setViewportView(tablaUsuarioLimitado);
+        if (tablaUsuarioLimitado.getColumnModel().getColumnCount() > 0) {
+            tablaUsuarioLimitado.getColumnModel().getColumn(0).setResizable(false);
+            tablaUsuarioLimitado.getColumnModel().getColumn(1).setResizable(false);
+            tablaUsuarioLimitado.getColumnModel().getColumn(2).setResizable(false);
+            tablaUsuarioLimitado.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jLabel85.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
+        jLabel85.setText("Informacion del Usuario");
+
+        javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
+        jPanel24.setLayout(jPanel24Layout);
+        jPanel24Layout.setHorizontalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel24Layout.createSequentialGroup()
+                .addGroup(jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel24Layout.createSequentialGroup()
+                        .addGap(234, 234, 234)
+                        .addComponent(jLabel85)))
+                .addContainerGap(96, Short.MAX_VALUE))
+        );
+        jPanel24Layout.setVerticalGroup(
+            jPanel24Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel24Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(jLabel85)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57))
+        );
+
+        javax.swing.GroupLayout VerPerfilLimitadoLayout = new javax.swing.GroupLayout(VerPerfilLimitado.getContentPane());
+        VerPerfilLimitado.getContentPane().setLayout(VerPerfilLimitadoLayout);
+        VerPerfilLimitadoLayout.setHorizontalGroup(
+            VerPerfilLimitadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VerPerfilLimitadoLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        VerPerfilLimitadoLayout.setVerticalGroup(
+            VerPerfilLimitadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        tablaUsuarioContenido.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "NombreCompleto", "Username", "Password", "Edad"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaUsuarioContenido.getTableHeader().setReorderingAllowed(false);
+        jScrollPane12.setViewportView(tablaUsuarioContenido);
+        if (tablaUsuarioContenido.getColumnModel().getColumnCount() > 0) {
+            tablaUsuarioContenido.getColumnModel().getColumn(0).setResizable(false);
+            tablaUsuarioContenido.getColumnModel().getColumn(1).setResizable(false);
+            tablaUsuarioContenido.getColumnModel().getColumn(2).setResizable(false);
+            tablaUsuarioContenido.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        tablaEventosContenido.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Tipo", "Titulo", "Monto"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaEventosContenido.getTableHeader().setReorderingAllowed(false);
+        jScrollPane13.setViewportView(tablaEventosContenido);
+        if (tablaEventosContenido.getColumnModel().getColumnCount() > 0) {
+            tablaEventosContenido.getColumnModel().getColumn(0).setResizable(false);
+            tablaEventosContenido.getColumnModel().getColumn(1).setResizable(false);
+            tablaEventosContenido.getColumnModel().getColumn(2).setResizable(false);
+            tablaEventosContenido.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jLabel86.setText("Informacion Del Usuario");
+
+        jLabel87.setText("Eventos del Usuario");
+
+        javax.swing.GroupLayout VerPerfilContenidoLayout = new javax.swing.GroupLayout(VerPerfilContenido.getContentPane());
+        VerPerfilContenido.getContentPane().setLayout(VerPerfilContenidoLayout);
+        VerPerfilContenidoLayout.setHorizontalGroup(
+            VerPerfilContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, VerPerfilContenidoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel86)
+                .addGap(223, 223, 223))
+            .addGroup(VerPerfilContenidoLayout.createSequentialGroup()
+                .addGroup(VerPerfilContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(VerPerfilContenidoLayout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addGroup(VerPerfilContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(VerPerfilContenidoLayout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(jLabel87)))
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        VerPerfilContenidoLayout.setVerticalGroup(
+            VerPerfilContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(VerPerfilContenidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel86)
+                .addGap(39, 39, 39)
+                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jLabel87)
+                .addGap(26, 26, 26)
+                .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
+        jPanel25.setLayout(jPanel25Layout);
+        jPanel25Layout.setHorizontalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 388, Short.MAX_VALUE)
+        );
+        jPanel25Layout.setVerticalGroup(
+            jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -3126,26 +3416,50 @@ public class JavaTicket extends javax.swing.JFrame {
             String equipo1 = equipo1TF.getText();
             String equipo2 = equipo2TF.getText();
             if (validarCodigo == false && cantidadGente < 20000) {
-                if (tipoDeporte.equalsIgnoreCase("Futbol")) {
-                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    EventoDeportivo.setVisible(false);
-                    AdminEventos.setVisible(true);
-                } else if (tipoDeporte.equalsIgnoreCase("Rugby")) {
-                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.RUGBY, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    EventoDeportivo.setVisible(false);
-                    AdminEventos.setVisible(true);
-                } else if (tipoDeporte.equalsIgnoreCase("Baseball")) {
-                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.BASEBALL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    EventoDeportivo.setVisible(false);
-                    AdminEventos.setVisible(true);
-                } else if (tipoDeporte.equalsIgnoreCase("Tenis")) {
-                    eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.TENIS, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    EventoDeportivo.setVisible(false);
-                    AdminEventos.setVisible(true);
+                if (usuarios.get(pos) instanceof UsuarioAdmin) {
+                    if (tipoDeporte.equalsIgnoreCase("Futbol")) {
+                        eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoDeportivo.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoDeporte.equalsIgnoreCase("Rugby")) {
+                        eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.RUGBY, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoDeportivo.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoDeporte.equalsIgnoreCase("Baseball")) {
+                        eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.BASEBALL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoDeportivo.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoDeporte.equalsIgnoreCase("Tenis")) {
+                        eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.TENIS, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoDeportivo.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    }
+                } else if (usuarios.get(pos) instanceof UsuarioContenido) {
+                    if (tipoDeporte.equalsIgnoreCase("Futbol")) {
+                        eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoDeportivo.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoDeporte.equalsIgnoreCase("Rugby")) {
+                        eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.RUGBY, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoDeportivo.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoDeporte.equalsIgnoreCase("Baseball")) {
+                        eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.BASEBALL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoDeportivo.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoDeporte.equalsIgnoreCase("Tenis")) {
+                        eventosCreados.add(new EventoDeportivo(Deportes.FUTBOL, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoDeportivo(Deportes.TENIS, cantidadGente, equipo1, equipo2, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoDeportivo.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    }
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "El evento no se pudo Crear!");
@@ -3204,34 +3518,66 @@ public class JavaTicket extends javax.swing.JFrame {
             boolean validarCodigo = codigoUnico(codigo);
             int pos = searchUserIndex(userTextField.getText());
             if (validarCodigo == false && cantidadGente < 25000) {
-                if (tipoMusica.equalsIgnoreCase("Pop")) {
-                    eventosCreados.add(new EventoMusical(Musica.POP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.POP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    EventoMusical.setVisible(false);
-                    AdminEventos.setVisible(true);
-                } else if (tipoMusica.equalsIgnoreCase("Rock")) {
-                    eventosCreados.add(new EventoMusical(Musica.ROCK, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.ROCK, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    EventoMusical.setVisible(false);
-                    AdminEventos.setVisible(true);
-                } else if (tipoMusica.equalsIgnoreCase("Rap")) {
-                    eventosCreados.add(new EventoMusical(Musica.RAP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.RAP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    EventoMusical.setVisible(false);
-                    AdminEventos.setVisible(true);
-                } else if (tipoMusica.equalsIgnoreCase("Clasica")) {
-                    eventosCreados.add(new EventoMusical(Musica.CLASICA, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.CLASICA, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    EventoMusical.setVisible(false);
-                    AdminEventos.setVisible(true);
-                } else if (tipoMusica.equalsIgnoreCase("Reggeaton")) {
-                    eventosCreados.add(new EventoMusical(Musica.REGGEATON, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.REGGEATON, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    EventoMusical.setVisible(false);
-                    AdminEventos.setVisible(true);
-                } else if (tipoMusica.equalsIgnoreCase("Otro")) {
-                    eventosCreados.add(new EventoMusical(Musica.OTRO, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.OTRO, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                if (usuarios.get(pos) instanceof UsuarioAdmin) {
+                    if (tipoMusica.equalsIgnoreCase("Pop")) {
+                        eventosCreados.add(new EventoMusical(Musica.POP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.POP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Rock")) {
+                        eventosCreados.add(new EventoMusical(Musica.ROCK, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.ROCK, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Rap")) {
+                        eventosCreados.add(new EventoMusical(Musica.RAP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.RAP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Clasica")) {
+                        eventosCreados.add(new EventoMusical(Musica.CLASICA, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.CLASICA, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Reggeaton")) {
+                        eventosCreados.add(new EventoMusical(Musica.REGGEATON, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.REGGEATON, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Otro")) {
+                        eventosCreados.add(new EventoMusical(Musica.OTRO, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.OTRO, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    }
+                } else if (usuarios.get(pos) instanceof UsuarioContenido) {
+                    if (tipoMusica.equalsIgnoreCase("Pop")) {
+                        eventosCreados.add(new EventoMusical(Musica.POP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.POP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Rock")) {
+                        eventosCreados.add(new EventoMusical(Musica.ROCK, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.ROCK, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Rap")) {
+                        eventosCreados.add(new EventoMusical(Musica.RAP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.RAP, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Clasica")) {
+                        eventosCreados.add(new EventoMusical(Musica.CLASICA, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.CLASICA, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Reggeaton")) {
+                        eventosCreados.add(new EventoMusical(Musica.REGGEATON, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.REGGEATON, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        EventoMusical.setVisible(false);
+                        AdminEventos.setVisible(true);
+                    } else if (tipoMusica.equalsIgnoreCase("Otro")) {
+                        eventosCreados.add(new EventoMusical(Musica.OTRO, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                        ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().add(new EventoMusical(Musica.OTRO, cantidadGente, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    }
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "El evento no se pudo Crear!");
@@ -3267,10 +3613,17 @@ public class JavaTicket extends javax.swing.JFrame {
             boolean validarCodigo = codigoUnico(codigo);
             int pos = searchUserIndex(userTextField.getText());
             if (validarCodigo == false && cantidadGente < 30000) {
-                eventosCreados.add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
-                EventoReligioso.setVisible(false);
-                AdminEventos.setVisible(true);
+                if (usuarios.get(pos) instanceof UsuarioAdmin) {
+                    eventosCreados.add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoReligioso.setVisible(false);
+                    AdminEventos.setVisible(true);
+                } else if (usuarios.get(pos) instanceof UsuarioContenido) {
+                    eventosCreados.add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().add(new EventoReligioso(cantidadGente, cantidadGenteConvertida, codigo, tituloEvento, descripcion, fechaEvento, montoRenta));
+                    EventoReligioso.setVisible(false);
+                    AdminEventos.setVisible(true);
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "El evento no se pudo Crear!");
             }
@@ -3959,10 +4312,10 @@ public class JavaTicket extends javax.swing.JFrame {
     private void codigoIngresadoVerEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoIngresadoVerEventoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_codigoIngresadoVerEventoActionPerformed
-    public void llenarEventoReligioso(){
-        DefaultTableModel model = (DefaultTableModel)tablaEventoReligioso.getModel();
+    public void llenarEventoReligioso() {
+        DefaultTableModel model = (DefaultTableModel) tablaEventoReligioso.getModel();
         Object rowData[] = new Object[7];
-        for(int i = 0;i<eventosCreados.size();i++){
+        for (int i = 0; i < eventosCreados.size(); i++) {
             rowData[0] = ((EventoReligioso) eventosCreados.get(i)).getCodigo();
             rowData[1] = ((EventoReligioso) eventosCreados.get(i)).getTituloEvento();
             rowData[2] = ((EventoReligioso) eventosCreados.get(i)).getDescripcion();
@@ -3973,6 +4326,7 @@ public class JavaTicket extends javax.swing.JFrame {
             model.addRow(rowData);
         }
     }
+
     public void llenarEventoMusical() {
         DefaultTableModel model = (DefaultTableModel) tablaEventoMusical.getModel();
         Object rowData[] = new Object[8];
@@ -4060,6 +4414,106 @@ public class JavaTicket extends javax.swing.JFrame {
         Reportes.pack();
         // TODO add your handling code here:
     }//GEN-LAST:event_reportesButtonActionPerformed
+    public void llenarPerfilAdmin() {
+        DefaultTableModel model = (DefaultTableModel) tablaUsuarioAdmin.getModel();
+        Object rowData[] = new Object[4];
+        int pos = searchUserIndex(userTextField.getText());
+        rowData[0] = ((UsuarioAdmin) usuarios.get(pos)).getNombreCompleto();
+        rowData[1] = ((UsuarioAdmin) usuarios.get(pos)).getUsername();
+        rowData[2] = ((UsuarioAdmin) usuarios.get(pos)).getPassword();
+        rowData[3] = ((UsuarioAdmin) usuarios.get(pos)).getEdad();
+        model.addRow(rowData);
+
+    }
+
+    public void llenarPerfilEventosAdmin() {
+        DefaultTableModel model = (DefaultTableModel) tablaEventosAdmin.getModel();
+        Object rowData[] = new Object[4];
+        int pos = searchUserIndex(userTextField.getText());
+        for (int i = 0; i < ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().size(); i++) {
+            rowData[0] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getCodigo();
+            if (((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i) instanceof EventoDeportivo) {
+                rowData[1] = "Evento Deportivo";
+            } else if (((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i) instanceof EventoMusical) {
+                rowData[1] = "Evento Musical";
+            } else if (((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i) instanceof EventoReligioso) {
+                rowData[1] = "Evento Religioso";
+            }
+            rowData[2] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getTituloEvento();
+            rowData[3] = ((UsuarioAdmin) usuarios.get(pos)).getEventosCreados().get(i).getMontoRenta();
+            model.addRow(rowData);
+        }
+    }
+    public void llenarPerfilContenido(){
+        DefaultTableModel model = (DefaultTableModel) tablaUsuarioContenido.getModel();
+        Object rowData[] = new Object[4];
+        int pos = searchUserIndex(userTextField.getText());
+        rowData[0] = ((UsuarioContenido) usuarios.get(pos)).getNombreCompleto();
+        rowData[1] = ((UsuarioContenido) usuarios.get(pos)).getUsername();
+        rowData[2] = ((UsuarioContenido) usuarios.get(pos)).getPassword();
+        rowData[3] = ((UsuarioContenido) usuarios.get(pos)).getEdad();
+        model.addRow(rowData);
+    }
+    public void llenarPerfilEventosContenido(){
+         DefaultTableModel model = (DefaultTableModel) tablaEventosContenido.getModel();
+        Object rowData[] = new Object[4];
+        int pos = searchUserIndex(userTextField.getText());
+        for (int i = 0; i < ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().size(); i++) {
+            rowData[0] = ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i).getCodigo();
+            if (((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i) instanceof EventoDeportivo) {
+                rowData[1] = "Evento Deportivo";
+            } else if (((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i) instanceof EventoMusical) {
+                rowData[1] = "Evento Musical";
+            } else if (((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i) instanceof EventoReligioso) {
+                rowData[1] = "Evento Religioso";
+            }
+            rowData[2] = ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i).getTituloEvento();
+            rowData[3] = ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().get(i).getMontoRenta();
+            model.addRow(rowData);
+        }
+    }
+    public void llenarPerfilLimitado(){
+         DefaultTableModel model = (DefaultTableModel) tablaUsuarioLimitado.getModel();
+        Object rowData[] = new Object[4];
+        int pos = searchUserIndex(userTextField.getText());
+        rowData[0] = ((UsuarioLimitado) usuarios.get(pos)).getNombreCompleto();
+        rowData[1] = ((UsuarioLimitado) usuarios.get(pos)).getUsername();
+        rowData[2] = ((UsuarioLimitado) usuarios.get(pos)).getPassword();
+        rowData[3] = ((UsuarioLimitado) usuarios.get(pos)).getEdad();
+        model.addRow(rowData);
+    }
+    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
+        //Funcion para poder ver la info del usuario loggeado
+        String userLogged = userTextField.getText();
+        int pos = searchUserIndex(userLogged);
+        if(usuarios.get(pos) instanceof UsuarioAdmin){
+            VerPerfilAdmin.setVisible(true);
+            VerPerfilAdmin.setResizable(false);
+            VerPerfilAdmin.setLocationRelativeTo(null);
+            VerPerfilAdmin.pack();
+            Reportes.setVisible(false);
+            llenarPerfilAdmin();
+            llenarPerfilEventosAdmin();
+        }else if(usuarios.get(pos) instanceof UsuarioContenido){
+            VerPerfilContenido.setVisible(true);
+            VerPerfilContenido.setResizable(false);
+            VerPerfilContenido.setLocationRelativeTo(null);
+            VerPerfilContenido.pack();
+            Reportes.setVisible(false);
+            llenarPerfilContenido();
+            llenarPerfilEventosContenido();
+        }else if(usuarios.get(pos) instanceof UsuarioLimitado){
+            VerPerfilLimitado.setVisible(true);
+            VerPerfilLimitado.setResizable(false);
+            VerPerfilLimitado.setLocationRelativeTo(null);
+            VerPerfilLimitado.pack();
+            Reportes.setVisible(false);
+            llenarPerfilLimitado();
+            llenarPerfilLimitado();
+        }
+        //desplegarInfo del usuario
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton23ActionPerformed
 
     private Evento searchEvento(int codigo, int i) throws StackOverflowError {
         if (i < eventosCreados.size()) {
@@ -4161,6 +4615,9 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JDialog VerEventoDeportivo;
     private javax.swing.JDialog VerEventoMusical;
     private javax.swing.JDialog VerEventoReligioso;
+    private javax.swing.JDialog VerPerfilAdmin;
+    private javax.swing.JDialog VerPerfilContenido;
+    private javax.swing.JDialog VerPerfilLimitado;
     private javax.swing.JButton adminEventosButton;
     private javax.swing.JButton adminEventosContenido;
     private javax.swing.JButton adminUsuariosButton;
@@ -4343,6 +4800,11 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
     private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
@@ -4359,6 +4821,9 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel4;
@@ -4368,6 +4833,10 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
@@ -4379,6 +4848,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField jugadorIngresado1;
     private javax.swing.JTextField jugadorIngresado2;
@@ -4406,6 +4876,11 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTable tablaEventoDeportivo;
     private javax.swing.JTable tablaEventoMusical;
     private javax.swing.JTable tablaEventoReligioso;
+    private javax.swing.JTable tablaEventosAdmin;
+    private javax.swing.JTable tablaEventosContenido;
+    private javax.swing.JTable tablaUsuarioAdmin;
+    private javax.swing.JTable tablaUsuarioContenido;
+    private javax.swing.JTable tablaUsuarioLimitado;
     private javax.swing.JComboBox<String> tipoUsuarioCB;
     private javax.swing.JTextField tituloEventoAdmin;
     private javax.swing.JTextField tituloEventoMusical;
