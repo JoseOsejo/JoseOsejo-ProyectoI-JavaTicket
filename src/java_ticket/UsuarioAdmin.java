@@ -29,7 +29,7 @@ public class UsuarioAdmin extends Usuario {
     }
     
     
-    public ArrayList<String> idsEvento(){
+    public final ArrayList<String> idsEvento(){
         ArrayList<String>ids = new ArrayList();
         for(Evento evento:eventosCreados){
             ids.add(String.valueOf(evento.getCodigo()));

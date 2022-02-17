@@ -3090,14 +3090,35 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_logInButtonActionPerformed
 
-    private boolean logIn(String username, String password) {
+    /*private boolean logIn(String username, String password) {
         for (Usuario user : usuarios) {
             if (user.getUsername().equalsIgnoreCase(username) && user.getPassword().equalsIgnoreCase(password)) {
                 return true;
             }
         }
         return false;
+    }*/
+    
+    //Funcion Recursiva Para el LogIn
+    private boolean logIn(String username, String password, int i) {
+
+        if (i < usuarios.size()) {
+            if (usuarios.get(i).getUsername().equalsIgnoreCase(username) && usuarios.get(i).getPassword().equalsIgnoreCase(password)) {
+                return true;
+            }
+        }
+
+        return logIn(username, password, i + 1);
     }
+
+    private boolean logIn(String username, String password) {
+        try {
+            return logIn(username, password, 0);
+        }catch(StackOverflowError e){
+                JOptionPane.showMessageDialog(null, "LogIng Invalido!");
+                return false;
+                }
+            }
 
 
     private void adminEventosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminEventosButtonActionPerformed
@@ -3143,13 +3164,29 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_edadTFActionPerformed
 
     //funcion para validar user unico
-    public boolean checkUser(String username) {
+   /* public boolean checkUser(String username) {
         for (Usuario user : usuarios) {
             if ((user.getUsername().replaceAll("\\s+", "").equalsIgnoreCase(username.replaceAll("\\s+", "")))) {
                 return true;
             }
         }
         return false;
+    }*/
+    //Funcion Recursiva para validar que el usuario no se repita
+    private boolean checkUser(String username,int i){
+        if(i<usuarios.size()){
+            if(usuarios.get(i).getUsername().replaceAll("\\s+", "").equalsIgnoreCase(username.replaceAll("\\s+", ""))){
+                return true;
+            }
+        }
+        return checkUser(username,i+1);
+    }
+    public boolean checkUser(String username){
+        try{
+            return checkUser(username,0);
+        }catch(StackOverflowError e){
+            return false;
+        }
     }
     private void crearUsuarioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearUsuarioButtonActionPerformed
         String tipoUsuario = String.valueOf(tipoUsuarioCB.getSelectedItem());
@@ -4436,10 +4473,10 @@ public class JavaTicket extends javax.swing.JFrame {
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         int pos = searchUserIndex(userTextField.getText());
-        if(usuarios.get(pos) instanceof UsuarioAdmin){
-        Reportes.setVisible(false);
-        MenuAdmin.setVisible(true);
-        }else if(usuarios.get(pos) instanceof UsuarioContenido){
+        if (usuarios.get(pos) instanceof UsuarioAdmin) {
+            Reportes.setVisible(false);
+            MenuAdmin.setVisible(true);
+        } else if (usuarios.get(pos) instanceof UsuarioContenido) {
             Reportes.setVisible(false);
             MenuContenido.setVisible(true);
         }
@@ -4585,7 +4622,8 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton25ActionPerformed
 
-    private Evento searchEvento(int codigo, int i) throws StackOverflowError {
+    //Funcion Recursiva
+    private  Evento searchEvento(int codigo, int i){
         if (i < eventosCreados.size()) {
             if (eventosCreados.get(i).getCodigo() == codigo) {
                 return eventosCreados.get(i);
@@ -4595,7 +4633,12 @@ public class JavaTicket extends javax.swing.JFrame {
     }
 
     private Evento searchEvento(int codigo) {
+        try{
         return searchEvento(codigo, 0);
+        }catch(StackOverflowError e){
+            JOptionPane.showMessageDialog(null, "El evento no Existe");
+            return null;
+        }
     }
 
     private boolean codigoUnico(int codigo) {
