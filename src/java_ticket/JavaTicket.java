@@ -52,6 +52,7 @@ public class JavaTicket extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
         jButton25 = new javax.swing.JButton();
+        jButton26 = new javax.swing.JButton();
         MenuContenido = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -330,7 +331,34 @@ public class JavaTicket extends javax.swing.JFrame {
         tablaEventosContenido = new javax.swing.JTable();
         jLabel86 = new javax.swing.JLabel();
         jLabel87 = new javax.swing.JLabel();
+        EventosRealizados = new javax.swing.JDialog();
         jPanel25 = new javax.swing.JPanel();
+        jScrollPane14 = new javax.swing.JScrollPane();
+        tablaEventosRealizados = new javax.swing.JTable();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        tablaEstadisticaEventosRealizados = new javax.swing.JTable();
+        jLabel88 = new javax.swing.JLabel();
+        jLabel89 = new javax.swing.JLabel();
+        EventosFuturos = new javax.swing.JDialog();
+        jPanel26 = new javax.swing.JPanel();
+        jScrollPane20 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jScrollPane21 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        EventosCancelados = new javax.swing.JDialog();
+        jPanel27 = new javax.swing.JPanel();
+        jScrollPane22 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        jScrollPane23 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        IngresoGeneradoPorFecha = new javax.swing.JDialog();
+        jPanel28 = new javax.swing.JPanel();
+        jScrollPane24 = new javax.swing.JScrollPane();
+        jTable5 = new javax.swing.JTable();
+        jScrollPane25 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
+        jLabel90 = new javax.swing.JLabel();
+        totalGenerado = new javax.swing.JLabel();
         logInPanel = new javax.swing.JPanel();
         nameLabel = new javax.swing.JLabel();
         usernmaeLabel = new javax.swing.JLabel();
@@ -436,6 +464,8 @@ public class JavaTicket extends javax.swing.JFrame {
             }
         });
 
+        jButton26.setText("Reportes");
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -446,8 +476,10 @@ public class JavaTicket extends javax.swing.JFrame {
                         .addGap(132, 132, 132)
                         .addComponent(jLabel32))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(jButton25)))
+                        .addGap(152, 152, 152)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(139, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
@@ -455,9 +487,11 @@ public class JavaTicket extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(jLabel32)
-                .addGap(67, 67, 67)
+                .addGap(40, 40, 40)
                 .addComponent(jButton25)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jButton26)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MenuLimitadoLayout = new javax.swing.GroupLayout(MenuLimitado.getContentPane());
@@ -2595,12 +2629,32 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel82.setText("Reportes");
 
         jButton19.setText("Listar Eventos Realizados");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
 
         jButton20.setText("Listar Eventos Futuros");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
 
         jButton21.setText("Listar Eventos Cancelados");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
 
         jButton22.setText("Ingreso Generado  por Fecha");
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
 
         jButton23.setText("Ver Perfil");
         jButton23.addActionListener(new java.awt.event.ActionListener() {
@@ -2924,15 +2978,356 @@ public class JavaTicket extends javax.swing.JFrame {
                 .addContainerGap(75, Short.MAX_VALUE))
         );
 
+        tablaEventosRealizados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Tipo", "Titulo", "Fecha", "Monto"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane14.setViewportView(tablaEventosRealizados);
+        if (tablaEventosRealizados.getColumnModel().getColumnCount() > 0) {
+            tablaEventosRealizados.getColumnModel().getColumn(0).setResizable(false);
+            tablaEventosRealizados.getColumnModel().getColumn(1).setResizable(false);
+            tablaEventosRealizados.getColumnModel().getColumn(2).setResizable(false);
+            tablaEventosRealizados.getColumnModel().getColumn(3).setResizable(false);
+            tablaEventosRealizados.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        tablaEstadisticaEventosRealizados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Deportivo", "Religiosos", "Musicales", "Monto "
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane18.setViewportView(tablaEstadisticaEventosRealizados);
+        if (tablaEstadisticaEventosRealizados.getColumnModel().getColumnCount() > 0) {
+            tablaEstadisticaEventosRealizados.getColumnModel().getColumn(0).setResizable(false);
+            tablaEstadisticaEventosRealizados.getColumnModel().getColumn(1).setResizable(false);
+            tablaEstadisticaEventosRealizados.getColumnModel().getColumn(2).setResizable(false);
+            tablaEstadisticaEventosRealizados.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jLabel88.setText("Estadistica");
+
+        jLabel89.setText("Eventos Realizados");
+
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
         jPanel25Layout.setHorizontalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addGap(269, 269, 269)
+                        .addComponent(jLabel88))
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addGap(256, 256, 256)
+                        .addComponent(jLabel89)))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         jPanel25Layout.setVerticalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addComponent(jLabel89)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addComponent(jLabel88)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(104, 104, 104))
+        );
+
+        javax.swing.GroupLayout EventosRealizadosLayout = new javax.swing.GroupLayout(EventosRealizados.getContentPane());
+        EventosRealizados.getContentPane().setLayout(EventosRealizadosLayout);
+        EventosRealizadosLayout.setHorizontalGroup(
+            EventosRealizadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventosRealizadosLayout.createSequentialGroup()
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        EventosRealizadosLayout.setVerticalGroup(
+            EventosRealizadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventosRealizadosLayout.createSequentialGroup()
+                .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Tipo", "Titulo", "Fecha", "Monto "
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane20.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setResizable(false);
+            jTable1.getColumnModel().getColumn(1).setResizable(false);
+            jTable1.getColumnModel().getColumn(2).setResizable(false);
+            jTable1.getColumnModel().getColumn(3).setResizable(false);
+            jTable1.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Deportivos", "Religiosos", "Musicales", "Monto"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane21.setViewportView(jTable2);
+        if (jTable2.getColumnModel().getColumnCount() > 0) {
+            jTable2.getColumnModel().getColumn(0).setResizable(false);
+            jTable2.getColumnModel().getColumn(1).setResizable(false);
+            jTable2.getColumnModel().getColumn(2).setResizable(false);
+            jTable2.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
+        jPanel26.setLayout(jPanel26Layout);
+        jPanel26Layout.setHorizontalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(96, Short.MAX_VALUE))
+        );
+        jPanel26Layout.setVerticalGroup(
+            jPanel26Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel26Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(105, 105, 105)
+                .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout EventosFuturosLayout = new javax.swing.GroupLayout(EventosFuturos.getContentPane());
+        EventosFuturos.getContentPane().setLayout(EventosFuturosLayout);
+        EventosFuturosLayout.setHorizontalGroup(
+            EventosFuturosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventosFuturosLayout.createSequentialGroup()
+                .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        EventosFuturosLayout.setVerticalGroup(
+            EventosFuturosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Tipo", "TItulo", "Fecha", "Multa"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane22.setViewportView(jTable3);
+        if (jTable3.getColumnModel().getColumnCount() > 0) {
+            jTable3.getColumnModel().getColumn(0).setResizable(false);
+            jTable3.getColumnModel().getColumn(1).setResizable(false);
+            jTable3.getColumnModel().getColumn(2).setResizable(false);
+            jTable3.getColumnModel().getColumn(3).setResizable(false);
+            jTable3.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Deportivos", "Musicales", "Religiosos", "Multa"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane23.setViewportView(jTable4);
+        if (jTable4.getColumnModel().getColumnCount() > 0) {
+            jTable4.getColumnModel().getColumn(0).setResizable(false);
+            jTable4.getColumnModel().getColumn(1).setResizable(false);
+            jTable4.getColumnModel().getColumn(2).setResizable(false);
+            jTable4.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
+        jPanel27.setLayout(jPanel27Layout);
+        jPanel27Layout.setHorizontalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addGroup(jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel27Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(90, Short.MAX_VALUE))
+        );
+        jPanel27Layout.setVerticalGroup(
+            jPanel27Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel27Layout.createSequentialGroup()
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(290, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout EventosCanceladosLayout = new javax.swing.GroupLayout(EventosCancelados.getContentPane());
+        EventosCancelados.getContentPane().setLayout(EventosCanceladosLayout);
+        EventosCanceladosLayout.setHorizontalGroup(
+            EventosCanceladosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EventosCanceladosLayout.createSequentialGroup()
+                .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        EventosCanceladosLayout.setVerticalGroup(
+            EventosCanceladosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EventosCanceladosLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Tipo", "Titulo", "Fecha", "Multa"
+            }
+        ));
+        jScrollPane24.setViewportView(jTable5);
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Deportivos", "Musicales", "Religiosos"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane25.setViewportView(jTable6);
+        if (jTable6.getColumnModel().getColumnCount() > 0) {
+            jTable6.getColumnModel().getColumn(0).setResizable(false);
+            jTable6.getColumnModel().getColumn(1).setResizable(false);
+            jTable6.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        jLabel90.setText("Total Generado");
+
+        javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
+        jPanel28.setLayout(jPanel28Layout);
+        jPanel28Layout.setHorizontalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
+                        .addGroup(jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addComponent(totalGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel28Layout.createSequentialGroup()
+                        .addGap(233, 233, 233)
+                        .addComponent(jLabel90)))
+                .addContainerGap(66, Short.MAX_VALUE))
+        );
+        jPanel28Layout.setVerticalGroup(
+            jPanel28Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel28Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel90)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(totalGenerado, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout IngresoGeneradoPorFechaLayout = new javax.swing.GroupLayout(IngresoGeneradoPorFecha.getContentPane());
+        IngresoGeneradoPorFecha.getContentPane().setLayout(IngresoGeneradoPorFechaLayout);
+        IngresoGeneradoPorFechaLayout.setHorizontalGroup(
+            IngresoGeneradoPorFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(IngresoGeneradoPorFechaLayout.createSequentialGroup()
+                .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        IngresoGeneradoPorFechaLayout.setVerticalGroup(
+            IngresoGeneradoPorFechaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -3714,7 +4109,11 @@ public class JavaTicket extends javax.swing.JFrame {
 
     private void eliminarEventoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarEventoButtonActionPerformed
         //esta funcion permite eliminar un evento
-
+        EliminarEvento.setVisible(true);
+        EliminarEvento.setLocationRelativeTo(null);
+        EliminarEvento.setResizable(false);
+        EliminarEvento.pack();
+        AdminEventos.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_eliminarEventoButtonActionPerformed
 
@@ -4363,10 +4762,28 @@ public class JavaTicket extends javax.swing.JFrame {
         //Funcion para eliminar el evento
         //  si la fecha es apenas 1 dia antes de su realizacion se cobrara el 50% del monto acordado
         //a excepcion de los eventos religiosos que no pagan nada
-        /*Calendar hoy = Calendar.getInstance();
-        hoy.add(Calendar.DATE,1);
-        Evento evento = searchEvento(Integer.parseInt(codigoIngresadoEliminarEvento.getText()));
-            if(evento.getFechaEvento())
+        int userPos = searchUserIndex(userTextField.getText());
+        int codigo = Integer.parseInt(codigoIngresadoEliminarEvento.getText());
+        Evento evento = searchEvento(codigo);
+        int pos = eventosCreados.indexOf(evento);
+        int userEventoPos = searchUserEventos(Integer.parseInt(codigoIngresadoEliminarEvento.getText()), userPos);
+        
+        if(evento!=null){
+            eventosCreados.get(pos).cancelarEvento();
+            if(usuarios.get(userPos) instanceof UsuarioAdmin){
+                ((UsuarioAdmin)usuarios.get(userPos)).getEventosCreados().get(userEventoPos).cancelarEvento();
+            }else if(usuarios.get(userPos)instanceof UsuarioContenido){
+                ((UsuarioContenido)usuarios.get(userPos)).getEventosCreados().get(userEventoPos).cancelarEvento();
+            }
+        }
+        
+        for(Evento e: eventosCreados){
+            System.out.println(e.datosCancelados());
+        }
+        for(Usuario user:usuarios){
+            System.out.println(user);
+        }
+      
         // TODO add your handling code here:*/
     }//GEN-LAST:event_jButton17ActionPerformed
 
@@ -4622,6 +5039,42 @@ public class JavaTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton25ActionPerformed
 
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        EventosRealizados.setVisible(true);
+        EventosRealizados.setResizable(false);
+        EventosRealizados.setLocationRelativeTo(null);
+        EventosRealizados.pack();
+        Reportes.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        EventosFuturos.setVisible(true);
+        EventosFuturos.setResizable(false);
+        EventosFuturos.setLocationRelativeTo(null);
+        EventosFuturos.pack();
+        Reportes.setVisible(false);
+            // TODO add your handling code here:
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        EventosCancelados.setVisible(true);
+        EventosCancelados.setResizable(false);
+        EventosCancelados.setLocationRelativeTo(null);
+        EventosCancelados.pack();
+        Reportes.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        IngresoGeneradoPorFecha.setVisible(true);
+        IngresoGeneradoPorFecha.setResizable(false);
+        IngresoGeneradoPorFecha.setLocationRelativeTo(null);
+        IngresoGeneradoPorFecha.pack();
+        Reportes.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton22ActionPerformed
+
     //Funcion Recursiva
     private  Evento searchEvento(int codigo, int i){
         if (i < eventosCreados.size()) {
@@ -4717,8 +5170,12 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JDialog EventoDeportivo;
     private javax.swing.JDialog EventoMusical;
     private javax.swing.JDialog EventoReligioso;
+    private javax.swing.JDialog EventosCancelados;
+    private javax.swing.JDialog EventosFuturos;
+    private javax.swing.JDialog EventosRealizados;
     private javax.swing.JDialog IngresarCodigoEvento;
     private javax.swing.JDialog IngresarCodigoVerEvento;
+    private javax.swing.JDialog IngresoGeneradoPorFecha;
     private javax.swing.JDialog ManejoUsuario;
     private javax.swing.JDialog MenuAdmin;
     private javax.swing.JDialog MenuContenido;
@@ -4810,6 +5267,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
     private javax.swing.JButton jButton25;
+    private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
@@ -4919,7 +5377,10 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel85;
     private javax.swing.JLabel jLabel86;
     private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -4938,6 +5399,9 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel4;
@@ -4951,11 +5415,19 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane16;
     private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane19;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane20;
+    private javax.swing.JScrollPane jScrollPane21;
+    private javax.swing.JScrollPane jScrollPane22;
+    private javax.swing.JScrollPane jScrollPane23;
+    private javax.swing.JScrollPane jScrollPane24;
+    private javax.swing.JScrollPane jScrollPane25;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -4963,6 +5435,12 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
+    private javax.swing.JTable jTable5;
+    private javax.swing.JTable jTable6;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JTextField jugadorIngresado1;
     private javax.swing.JTextField jugadorIngresado2;
@@ -4987,11 +5465,13 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton reportesButton;
     private javax.swing.JButton reportesContenido;
     private javax.swing.JButton salirButton;
+    private javax.swing.JTable tablaEstadisticaEventosRealizados;
     private javax.swing.JTable tablaEventoDeportivo;
     private javax.swing.JTable tablaEventoMusical;
     private javax.swing.JTable tablaEventoReligioso;
     private javax.swing.JTable tablaEventosAdmin;
     private javax.swing.JTable tablaEventosContenido;
+    private javax.swing.JTable tablaEventosRealizados;
     private javax.swing.JTable tablaUsuarioAdmin;
     private javax.swing.JTable tablaUsuarioContenido;
     private javax.swing.JTable tablaUsuarioLimitado;
@@ -4999,6 +5479,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JTextField tituloEventoAdmin;
     private javax.swing.JTextField tituloEventoMusical;
     private javax.swing.JTextField tituloReligioso;
+    private javax.swing.JLabel totalGenerado;
     private javax.swing.JTextField userTextField;
     private javax.swing.JRadioButton usernameRB;
     private javax.swing.JTextField usernameTF;

@@ -6,6 +6,7 @@
 package java_ticket;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -22,7 +23,6 @@ public class EventoDeportivo extends Evento {
     private String equipo2;
     private ArrayList<String> listadoJugadores1;
     private ArrayList<String> listadoJugadores2;
-
     /*||Atributos extras||
     listado de jugadores por equipo
     cada listado dentro de un arraylist para cada equipo
@@ -36,6 +36,7 @@ public class EventoDeportivo extends Evento {
         this.equipo2 = equipo2;
         this.listadoJugadores1 = new ArrayList();
         this.listadoJugadores2 = new ArrayList();
+        
     }
     
 

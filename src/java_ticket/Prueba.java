@@ -38,7 +38,12 @@ public class Prueba {
         ((UsuarioAdmin) user1).getEventosCreados().add(eventos.get(0));
         ((UsuarioAdmin) user1).getEventosCreados().add(eventos.get(1));
         ((UsuarioAdmin) user1).getEventosCreados().add(eventos.get(2));
-        for(int i = 0;i<((UsuarioAdmin)usuarios.get(0)).getEventosCreados().size();i++){
+        ((UsuarioAdmin)user1).getEventosCreados().get(0).cancelarEvento();
+        for(Evento evento :((UsuarioAdmin)usuarios.get(0)).getEventosCreados()){
+            System.out.println(evento);
+        }
+        
+       /* for(int i = 0;i<((UsuarioAdmin)usuarios.get(0)).getEventosCreados().size();i++){
             
             System.out.println(((UsuarioAdmin)usuarios.get(0)).getEventosCreados().get(i).getCodigo());
            //System.out.println(tipoEvento());
@@ -49,9 +54,9 @@ public class Prueba {
            }else {
                System.out.println("Evento Deportivo");
            }
-           
         }
-
+*/
+       
         /*
         ar hoy = Calendar.getInstance();
             Calendar fecha = Calendar.getInstance();

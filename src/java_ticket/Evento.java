@@ -15,13 +15,13 @@ import java.util.Date;
  */
 public  class Evento 
 {
-    private int codigo;//el codigo de cada evento es unico
-    private String tituloEvento;
-    private String descripcion;
-    private Date fechaEvento;
-    private int montoRenta;//renta del estadio
-    private boolean eventoCancelado;
-    private double multaEvento;
+    protected int codigo;//el codigo de cada evento es unico
+    protected String tituloEvento;
+    protected String descripcion;
+    protected Date fechaEvento;
+    protected int montoRenta;//renta del estadio
+    protected boolean eventoCancelado;
+    protected double multaEvento;
     //todas se ingresan desde el teclado
 
     public Evento(int codigo, String tituloEvento, String descripcion, Date fechaEvento, int montoRenta) {
@@ -91,22 +91,32 @@ public  class Evento
     }
     
     
-    /*public  void cancelarEvento(){
+    public void cancelarEvento(){
         Calendar hoy = Calendar.getInstance();
         if(hoy.before(fechaEvento)){
             hoy.add(Calendar.DATE, 1);
             if(hoy.before(fechaEvento)){
                 eventoCancelado = true;
-                multa
+                multaEvento =0;
+                
             }else{
+                eventoCancelado = true;
+                multaEvento = montoRenta*0.5;
                 
             }
+           
         }
-    }*/
+    }
+    public String datosCancelados(){
+        if(eventoCancelado == true){
+            return "Estado: Cancelado"+" Multa: "+multaEvento;
+        }
+        return "El evento no esta Cancelado";
+    }
 
     @Override
     public String toString() {
-        return "{" + "codigo=" + codigo + ", tituloEvento=" + tituloEvento + ", descripcion=" + descripcion + ", fechaEvento=" + fechaEvento + ", montoRenta=" + montoRenta + '}';
+        return "{" + "codigo=" + codigo + ", tituloEvento=" + tituloEvento + ", descripcion=" + descripcion + ", fechaEvento=" + fechaEvento + ", montoRenta=" + montoRenta +"Estado"+eventoCancelado+'}';
     }
     
     

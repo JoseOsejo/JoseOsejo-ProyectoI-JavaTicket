@@ -12,10 +12,10 @@ package java_ticket;
 public abstract class  Usuario 
 {
  /*antes de crear un usuario es importante definir que tipo de usuario sera*/
-private String nombreCompleto;
-private String username;//no se puede repetir
-private String password;
-private int edad;
+protected String nombreCompleto;
+protected String username;//no se puede repetir
+protected String password;
+protected int edad;
 
     public Usuario(String nombreCompleto, String username, String password, int edad) {
         this.nombreCompleto = nombreCompleto;
