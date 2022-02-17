@@ -51,6 +51,7 @@ public class JavaTicket extends javax.swing.JFrame {
         MenuLimitado = new javax.swing.JDialog();
         jPanel10 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
+        jButton25 = new javax.swing.JButton();
         MenuContenido = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -425,23 +426,38 @@ public class JavaTicket extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        jLabel32.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel32.setText("Menu Limitado");
+
+        jButton25.setText("Ver Evento");
+        jButton25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton25ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(jLabel32)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jLabel32))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jButton25)))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel32)
-                .addContainerGap(247, Short.MAX_VALUE))
+                .addGap(67, 67, 67)
+                .addComponent(jButton25)
+                .addContainerGap(156, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout MenuLimitadoLayout = new javax.swing.GroupLayout(MenuLimitado.getContentPane());
@@ -458,8 +474,18 @@ public class JavaTicket extends javax.swing.JFrame {
         jLabel8.setText("Menu Pricipal");
 
         adminEventosContenido.setText("Administracion de Eventos");
+        adminEventosContenido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminEventosContenidoActionPerformed(evt);
+            }
+        });
 
         reportesContenido.setText("Reportes");
+        reportesContenido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reportesContenidoActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Salir");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -3103,6 +3129,8 @@ public class JavaTicket extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         MenuContenido.setVisible(false);
         this.setVisible(true);
+        userTextField.setText("");
+        passwordTextField.setText("");
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -3390,8 +3418,14 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel29MouseClicked
 
     private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
-        AdminEventos.setVisible(false);
-        MenuAdmin.setVisible(true);
+        int pos = searchUserIndex(userTextField.getText());
+        if (usuarios.get(pos) instanceof UsuarioAdmin) {
+            AdminEventos.setVisible(false);
+            MenuAdmin.setVisible(true);
+        } else if (usuarios.get(pos) instanceof UsuarioContenido) {
+            AdminEventos.setVisible(false);
+            MenuContenido.setVisible(true);
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel30MouseClicked
 
@@ -4401,8 +4435,14 @@ public class JavaTicket extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        int pos = searchUserIndex(userTextField.getText());
+        if(usuarios.get(pos) instanceof UsuarioAdmin){
         Reportes.setVisible(false);
         MenuAdmin.setVisible(true);
+        }else if(usuarios.get(pos) instanceof UsuarioContenido){
+            Reportes.setVisible(false);
+            MenuContenido.setVisible(true);
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton24ActionPerformed
 
@@ -4444,7 +4484,8 @@ public class JavaTicket extends javax.swing.JFrame {
             model.addRow(rowData);
         }
     }
-    public void llenarPerfilContenido(){
+
+    public void llenarPerfilContenido() {
         DefaultTableModel model = (DefaultTableModel) tablaUsuarioContenido.getModel();
         Object rowData[] = new Object[4];
         int pos = searchUserIndex(userTextField.getText());
@@ -4454,8 +4495,9 @@ public class JavaTicket extends javax.swing.JFrame {
         rowData[3] = ((UsuarioContenido) usuarios.get(pos)).getEdad();
         model.addRow(rowData);
     }
-    public void llenarPerfilEventosContenido(){
-         DefaultTableModel model = (DefaultTableModel) tablaEventosContenido.getModel();
+
+    public void llenarPerfilEventosContenido() {
+        DefaultTableModel model = (DefaultTableModel) tablaEventosContenido.getModel();
         Object rowData[] = new Object[4];
         int pos = searchUserIndex(userTextField.getText());
         for (int i = 0; i < ((UsuarioContenido) usuarios.get(pos)).getEventosCreados().size(); i++) {
@@ -4472,8 +4514,9 @@ public class JavaTicket extends javax.swing.JFrame {
             model.addRow(rowData);
         }
     }
-    public void llenarPerfilLimitado(){
-         DefaultTableModel model = (DefaultTableModel) tablaUsuarioLimitado.getModel();
+
+    public void llenarPerfilLimitado() {
+        DefaultTableModel model = (DefaultTableModel) tablaUsuarioLimitado.getModel();
         Object rowData[] = new Object[4];
         int pos = searchUserIndex(userTextField.getText());
         rowData[0] = ((UsuarioLimitado) usuarios.get(pos)).getNombreCompleto();
@@ -4486,7 +4529,7 @@ public class JavaTicket extends javax.swing.JFrame {
         //Funcion para poder ver la info del usuario loggeado
         String userLogged = userTextField.getText();
         int pos = searchUserIndex(userLogged);
-        if(usuarios.get(pos) instanceof UsuarioAdmin){
+        if (usuarios.get(pos) instanceof UsuarioAdmin) {
             VerPerfilAdmin.setVisible(true);
             VerPerfilAdmin.setResizable(false);
             VerPerfilAdmin.setLocationRelativeTo(null);
@@ -4494,7 +4537,7 @@ public class JavaTicket extends javax.swing.JFrame {
             Reportes.setVisible(false);
             llenarPerfilAdmin();
             llenarPerfilEventosAdmin();
-        }else if(usuarios.get(pos) instanceof UsuarioContenido){
+        } else if (usuarios.get(pos) instanceof UsuarioContenido) {
             VerPerfilContenido.setVisible(true);
             VerPerfilContenido.setResizable(false);
             VerPerfilContenido.setLocationRelativeTo(null);
@@ -4502,7 +4545,7 @@ public class JavaTicket extends javax.swing.JFrame {
             Reportes.setVisible(false);
             llenarPerfilContenido();
             llenarPerfilEventosContenido();
-        }else if(usuarios.get(pos) instanceof UsuarioLimitado){
+        } else if (usuarios.get(pos) instanceof UsuarioLimitado) {
             VerPerfilLimitado.setVisible(true);
             VerPerfilLimitado.setResizable(false);
             VerPerfilLimitado.setLocationRelativeTo(null);
@@ -4514,6 +4557,33 @@ public class JavaTicket extends javax.swing.JFrame {
         //desplegarInfo del usuario
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton23ActionPerformed
+
+    private void adminEventosContenidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminEventosContenidoActionPerformed
+        AdminEventos.setVisible(true);
+        AdminEventos.setLocationRelativeTo(null);
+        AdminEventos.setResizable(false);
+        AdminEventos.pack();
+        MenuContenido.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_adminEventosContenidoActionPerformed
+
+    private void reportesContenidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportesContenidoActionPerformed
+        Reportes.setVisible(true);
+        Reportes.setLocationRelativeTo(null);
+        Reportes.setResizable(false);
+        Reportes.pack();
+        MenuContenido.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_reportesContenidoActionPerformed
+
+    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+        IngresarCodigoVerEvento.setVisible(true);
+        IngresarCodigoVerEvento.setResizable(false);
+        IngresarCodigoVerEvento.setLocationRelativeTo(null);
+        IngresarCodigoVerEvento.pack();
+        MenuLimitado.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton25ActionPerformed
 
     private Evento searchEvento(int codigo, int i) throws StackOverflowError {
         if (i < eventosCreados.size()) {
@@ -4696,6 +4766,7 @@ public class JavaTicket extends javax.swing.JFrame {
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
     private javax.swing.JButton jButton24;
+    private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton29;
     private javax.swing.JButton jButton3;
